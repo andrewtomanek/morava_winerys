@@ -1,33 +1,946 @@
-.App {
+.main-navigation {
+  width: 100%;
+  height: 4.5rem;
+  background: #00179b;
+}
+
+.main-navigation nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-navigation li {
+  margin: 0 1rem;
+}
+
+.main-navigation a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.main-navigation a:hover,
+.main-navigation a:active {
+  background: white;
+  color: #00179b;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: hsla(205, 100%, 50%, 0.4);
+  background: linear-gradient(
+    to bottom right,
+    hsla(205, 100%, 50%, 0.2),
+    hsla(205, 100%, 50%, 0.6),
+    hsla(205, 100%, 70%, 0.2)
+  );
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  width: 100vw;
+  z-index: 10;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: linear-gradient(
+    to left,
+    hsla(205, 100%, 50%, 1),
+    hsla(205, 100%, 70%, 1)
+  ); /* Standard syntax */
+  background-size: 100% 100%;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.search__input {
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+:root {
+  font-size: calc(1vw + 1vh + 0.5vmin);
+}
+
+.wine__wrap {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-items: center;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-content: space-between;
+}
+
+.shops__container {
+  display: grid;
+  grid-template-columns: repeat(3, 30vw);
+  gap: 5vmin 1vmin;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  transition: 0.7s ease-in;
+  animation-name: jmena;
+  animation-duration: 0.5s;
+  overflow: hidden;
+}
+
+h1 {
+  position: relative;
+  font-family: "Ubuntu", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color: white;
+  background: hsla(205, 100%, 50%, 0.5);
+  background: linear-gradient(
+    to bottom right,
+    hsla(205, 100%, 50%, 0.4),
+    hsla(205, 100%, 50%, 0.8),
+    hsla(205, 100%, 90%, 0.2)
+  ); /* Standard syntax */
+  text-align: center;
+  margin: 80px auto 10px;
+  padding: 5px 20px;
+  border: 5px ridge hsla(205, 100%, 50%, 1);
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+img.sld {
+  width: 100%;
+  height: 50vh;
+  overflow-y: hidden;
+  object-fit: cover;
+  animation: slide 9s linear 0s infinite;
 }
 
-@keyframes App-logo-spin {
+/* Standard syntax */
+@keyframes slide {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1.2, 1.2) translate(-50px, -50px);
+  }
+}
+
+.okres_container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  grid-auto-flow: row;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  animation-name: jmena;
+  animation-duration: 0.5s;
+}
+
+@keyframes jmena {
   from {
-    transform: rotate(0deg);
+    opacity: 0.2;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.topttl {
+  height: 10%;
+  width: 100%;
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  color: white;
+  background: hsla(205, 100%, 50%, 1);
+  background: linear-gradient(
+    to bottom,
+    hsla(205, 100%, 50%, 1),
+    hsla(205, 100%, 60%, 1)
+  ); /* Standard syntax */
+  margin: 0;
+  padding: 5px 0 0 0px;
+  border-bottom: 5px solid hsla(205, 100%, 50%, 1);
+}
+
+.mySlides {
+  display: none;
+}
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: 0 auto 40px;
+  z-index: -3;
+  transform: rotate(-1deg);
+  transform: skew(-1deg, -2deg);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 2rem;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  text-align: center;
+  transform: rotate(-1deg);
+  transform: skew(-1deg, -2deg);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.tite {
+  position: absolute;
+  padding: 5px 10px;
+  top: 20%;
+  left: 50%;
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  color: hsl(210, 100%, 50%);
+  padding: 5px 20px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  transform: translate(-50%, -50%) rotate(1deg) skew(3deg, 2deg);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translate(0%, 50%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5, 0.5) skew(20deg, 20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+#map-canvas {
+  position: relative;
+  display: block;
+  height: 90%;
+  z-index: 1;
+  top: 60px;
+}
+
+input {
+  width: 100%;
+  padding: 20px;
+}
+
+.search-form {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+input.search {
+  margin: 0;
+  text-align: center;
+  outline: 0;
+  border: 10px solid #f7f7f7;
+  width: 120%;
+  left: -10%;
+  position: relative;
+  top: 10px;
+  z-index: 2;
+  border-radius: 5px;
+  font-size: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.suggestions {
+  background-color: hsla(205, 100%, 75%, 0.8);
+  list-style: none;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-transform: capitalize;
+  /*perspective:20px;*/
+}
+.hl {
+  background: #ffc600;
+}
+
+.searchContent {
+  margin: 10px 0;
+  padding: 0px;
+  text-align: center;
+  border-radius: 10px;
+  color: hsla(205, 100%, 50%, 1);
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+}
+
+.companyName {
+  height: 5%;
+  color: hsla(3, 99%, 48%, 1);
+  margin: 4px;
+  padding: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: hsla(205, 100%, 80%, 0.9);
+  border-radius: 15px;
+}
+.postalNumber {
+  height: 5%;
+  margin: 5px;
+  padding: 3px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: hsla(205, 100%, 75%, 0.8);
+  border-radius: 15px;
+}
+
+.webLink {
+  height: 5%;
+  margin: 5px;
+  padding: 3px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: hsla(54, 100%, 90%, 1);
+  border-radius: 15px;
+}
+img.pctr {
+  margin: 0px auto 0;
+  width: auto;
+  max-height: 50px;
+  border-radius: 10px;
+}
+
+a.business_website {
+  color: hsl(120, 100%, 43%);
+}
+
+.info_title {
+  padding: 3px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: hsla(205, 100%, 50%, 0.2);
+  border-radius: 10px;
+  color: red;
+}
+.info_content {
+  display: grid;
+  grid: 5fr repeat(5, 1fr) / 1fr;
+  place-items: center;
+  justify-content: space-around;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: hsla(205, 100%, 50%, 0.08);
+  border-radius: 10px;
+  color: hsla(205, 100%, 50%, 1);
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.info_adress {
+  padding: 3px;
+  background-color: hsla(205, 100%, 50%, 0.1);
+  border-radius: 10px;
+}
+.info_postal {
+  padding: 3px;
+  background-color: hsla(205, 100%, 50%, 0.1);
+  border-radius: 10px;
+}
+.info_telephone {
+  padding: 3px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: hsla(205, 100%, 70%, 0.9);
+  border-radius: 15px;
+}
+.info_link {
+  padding: 3px;
+  background-color: hsla(205, 100%, 50%, 0.1);
+  border-radius: 10px;
+}
+a.business_website {
+  color: hsl(120, 100%, 43%);
+}
+
+.business_title {
+  padding: 0 0.3rem;
+  color: hsla(3, 99%, 48%, 1);
+  font-weight: 700;
+  text-align: center;
+  background-color: hsla(205, 100%, 80%, 0.9);
+  border-radius: 15px;
+}
+.business_adress {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  background-color: hsla(205, 100%, 75%, 0.8);
+  border-radius: 15px;
+}
+.business_postal {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  background-color: hsla(205, 100%, 75%, 0.8);
+  border-radius: 15px;
+}
+.business_telphone {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  background-color: hsla(205, 100%, 70%, 0.9);
+  border-radius: 15px;
+}
+.business_link {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  background-color: hsla(54, 100%, 90%, 1);
+  border-radius: 15px;
+}
+img.pctr {
+  margin: 0px auto 0;
+  width: auto;
+  max-height: 200px;
+  border-radius: 10px;
+}
+img.front_picture {
+  display: block;
+  width: 95%;
+  height: auto;
+  margin: 2px auto 0px;
+  border-radius: 15px;
+}
+.pic_caption {
+  color: white;
+  font-family: "Ubuntu", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.wine_container {
+  transform: rotate(1deg);
+  transition: 0.7s ease-in;
+  width: 100%;
+}
+
+.wine_box {
+  width: 100%;
+  padding: 0;
+  margin: 0px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: hsl(210, 100%, 50%);
+  text-align: center;
+}
+
+.content_overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: repeat(5, 7vh);
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+  font-size: 1rem;
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-color: hsla(205, 100%, 50%, 0.81);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 15px;
+  transform: translate(0, -10vmin);
+  transition: all 0.5s ease-in-out;
+}
+.wine_container:hover .wine_box .content_overlay {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+div.artclbox {
+  display: flex;
+  align-items: stretch;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 0px;
+}
+
+div.artbx {
+  display: flex;
+  height: auto;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+
+div.sidetxt {
+  display: flex;
+  width: 70%;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  border-radius: 10px;
+  position: relative;
+  background-color: hsla(240, 100%, 95%, 0.5);
+  padding: 0px;
+  margin: 0px;
+}
+
+div.artimg {
+  height: auto;
+  width: 28%;
+  margin: 0px;
+  border-radius: 10px;
+}
+
+div.ttl {
+  height: 17%;
+  width: 100%;
+  font-weight: 800;
+  position: relative;
+  font-family: "Cardo", "Oldenburg", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0px;
+  padding: 3px;
+  color: hsl(210, 100%, 80%);
+  background-color: hsla(240, 100%, 35%, 1);
+  border-radius: 10px;
+}
+
+.cont {
+  height: 60%;
+  position: relative;
+  color: hsl(240, 100%, 40%);
+  font-family: "Cardo", "Oldenburg", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: hsla(240, 100%, 95%, 0.6);
+  padding: 10px 10px 10px 10px;
+}
+
+a.obrzk {
+  background-color: none;
+  color: none;
+  border: none;
+  text-decoration: none;
+  padding: 0px;
+  margin: 3px;
+  border-radius: 10px;
+}
+a.lnk {
+  display: block;
+  float: left;
+  text-decoration: none;
+  outline: 0;
+  border-radius: 10px;
+}
+
+a.lnk:link {
+  background-color: hsla(240, 100%, 35%, 0.7);
+  color: hsl(210, 100%, 80%);
+  font-weight: 300;
+  padding: 1px 3px;
+  margin: 0px;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 10px;
+}
+a.lnk:visited {
+  background-color: hsla(240, 100%, 35%, 0.6);
+  color: hsl(210, 100%, 90%);
+}
+
+a.lnk:hover {
+  background-color: hsl(210, 100%, 80%);
+  color: hsla(240, 100%, 35%, 1);
+}
+a.lnk:active {
+  background-color: olive;
+  color: pink;
+}
+
+a.clcktrgh {
+  display: block;
+  float: right;
+  position: relative;
+  color: hsl(240, 100%, 95%);
+  font-family: "Ubuntu", "Cardo", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: hsla(240, 100%, 35%, 0.6);
+  margin: 0px;
+  padding: 2px 4px;
+  border-radius: 10px;
+}
+a.webs {
+  display: block;
+  float: right;
+  position: relative;
+  background-color: hsla(240, 100%, 35%, 0.7);
+  color: hsl(240, 100%, 99%);
+  margin: 0px;
+  padding: 2px 4px;
+  border-radius: 10px;
+}
+img.artcls {
+  width: 100%;
+  vertical-align: middle;
+  z-index: 1;
+  border-radius: 10px;
+}
+.loko {
+  display: flex;
+  height: 17%;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 10px;
+}
+.plc {
+  background-color: hsla(240, 100%, 35%, 0.7);
+  color: hsl(240, 100%, 99%);
+  font-family: "Ubuntu", "Cardo", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0px;
+  padding: 2px 4px;
+  border-radius: 10px;
+}
+.wb {
+  font-family: "Ubuntu", "Cardo", "Lucida Sans Unicode", "Lucida Grande",
+    sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0px;
+  padding: 2px 4px;
+  border-radius: 10px;
+}
+
+.sidenav_box {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  right: 0;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: linear-gradient(
+    to left,
+    hsla(205, 100%, 50%, 1),
+    hsla(205, 100%, 70%, 1)
+  ); /* Standard syntax */
+  background-size: 100% 100%;
+  overflow-x: hidden;
+  transition: 0.9s;
+}
+
+.nav_open {
+  height: 100vh;
+  width: 50vmin;
+}
+
+.navihation_links {
+  width: 100%;
+  height: 100%;
+  padding: 0.3rem;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Didact Gothic", "Ubuntu", "Lucida Console", Monaco, monospace;
+  color: white;
+  transition: 0.3s;
+}
+
+.navihation_links:hover {
+  background-color: white;
+  color: hsla(205, 100%, 50%, 1);
+}
+#offside {
+  transition: margin-right 0.9s;
+}
+.to_top {
+  width: 10vh;
+  height: 10vh;
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: hsla(205, 100%, 50%, 1);
+  color: white;
+  cursor: pointer;
+  padding: 20px 15px 0px;
+  border-radius: 10px 0 0 0;
+}
+
+.to_top:hover {
+  background-color: hsla(240, 100%, 90%, 1);
+  color: hsla(205, 100%, 50%, 1);
+}
+i {
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 10px;
+}
+.up {
+  transform: rotate(-135deg);
+}
+
+.close_button {
+  display: none;
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+  font-size: 4rem;
+  background-color: hsla(205, 100%, 50%, 1);
+  color: white;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 0 1rem 0 0;
+}
+
+.close_button:hover {
+  background-color: hsla(240, 100%, 90%, 1);
+  color: hsla(205, 100%, 50%, 1);
+}
+
+.burger_container {
+  width: 5vh;
+  height: 5vh;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  grid-row: 1fr 1fr 1fr;
+  gap: 1vh;
+  cursor: pointer;
+  background-color: hsla(205, 100%, 50%, 1);
+  z-index: 20;
+  border-radius: 0 0 0 10px;
+  border: solid 1vh hsla(205, 100%, 50%, 1);
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  margin: 0px;
+  transition: 0.9s;
+  display: block;
+}
+.responsive .bar1 {
+  transform: rotate(-45deg) translate(1vh, -1vh);
+  grid-area: 2 / 1 / 2 / 1;
+}
+.responsive .bar2 {
+  grid-area: 2 / 1 / 2 / 1;
+  opacity: 0;
+}
+.responsive .bar3 {
+  transform: rotate(45deg) translate(-1vh, -1vh);
+  grid-area: 2 / 1 / 2 / 1;
+}
+
+@media all and (max-width: 1280px) {
+  .shops__container {
+    display: grid;
+    grid-template-columns: repeat(4, 24vw);
+    gap: 5vmin 1vmin;
+  }
+}
+@media all and (max-width: 980px) {
+  .content_overlay {
+    font-size: 1.2rem;
+  }
+
+  .shops__container {
+    display: grid;
+    grid-template-columns: repeat(3, 32vw);
+    gap: 5vmin 1vmin;
+  }
+}
+
+@media all and (max-width: 736px) {
+  .content_overlay {
+    font-size: 1.5rem;
+  }
+
+  .shops__container {
+    display: grid;
+    grid-template-columns: repeat(2, 48vw);
+    gap: 3vmin 0vmin;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .content_overlay {
+    font-size: 2rem;
+  }
+
+  .shops__container {
+    display: grid;
+    grid-template-columns: 100vw;
+    gap: 2vmin 1vmin;
+  }
+
+  .topttl {
+    height: 5%;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: left;
+    padding: 0px 0 0 0px;
+  }
+
+  #map-canvas {
+    display: block;
+    height: 95%;
+    top: 30px;
+  }
+
+  div.artbx {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    margin: 40px 0;
+    border-top: 40px solid hsla(205, 100%, 60%, 1);
+    border-radius: 10px 10px 0px 0px;
+  }
+  div.artimg {
+    width: 100%;
+    height: auto;
+  }
+  img.artcls {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  div.sidetxt {
+    height: auto;
+    width: 100%;
+  }
+
+  .ttl {
+    height: auto;
+    width: 100%;
+    line-height: 1;
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+  .cont {
+    width: 100%;
+    height: auto;
+    position: relative;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid hsla(240, 100%, 94%, 1);
+  }
+
+  .rep {
+    padding: 0px;
+    float: left;
+    width: 50%;
   }
 }
