@@ -1,22 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import database from "../data/db";
-import { compose, withProps, withHandlers } from "recompose";
+import { compose, withProps, withHandlers, withStateHandlers } from "recompose";
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
+  InfoWindow,
   Marker
 } from "react-google-maps";
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
-const fetch = require("isomorphic-fetch");
+function importAll(r) {
+  let images = {};
+  r.keys().map(item => {
+    return (images[item.replace("./", "")] = r(item));
+  });
+  return images;
+}
+
+const images = importAll(
+  require.context("../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
+);
 
 const MapWithAMarkerClusterer = compose(
   withProps({
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `80vh` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withHandlers({
@@ -26,6 +37,16 @@ const MapWithAMarkerClusterer = compose(
       console.log(clickedMarkers);
     }
   }),
+  withStateHandlers(
+    () => ({
+      isOpen: false
+    }),
+    {
+      onToggleOpen: ({ isOpen }) => () => ({
+        isOpen: !isOpen
+      })
+    }
+  ),
   withScriptjs,
   withGoogleMap
 )(props => (
@@ -43,7 +64,25 @@ const MapWithAMarkerClusterer = compose(
         <Marker
           key={marker.id}
           position={{ lat: marker.lat, lng: marker.lng }}
-        />
+          onClick={props.onToggleOpen}
+        >
+          {props.isOpen && (
+            <InfoWindow onCloseClick={props.onToggleOpen}>
+              <div className="info_content">
+                <img
+                  className="info_picture"
+                  src={marker.picture}
+                  alt={marker.picture}
+                />
+                <div className="info_title">{marker.name}</div>
+                <div className="info_adress">{marker.address}</div>
+                <div className="info_postal">{marker.postalCode}</div>
+                <div className="info_telephone">{marker.phoneNumber}</div>
+                <div className="info_link">{marker.website}</div>
+              </div>
+            </InfoWindow>
+          )}
+        </Marker>
       ))}
     </MarkerClusterer>
   </GoogleMap>

@@ -9,7 +9,6 @@ function Mapa() {
   return (
     <div className="app">
       <Navigation />
-      <p>Mapa</p>
       <MapWithAMarkerClusterer markers={database} />
     </div>
   );
