@@ -19,17 +19,13 @@ export default function Map({ options, onMount, className }) {
     } else onLoad();
   });
 
-  return (
-    <div
-      {...props}
-      style={{ height: `70vh`, margin: `1em 0`, borderRadius: `0.5em` }}
-    />
-  );
+  return <div {...props} style={{ height: `80vh` }} />;
 }
 
 Map.defaultProps = {
   options: {
-    center: { lat: 48, lng: 8 },
-    zoom: 5
+    center: { lat: 49.0308605, lng: 17.3423464 },
+    zoom: 9,
+    mapTypeId: "roadmap"
   }
 };
