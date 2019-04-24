@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
-import MyMapComponent from "../components/MyMapComponent";
+import MapWithAMarkerClusterer from "../components/MapWithAMarkerClusterer";
 import database from "../data/db";
 import "../App.css";
 
@@ -10,7 +10,7 @@ function Mapa() {
     <div className="app">
       <Navigation />
       <p>Mapa</p>
-      <MyMapComponent isMarkerShown />
+      <MapWithAMarkerClusterer markers={database} />
     </div>
   );
 }
