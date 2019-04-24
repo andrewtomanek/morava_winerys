@@ -22,7 +22,7 @@ const images = importAll(
   require.context("../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
 );
 
-const MapWithAMarkerClusterer = compose(
+const MapClustered = compose(
   withProps({
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI",
@@ -88,4 +88,4 @@ const MapWithAMarkerClusterer = compose(
   </GoogleMap>
 ));
 
-export default MapWithAMarkerClusterer;
+export default MapClustered;
