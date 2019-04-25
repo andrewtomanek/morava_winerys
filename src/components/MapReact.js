@@ -20,6 +20,7 @@ class GoogleMapsContainer extends React.Component {
       activeMarker: marker,
       showingInfoWindow: true
     });
+    console.log(props, marker, e);
   };
 
   onMapClick = props => {
@@ -60,7 +61,24 @@ class GoogleMapsContainer extends React.Component {
             <InfoWindow
               marker={this.state.activeMarker}
               visible={this.state.showingInfoWindow}
-            />
+            >
+              <div className="info_content">
+                <img
+                  className="info_picture"
+                  src={marker.picture}
+                  alt={marker.picture}
+                />
+                <div className="info_title">{marker.name}</div>
+                <div className="info_adress">{marker.address}</div>
+                <div className="info_postal">{marker.postalCode}</div>
+                <div className="info_telephone">{marker.phoneNumber}</div>
+                <div className="info_link">{marker.website}</div>
+                {console.log(
+                  this.state.activeMarker,
+                  this.state.showingInfoWindow
+                )}
+              </div>
+            </InfoWindow>
           </Marker>
         ))}
       </Map>

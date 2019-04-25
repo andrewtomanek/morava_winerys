@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
-import MapReact from "../components/MapReact";
+import MapApp from "../components/HookMap";
 import database from "../data/db";
 import "../App.css";
 
@@ -8,7 +8,7 @@ function Mapa() {
   return (
     <div className="app">
       <Navigation />
-      <MapReact markers={database} />
+      <MapApp markers={database} />
     </div>
   );
 }
