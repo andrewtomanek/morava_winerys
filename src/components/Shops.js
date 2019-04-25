@@ -3,15 +3,16 @@ import React from "react";
 const Shops = props => {
   return (
     <div className="col">
-      <h2>Shops: </h2>
-      <hr />
-      {props.sklepy.map(p => (
-        <div key={Math.random() * 1000000000}>
-          <p>
-            {p.name} {p.id}
-          </p>
-        </div>
-      ))}
+      {props.initSklepy &&
+        props.sklepy.map(item => (
+          <div className="search__result-box" key={item.id}>
+            <p>{item.name} </p>
+            <p>{item.address}</p>
+            <p>{item.postalCode}</p>
+            <p> {item.phoneNumber}</p>
+            <a href={item.url}>{item.website}</a>
+          </div>
+        ))}
     </div>
   );
 };

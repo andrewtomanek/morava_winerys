@@ -6,9 +6,11 @@ import "../App.css";
 
 import Form from "../components/Form";
 import Shops from "../components/Shops";
+import FilteredList from "../components/FilteredList";
 
 const Vyhledat = () => {
   const [sklepy, setSklepy] = useState(database);
+  const [initSklepy, setInitSklepy] = useState(false);
 
   const searchDatabase = searchString => {
     let keyword = searchString;
@@ -19,21 +21,22 @@ const Vyhledat = () => {
         item.address.toLowerCase().indexOf(keyword) > -1
       );
     });
-    console.log(searchString);
-    console.log(filtered);
+    setInitSklepy(true);
+    if (filtered.length === 0) setInitSklepy(false);
     setSklepy(filtered);
   };
 
   const resetSearch = () => {
+    setInitSklepy(false);
     setSklepy(database);
-    console.log(sklepy);
   };
 
   return (
     <div className="row">
       <Navigation />
       <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
-      <Shops sklepy={sklepy} />
+      <Shops sklepy={sklepy} initSklepy={initSklepy} />
+      <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
     </div>
   );
 };
