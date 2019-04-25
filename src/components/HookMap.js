@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useGoogleMap, useMap } from "./hooks";
+import { useGoogleMap, useMap } from "./MapHooks";
 import { useRef } from "react";
 
 const API_KEY = "AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI";
@@ -10,7 +10,6 @@ const initialConfig = {
   mapTypeId: "roadmap",
   center: { lat: 49.0308605, lng: 17.3423464 }
 };
-// hookを利用して表示するコンポーネント
 export const MapApp = () => {
   const googleMap = useGoogleMap(API_KEY);
   const mapContainerRef = useRef(null);
@@ -18,8 +17,7 @@ export const MapApp = () => {
   return (
     <div
       style={{
-        // ホントはstyled-componentsとかで良いのだけど簡略化
-        height: "100vh",
+        height: "85vh",
         width: "100%"
       }}
       ref={mapContainerRef}
