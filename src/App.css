@@ -384,17 +384,16 @@ a.business_website {
   height: 50vh;
   display: grid;
   grid: 5fr repeat(5, 1fr) / 1fr;
+  grid-gap: 0.1rem;
   place-items: center;
   justify-content: space-around;
   margin: 0px;
   padding: 0px;
   font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
+  font-weight: normal;
   background-color: hsla(205, 100%, 50%, 0.08);
   border-radius: 10px;
   color: hsla(205, 100%, 50%, 1);
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .info_adress {
   padding: 3px;
@@ -402,9 +401,8 @@ a.business_website {
   border-radius: 10px;
 }
 .info_title {
-  padding: 3px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-align: center;
   background-color: hsla(205, 100%, 50%, 0.2);
   border-radius: 10px;
@@ -423,14 +421,11 @@ a.business_website {
 .info_telephone {
   padding: 3px;
   color: white;
-  font-size: 1rem;
-  font-weight: 600;
   text-align: center;
   background-color: hsla(205, 100%, 70%, 0.9);
   border-radius: 15px;
 }
 .info_link {
-  padding: 3px;
   background-color: hsla(205, 100%, 50%, 0.1);
   border-radius: 10px;
 }

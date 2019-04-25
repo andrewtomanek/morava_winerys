@@ -17,7 +17,7 @@ export const MapApp = () => {
   return (
     <div
       style={{
-        height: "85vh",
+        height: "80vh",
         width: "100%"
       }}
       ref={mapContainerRef}
