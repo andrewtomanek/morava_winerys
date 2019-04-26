@@ -10,19 +10,18 @@ const Form = props => {
   };
 
   const onChange = event => {
-    setSearchString(event.target.value);
-    const newSearchString = searchString.trim();
+    const newSearchString = event.target.value.trim();
+    setSearchString(newSearchString);
     setOldSearchString(newSearchString);
     if (
       newSearchString.length !== "" &&
-      oldSearchString.length > newSearchString.length
+      oldSearchString.length >= newSearchString.length
     ) {
       setOldSearchString("");
       setSearchString("");
       resetSearch();
       return;
     }
-    //const oldsearchString = newSearchString;
     props.searchDatabase(newSearchString);
   };
   const onSubmit = event => {
@@ -46,9 +45,6 @@ const Form = props => {
           Search
         </button>
       </form>
-      <button className="btn" onClick={resetSearch}>
-        Reset
-      </button>
     </div>
   );
 };

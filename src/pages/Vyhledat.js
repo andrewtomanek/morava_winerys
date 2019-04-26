@@ -13,12 +13,11 @@ const Vyhledat = () => {
   const [initSklepy, setInitSklepy] = useState(false);
 
   const searchDatabase = searchString => {
-    let keyword = searchString;
     let filtered = sklepy.filter(item => {
       return (
-        item.name.toLowerCase().indexOf(keyword) > -1 ||
-        item.postalCode.toLowerCase().indexOf(keyword) > -1 ||
-        item.address.toLowerCase().indexOf(keyword) > -1
+        item.name.toLowerCase().indexOf(searchString) > -1 ||
+        item.postalCode.toLowerCase().indexOf(searchString) > -1 ||
+        item.address.toLowerCase().indexOf(searchString) > -1
       );
     });
     setInitSklepy(true);
@@ -35,7 +34,7 @@ const Vyhledat = () => {
     <div className="row">
       <Navigation />
       <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
-      <Shops sklepy={sklepy} initSklepy={initSklepy} />
+      <Shops sklepy={sklepy} initSklepy={!initSklepy} />
       <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
     </div>
   );
