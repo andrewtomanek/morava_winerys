@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+//import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
 import database from "../data/db";
 import "../App.css";

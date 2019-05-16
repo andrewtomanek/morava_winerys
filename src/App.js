@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Domu from "./pages/Domu";
+import Home from "./pages/Home";
 import Mapa from "./pages/Mapa";
 import Prodejny from "./pages/Prodejny";
 import Vyhledat from "./pages/Vyhledat";
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Domu} exact />
+          <Route path="/" component={Home} exact />
           <Route path="/mapa" component={Mapa} exact />
           <Route path="/prodejny" component={Prodejny} exact />
           <Route path="/vyhledat" component={Vyhledat} exact />

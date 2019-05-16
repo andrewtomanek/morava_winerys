@@ -14,10 +14,10 @@ const Navigation = props => (
         </li>
         <li>
           <NavLink to="/prodejny">Prodejny </NavLink>
-        </li>{" "}
+        </li>
         <li>
           <NavLink to="/vyhledat">Vyhledat </NavLink>
-        </li>{" "}
+        </li>
         <li>
           <NavLink to="/kontakt">Kontakt </NavLink>
         </li>
