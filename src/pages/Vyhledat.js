@@ -31,11 +31,13 @@ const Vyhledat = () => {
   };
 
   return (
-    <div className="row">
+    <div className="main__container">
       <Navigation />
-      <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
-      <Shops sklepy={sklepy} initSklepy={!initSklepy} />
-      <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
+      <div className="page__container">
+        <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
+        <Shops sklepy={sklepy} initSklepy={!initSklepy} />
+        <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
+      </div>
     </div>
   );
 };

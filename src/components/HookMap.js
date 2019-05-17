@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useGoogleMap, useMap } from "./MapHooks";
 import { useRef } from "react";
 

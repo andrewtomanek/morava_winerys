@@ -26,7 +26,7 @@ const Vyhledat = () => {
   };
 
   return (
-    <div className="row">
+    <div className="main__container">
       <Navigation />
       {toggleBox && (
         <button onClick={() => setToggleBox(!toggleBox)}>Reset</button>

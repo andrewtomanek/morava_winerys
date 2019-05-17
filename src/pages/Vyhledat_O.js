@@ -15,7 +15,7 @@ const Vyhledat = () => {
   };
 
   return (
-    <div className="row">
+    <div className="main__container">
       <Navigation />
 
       <Form addPerson={addPerson} />
