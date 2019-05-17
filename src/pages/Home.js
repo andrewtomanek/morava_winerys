@@ -6,6 +6,7 @@ import citis from "../data/citis";
 import "../App.css";
 import CityList from "../components/CityList";
 import FilteredCitis from "../components/FilteredCitis";
+import Modal from "../components/Modal.js";
 
 const Vyhledat = () => {
   const [filteredSklepy, setfilteredSklepy] = useState([]);
@@ -13,6 +14,8 @@ const Vyhledat = () => {
   const [initLocations, setInitLocations] = useState(citis);
   const [searchString, setSearchString] = useState("");
   //const [initOkres, setInitOkres] = useState(["Břeclav", "Uherské Hradiště"]);
+  const [show, setOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(false);
 
   const pickItem = query => {
     setSearchString(query.toLowerCase());
@@ -25,14 +28,34 @@ const Vyhledat = () => {
     setfilteredSklepy(filtered);
   };
 
+  const changeToggleBox = () => {
+    setToggleBox(!toggleBox);
+  };
+
+  const updateModal = content => {
+    setOpen(true);
+    setModalContent(content);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="main__container">
       <Navigation />
+      <Modal
+        modalContent={modalContent}
+        modalToggle={show}
+        closeModal={closeModal}
+      />
       {toggleBox && (
-        <button onClick={() => setToggleBox(!toggleBox)}>Reset</button>
-      )}
-      {toggleBox && (
-        <FilteredCitis sklepy={filteredSklepy} toggleBox={toggleBox} />
+        <FilteredCitis
+          sklepy={filteredSklepy}
+          changeToggleBox={changeToggleBox}
+          toggleBox={toggleBox}
+          updateModal={updateModal}
+        />
       )}
       {!toggleBox && <CityList citis={initLocations} pickItem={pickItem} />}
     </div>
