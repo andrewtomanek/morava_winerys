@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 //import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
 import database from "../data/db";
@@ -14,7 +13,6 @@ const Vyhledat = () => {
   const [toggleBox, setToggleBox] = useState(false);
   const [initLocations, setInitLocations] = useState(citis);
   const [searchString, setSearchString] = useState("");
-  //const [initOkres, setInitOkres] = useState(["Břeclav", "Uherské Hradiště"]);
   const [show, setOpen] = useState(false);
   const [modalContent, setModalContent] = useState(false);
 
@@ -23,7 +21,6 @@ const Vyhledat = () => {
     let filtered = database.filter(item => {
       return item.postalCode.toLowerCase().indexOf(query) > -1;
     });
-    console.log(filtered);
     setToggleBox(true);
     if (filtered.length === 0) setToggleBox(false);
     setfilteredSklepy(filtered);

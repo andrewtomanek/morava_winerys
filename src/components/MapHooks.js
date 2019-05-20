@@ -41,11 +41,12 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
       markersData.forEach(element => {
         let latlng = new googleMap.maps.LatLng(element.lat, element.lng);
         let name = element.name;
-        let picture = element.picture;
+        let picture = images[element.picture];
         let address = element.address;
         let postalCode = element.postalCode;
         let phoneNumber = element.phoneNumber;
         let website = element.website;
+        let url = element.url;
         createMarker(
           latlng,
           name,
@@ -53,7 +54,8 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
           address,
           postalCode,
           phoneNumber,
-          website
+          website,
+          url
         );
         bounds.extend(latlng);
       });
@@ -66,7 +68,8 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
       address,
       postalCode,
       phoneNumber,
-      website
+      website,
+      url
     ) {
       const marker = new googleMap.maps.Marker({
         position: latlng,
@@ -85,15 +88,20 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
       googleMap.maps.event.addListener(marker, "click", function() {
         map.setZoom(13);
         map.setCenter(marker.getPosition());
-        let iwContent = `<div class="info_content">  <img
+        let iwContent = `<div class="info__box">  <img
         class="info_picture"
         src=${picture}
         alt=${name}
       /><div class="info_title">${name}</div>
-        <div class="info_adress">${address}</div><div class="info_postal">
+        <div class="info_adress">${address}</div>
+        <div class="info_postal">
             ${postalCode}</div>
-          <div class="info_telephone">${phoneNumber}</div><div class="info_link">${website}</div></div>`;
-        console.log(infoWindow.getSize());
+          <div class="info_telephone">${phoneNumber}</div>
+          <div class="info_link">
+          <a class="business_website" href="${url}">
+          ${website}
+</a>
+          </div></div>`;
         infoWindow.setContent(iwContent);
         infoWindow.open(map, marker);
       });

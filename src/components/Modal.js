@@ -16,26 +16,20 @@ function Modal({ modalContent, closeModal, modalToggle }) {
     const googleMap = useGoogleMap(API_KEY);
     const mapContainerRef = useRef(null);
     useMap({ googleMap, mapContainerRef, initialConfig, markerData });
-    return (
-      <div
-        style={{
-          height: "70vh",
-          width: "100%"
-        }}
-        ref={mapContainerRef}
-      />
-    );
+    return <div className="modal__map" ref={mapContainerRef} />;
   };
 
-  const modalOpen = modalToggle ? "modalOverlay open" : "modalOverlay closed";
+  const modalOpen = modalToggle
+    ? "modal__overlay open"
+    : "modal__overlay closed";
   if (!modalToggle) {
     return null;
   } else
     return (
       <div className={modalOpen}>
         <div className="modal__wrap">
-          <button className="modal__button" onClick={() => closeModal()}>
-            X
+          <button className="close__button" onClick={() => closeModal()}>
+            {"\u{274C}"}
           </button>
           <div className="modal__container">
             <div className="modal__box">

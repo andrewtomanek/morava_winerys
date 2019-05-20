@@ -9,13 +9,13 @@ const FilteredCitis = props => {
   });
 
   return (
-    <div className="shops__container">
+    <div className="filtered__container">
       {props.toggleBox && (
         <button
           className="reset__button"
           onClick={() => props.changeToggleBox()}
         >
-          Reset
+          {"\u{1F504}"}
         </button>
       )}
       {props.toggleBox && items}

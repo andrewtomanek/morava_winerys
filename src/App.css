@@ -1,3 +1,7 @@
+:root {
+  font-size: calc(1vw + 1vh + 0.5vmin);
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -65,8 +69,6 @@ body {
   width: 100vw;
   display: grid;
   grid-template-rows: 10vh 1fr;
-  justify-items: center;
-  align-content: center;
   background: linear-gradient(
     to left,
     hsla(205, 100%, 50%, 1),
@@ -81,7 +83,6 @@ body {
   height: 100%;
   display: grid;
   grid-template-rows: 10vh 1fr;
-  justify-items: center;
   align-items: center;
   align-content: center;
   text-align: center;
@@ -156,7 +157,7 @@ button {
 
 .search__shops {
   display: grid;
-  grid-template-columns: repeat(3, 30vw);
+  grid-template-columns: repeat(5, 30vw);
   grid-template-rows: repeat(auto-fill, minmax(50vh, 1fr));
   gap: 5vmin 1vmin;
   justify-items: center;
@@ -175,11 +176,27 @@ button {
   height: 90vh;
 }
 
+.reset__button {
+  grid-column: 1 / -1;
+  color: hsla(205, 100%, 50%, 1);
+  background-color: white;
+  padding: 1vmin 5vmin;
+  border-radius: 1rem;
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
 .modal__button {
   color: hsla(205, 100%, 50%, 1);
   background-color: white;
   padding: 0.1rem 0.2rem;
-  border-radius: 1rem;
+  border-radius: 0 0 1rem 1rem;
   font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 1rem;
   font-weight: 900;
@@ -190,6 +207,20 @@ button {
   width: 100%;
 }
 
+.close__button {
+  color: hsla(205, 100%, 50%, 1);
+  background-color: white;
+  padding: 0rem 0.4rem;
+  border-radius: 2rem;
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .modal {
   max-width: 100%;
   max-height: 100%;
@@ -198,7 +229,7 @@ button {
   background: white;
 }
 
-.modalOverlay {
+.modal__overlay {
   grid-area: 1 / 1 / 5 / 1;
   grid-template-rows: 10vh 1fr;
   grid-gap: 1rem;
@@ -238,9 +269,16 @@ button {
   padding: 0.2rem 1.3rem;
 }
 
+.modal__map {
+  padding: 0.2rem 0.5rem;
+  height: "70vh";
+  width: "100%";
+  background: hsla(205, 100%, 50%, 1);
+}
+
 .modal__box {
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-flow: column;
   justify-items: center;
   justify-content: center;
   grid-gap: 0.2rem;
@@ -268,7 +306,8 @@ button {
 }
 
 .modal__website {
-  color: white;
+  height: 10vh;
+  color: hsl(120, 100%, 70%);
   font-weight: 600;
   text-align: center;
   font-size: 1.2rem;
@@ -292,10 +331,6 @@ button {
   text-align: center;
 }
 
-:root {
-  font-size: calc(1vw + 1vh + 0.5vmin);
-}
-
 .wine__wrap {
   margin: 0;
   padding: 0;
@@ -309,7 +344,24 @@ button {
 .shops__container {
   grid-area: 2 / 1 / 3 / 1;
   display: grid;
-  grid-template-columns: repeat(3, 30vw);
+  grid-template-columns: repeat(5, 30vw);
+  grid-template-rows: repeat(auto-fit, minmax(50vh, 1fr));
+  gap: 5vmin 1vmin;
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-evenly;
+  transition: 0.7s ease-in;
+  animation-name: jmena;
+  animation-duration: 0.5s;
+  overflow: hidden;
+}
+
+.filtered__container {
+  grid-area: 2 / 1 / 3 / 1;
+  display: grid;
+  grid-template-columns: repeat(5, 30vw);
+  grid-template-rows: 15vh repeat(auto-fit, minmax(40vh, 1fr));
   gap: 5vmin 1vmin;
   justify-items: center;
   justify-content: space-evenly;
@@ -321,20 +373,21 @@ button {
   overflow: hidden;
 }
 
-.reset__button {
-  grid-column: 1 / -1;
-  color: hsla(205, 100%, 50%, 1);
-  background-color: white;
-  padding: 1vmin 5vmin;
-  border-radius: 1rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 900;
-  text-align: center;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
+.city_box {
+  display: grid;
+  grid-template-rows: 10vh 1fr 5vh;
+  gap: 5vmin 1vmin;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
   width: 100%;
+  padding: 0;
+  margin: 0px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: hsl(210, 100%, 50%);
+  text-align: center;
 }
 
 h1 {
@@ -355,38 +408,17 @@ h1 {
   border-radius: 10px;
 }
 
-img.sld {
-  width: 100%;
-  height: 50vh;
-  overflow-y: hidden;
-  object-fit: cover;
-  animation: slide 9s linear 0s infinite;
-}
-
-/* Standard syntax */
-@keyframes slide {
-  0% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1.2, 1.2) translate(-50px, -50px);
-  }
-}
 .citis__box {
-  width: 90%;
-  padding: 2rem 0.1rem;
+  width: 100vw;
+  min-height: 90vh;
+  padding: 4rem 0.1rem;
   margin: 0rem;
   display: flex;
   flex-flow: row wrap;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(10vh, 1fr));
-  justify-items: center;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
   align-content: space-around;
-  animation-name: jmena;
-  animation-duration: 0.5s;
+  align-items: center;
 }
 
 .citis__cell {
@@ -418,190 +450,6 @@ img.sld {
   border-radius: 0.8rem;
   transform: rotate(-1deg);
   transform: skew(-1deg, -2deg);
-}
-
-.okres_container {
-  display: none;
-  width: 100%;
-  height: 100%;
-  grid-auto-flow: row;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  animation-name: jmena;
-  animation-duration: 0.5s;
-}
-
-@keyframes jmena {
-  from {
-    opacity: 0.2;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.topttl {
-  height: 10%;
-  width: 100%;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  z-index: 9;
-  position: absolute;
-  top: 0;
-  color: white;
-  background: hsla(205, 100%, 50%, 1);
-  background: linear-gradient(
-    to bottom,
-    hsla(205, 100%, 50%, 1),
-    hsla(205, 100%, 60%, 1)
-  ); /* Standard syntax */
-  margin: 0;
-  padding: 5px 0 0 0px;
-  border-bottom: 5px solid hsla(205, 100%, 50%, 1);
-}
-
-.mySlides {
-  display: none;
-}
-/* Slideshow container */
-.slideshow-container {
-  width: 100%;
-  position: relative;
-  margin: 0 auto 40px;
-  z-index: -3;
-  transform: rotate(-1deg);
-  transform: skew(-1deg, -2deg);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 2rem;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 3%;
-  width: 100%;
-  text-align: center;
-  transform: rotate(-1deg);
-  transform: skew(-1deg, -2deg);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-.tite {
-  position: absolute;
-  padding: 5px 10px;
-  top: 20%;
-  left: 50%;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  text-align: center;
-  color: hsl(210, 100%, 50%);
-  padding: 5px 20px;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-  transform: translate(-50%, -50%) rotate(1deg) skew(3deg, 2deg);
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translate(0%, 50%);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.5, 0.5) skew(20deg, 20deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
-#map-canvas {
-  position: relative;
-  display: block;
-  height: 90%;
-  z-index: 1;
-  top: 60px;
-}
-
-input {
-  width: 100%;
-  padding: 20px;
-}
-
-.search-form {
-  max-width: 400px;
-  margin: 50px auto;
-}
-
-input.search {
-  margin: 0;
-  text-align: center;
-  outline: 0;
-  border: 10px solid #f7f7f7;
-  width: 120%;
-  left: -10%;
-  position: relative;
-  top: 10px;
-  z-index: 2;
-  border-radius: 5px;
-  font-size: 40px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
-}
-
-.suggestions {
-  background-color: hsla(205, 100%, 75%, 0.8);
-  list-style: none;
-  border-bottom: 1px solid #d8d8d8;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
-  margin: 0;
-  padding: 20px;
-  transition: background 0.2s;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  text-transform: capitalize;
-  /*perspective:20px;*/
-}
-.hl {
-  background: #ffc600;
-}
-
-.searchContent {
-  margin: 10px 0;
-  padding: 0px;
-  text-align: center;
-  border-radius: 10px;
-  color: hsla(205, 100%, 50%, 1);
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-align: center;
 }
 
 .companyName {
@@ -665,7 +513,7 @@ a.business_website {
   color: white;
 }
 
-.info_content {
+.info__box {
   width: 100%;
   height: 50vh;
   display: grid;
@@ -680,6 +528,7 @@ a.business_website {
   background-color: hsla(205, 100%, 50%, 0.08);
   border-radius: 10px;
   color: hsla(205, 100%, 50%, 1);
+  overflow: hidden;
 }
 .info_adress {
   padding: 3px;
@@ -760,12 +609,7 @@ a.business_website {
   background-color: hsla(54, 100%, 90%, 1);
   border-radius: 15px;
 }
-img.pctr {
-  margin: 0px auto 0;
-  width: auto;
-  max-height: 200px;
-  border-radius: 10px;
-}
+
 img.front_picture {
   display: block;
   width: 95%;
@@ -785,10 +629,14 @@ img.front_picture {
   transform: rotate(1deg);
   transition: 0.7s ease-in;
   width: 100%;
+  height: 100%;
 }
 
 .wine_box {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  max-height: 50vh;
   padding: 0;
   margin: 0px;
   border-radius: 1rem;
@@ -813,7 +661,7 @@ img.front_picture {
   background-color: hsla(205, 100%, 50%, 0.81);
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 45vh;
   opacity: 0;
   border-radius: 15px;
   transform: translate(0, -10vmin);
@@ -823,82 +671,7 @@ img.front_picture {
   transform: translate(0, 0);
   opacity: 1;
 }
-div.artclbox {
-  display: flex;
-  align-items: stretch;
-  flex-flow: column wrap;
-  justify-content: space-around;
-  padding: 0px;
-  margin: 0px;
-}
 
-div.artbx {
-  display: flex;
-  height: auto;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 0px;
-  margin: 20px 0px;
-  border-radius: 10px;
-}
-
-div.sidetxt {
-  display: flex;
-  width: 70%;
-  flex-flow: column wrap;
-  justify-content: space-around;
-  border-radius: 10px;
-  position: relative;
-  background-color: hsla(240, 100%, 95%, 0.5);
-  padding: 0px;
-  margin: 0px;
-}
-
-div.artimg {
-  height: auto;
-  width: 28%;
-  margin: 0px;
-  border-radius: 10px;
-}
-
-div.ttl {
-  height: 17%;
-  width: 100%;
-  font-weight: 800;
-  position: relative;
-  font-family: "Cardo", "Oldenburg", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 0px;
-  padding: 3px;
-  color: hsl(210, 100%, 80%);
-  background-color: hsla(240, 100%, 35%, 1);
-  border-radius: 10px;
-}
-
-.cont {
-  height: 60%;
-  position: relative;
-  color: hsl(240, 100%, 40%);
-  font-family: "Cardo", "Oldenburg", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-align: center;
-  background-color: hsla(240, 100%, 95%, 0.6);
-  padding: 10px 10px 10px 10px;
-}
-
-a.obrzk {
-  background-color: none;
-  color: none;
-  border: none;
-  text-decoration: none;
-  padding: 0px;
-  margin: 3px;
-  border-radius: 10px;
-}
 a.lnk {
   display: block;
   float: left;
@@ -929,69 +702,6 @@ a.lnk:hover {
 a.lnk:active {
   background-color: olive;
   color: pink;
-}
-
-a.clcktrgh {
-  display: block;
-  float: right;
-  position: relative;
-  color: hsl(240, 100%, 95%);
-  font-family: "Ubuntu", "Cardo", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-align: center;
-  background-color: hsla(240, 100%, 35%, 0.6);
-  margin: 0px;
-  padding: 2px 4px;
-  border-radius: 10px;
-}
-a.webs {
-  display: block;
-  float: right;
-  position: relative;
-  background-color: hsla(240, 100%, 35%, 0.7);
-  color: hsl(240, 100%, 99%);
-  margin: 0px;
-  padding: 2px 4px;
-  border-radius: 10px;
-}
-img.artcls {
-  width: 100%;
-  vertical-align: middle;
-  z-index: 1;
-  border-radius: 10px;
-}
-.loko {
-  display: flex;
-  height: 17%;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 0px;
-  margin: 0px;
-  border-radius: 10px;
-}
-.plc {
-  background-color: hsla(240, 100%, 35%, 0.7);
-  color: hsl(240, 100%, 99%);
-  font-family: "Ubuntu", "Cardo", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-weight: 800;
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 0px;
-  padding: 2px 4px;
-  border-radius: 10px;
-}
-.wb {
-  font-family: "Ubuntu", "Cardo", "Lucida Sans Unicode", "Lucida Grande",
-    sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 0px;
-  padding: 2px 4px;
-  border-radius: 10px;
 }
 
 .sidenav_box {
@@ -1038,9 +748,7 @@ img.artcls {
   background-color: white;
   color: hsla(205, 100%, 50%, 1);
 }
-#offside {
-  transition: margin-right 0.9s;
-}
+
 .to_top {
   width: 10vh;
   height: 10vh;
@@ -1137,6 +845,18 @@ i {
     grid-template-columns: repeat(4, 24vw);
     gap: 5vmin 1vmin;
   }
+
+  .filtered__container {
+    display: grid;
+    grid-template-columns: repeat(4, 24vw);
+    gap: 5vmin 1vmin;
+  }
+
+  .search__shops {
+    display: grid;
+    grid-template-columns: repeat(4, 24vw);
+    gap: 5vmin 1vmin;
+  }
 }
 @media all and (max-width: 980px) {
   .content_overlay {
@@ -1144,6 +864,18 @@ i {
   }
 
   .shops__container {
+    display: grid;
+    grid-template-columns: repeat(3, 30vw);
+    gap: 5vmin 1vmin;
+  }
+
+  .filtered__container {
+    display: grid;
+    grid-template-columns: repeat(3, 30vw);
+    gap: 5vmin 1vmin;
+  }
+
+  .search__shops {
     display: grid;
     grid-template-columns: repeat(3, 30vw);
     gap: 5vmin 1vmin;
@@ -1160,76 +892,104 @@ i {
     grid-template-columns: repeat(2, 48vw);
     gap: 3vmin 0vmin;
   }
+
+  .filtered__container {
+    display: grid;
+    grid-template-columns: repeat(2, 48vw);
+    gap: 3vmin 0vmin;
+  }
+
+  .search__shops {
+    display: grid;
+    grid-template-columns: repeat(2, 48vw);
+    gap: 3vmin 0vmin;
+  }
+
+  .modal__wrap {
+    grid-gap: 0rem;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .modal__container {
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    height: 80vh;
+    width: 80vw;
+  }
+
+  .modal__box {
+    height: 40vh;
+    width: 100%;
+    justify-content: stretch;
+    padding: 1rem 0.1rem;
+  }
 }
 
 @media all and (max-width: 480px) {
   .content_overlay {
     font-size: 2rem;
+    height: 50vh;
   }
 
   .shops__container {
     display: grid;
     grid-template-columns: 100vw;
+    justify-content: stretch;
+    gap: 4vmin 1vmin;
+  }
+
+  .filtered__container {
+    display: grid;
+    grid-template-columns: 100vw;
+    justify-content: stretch;
+    gap: 4vmin 1vmin;
+  }
+
+  .search__shops {
+    display: grid;
+    grid-template-columns: 100vw;
+    justify-content: stretch;
     gap: 2vmin 1vmin;
   }
 
-  .topttl {
-    height: 5%;
-    font-size: 1rem;
-    font-weight: 800;
-    text-align: left;
-    padding: 0px 0 0 0px;
+  .modal__overlay {
+    justify-items: stretch;
+    justify-content: stretch;
+    align-items: stretch;
+    align-content: stretch;
   }
 
-  #map-canvas {
-    display: block;
-    height: 95%;
-    top: 30px;
+  .modal__wrap {
+    grid-gap: 0rem;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
   }
 
-  div.artbx {
-    display: flex;
-    width: 100%;
-    height: auto;
-    flex-flow: column wrap;
-    justify-content: space-around;
-    margin: 40px 0;
-    border-top: 40px solid hsla(205, 100%, 60%, 1);
-    border-radius: 10px 10px 0px 0px;
-  }
-  div.artimg {
-    width: 100%;
-    height: auto;
-  }
-  img.artcls {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-  }
-  div.sidetxt {
-    height: auto;
-    width: 100%;
+  .modal__container {
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    width: 80vw;
   }
 
-  .ttl {
-    height: auto;
+  .modal__box {
+    height: 40vh;
     width: 100%;
-    line-height: 1;
-    font-weight: 800;
-    font-size: 1.1rem;
-  }
-  .cont {
-    width: 100%;
-    height: auto;
-    position: relative;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border: 2px solid hsla(240, 100%, 94%, 1);
+    justify-content: stretch;
+    padding: 1rem 0.1rem;
   }
 
-  .rep {
-    padding: 0px;
-    float: left;
-    width: 50%;
+  .citis__box {
+    width: 85%;
+    justify-content: stretch;
+    padding: 1rem 0.1rem;
   }
 }

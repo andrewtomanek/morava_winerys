@@ -6,12 +6,7 @@ const ShopsList = props => {
     return <Cellar key={item.id} item={item} />;
   });
 
-  return (
-    <div className="shops__container">
-      {props.children}
-      {items}
-    </div>
-  );
+  return <div className="shops__container">{items}</div>;
 };
 
 export default ShopsList;
