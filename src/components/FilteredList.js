@@ -7,7 +7,7 @@ const FilteredList = props => {
   });
 
   return (
-    <div className="shops__container">
+    <div className="search__shops">
       {props.children}
       {props.initSklepy && items}
     </div>

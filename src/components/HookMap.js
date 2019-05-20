@@ -13,15 +13,7 @@ export const MapApp = () => {
   const googleMap = useGoogleMap(API_KEY);
   const mapContainerRef = useRef(null);
   useMap({ googleMap, mapContainerRef, initialConfig });
-  return (
-    <div
-      style={{
-        height: "80vh",
-        width: "100%"
-      }}
-      ref={mapContainerRef}
-    />
-  );
+  return <div className="map__container" ref={mapContainerRef} />;
 };
 
 export default MapApp;

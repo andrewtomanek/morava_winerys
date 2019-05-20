@@ -6,7 +6,7 @@ import "../App.css";
 
 function Mapa() {
   return (
-    <div className="app">
+    <div className="main__container">
       <Navigation />
       <MapApp markers={database} />
     </div>

@@ -35,8 +35,8 @@ const Vyhledat = () => {
       <Navigation />
       <div className="page__container">
         <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
-        <Shops sklepy={sklepy} initSklepy={!initSklepy} />
-        <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
+        {!initSklepy && <Shops sklepy={sklepy} initSklepy={!initSklepy} />}
+        {initSklepy && <FilteredList sklepy={sklepy} initSklepy={initSklepy} />}
       </div>
     </div>
   );

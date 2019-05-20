@@ -32,16 +32,16 @@ const Form = props => {
     setSearchString(newSearchString);
   };
   return (
-    <div className="col">
-      <form onSubmit={onSubmit}>
+    <div className="search__container">
+      <form onSubmit={onSubmit} className="search__form">
         <input
           type="text"
-          className="form-control"
+          className="search__input"
           placeholder="Vyhledat"
           value={searchString.toLowerCase()}
           onChange={onChange}
         />
-        <button className="btn" type="submit">
+        <button className="search__button" type="submit">
           Search
         </button>
       </form>

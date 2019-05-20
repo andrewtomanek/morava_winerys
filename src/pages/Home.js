@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 //import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
 import database from "../data/db";
@@ -33,6 +34,11 @@ const Vyhledat = () => {
   };
 
   const updateModal = content => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
     setOpen(true);
     setModalContent(content);
   };
@@ -48,6 +54,7 @@ const Vyhledat = () => {
         modalContent={modalContent}
         modalToggle={show}
         closeModal={closeModal}
+        onClick={() => closeModal()}
       />
       {toggleBox && (
         <FilteredCitis

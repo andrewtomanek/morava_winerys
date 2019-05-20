@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 //import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
 import ShopsList from "../components/ShopsList";
@@ -7,9 +7,8 @@ import "../App.css";
 
 function Prodejny() {
   return (
-    <div className="app">
+    <div className="main__container">
       <Navigation />
-      <p>Prodejny</p>
       <ShopsList shops={database} />
     </div>
   );

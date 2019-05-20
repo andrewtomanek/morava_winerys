@@ -1,7 +1,6 @@
 import React from "react";
 import { useGoogleMap, useMap } from "./MapHooksModal";
 import { useRef } from "react";
-import database from "../data/db";
 
 function Modal({ modalContent, closeModal, modalToggle }) {
   const API_KEY = "AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI";
@@ -21,7 +20,7 @@ function Modal({ modalContent, closeModal, modalToggle }) {
       <div
         style={{
           height: "70vh",
-          width: "70%"
+          width: "100%"
         }}
         ref={mapContainerRef}
       />
@@ -33,20 +32,24 @@ function Modal({ modalContent, closeModal, modalToggle }) {
     return null;
   } else
     return (
-      <div className={modalOpen} onClick={() => closeModal()}>
-        <div className="modal_container">
+      <div className={modalOpen}>
+        <div className="modal__wrap">
           <button className="modal__button" onClick={() => closeModal()}>
-            Close
+            X
           </button>
-          <h5 className="modal__title">{modalContent.name}</h5>
-          <a className="modal__website" href={modalContent.url}>
-            {modalContent.website}
-          </a>
-          <p className="modal__row">{modalContent.address}</p>
-          <p className="modal__row">{modalContent.postalCode}</p>
-          <p className="modal__row">{modalContent.phoneNumber}</p>
+          <div className="modal__container">
+            <div className="modal__box">
+              <h5 className="modal__title">{modalContent.name}</h5>
+              <a className="modal__website" href={modalContent.url}>
+                {modalContent.website}
+              </a>
+              <p className="modal__row">{modalContent.address}</p>
+              <p className="modal__row">{modalContent.postalCode}</p>
+              <p className="modal__row">{modalContent.phoneNumber}</p>
+            </div>
+            <MapApp />
+          </div>
         </div>
-        <MapApp />
       </div>
     );
 }

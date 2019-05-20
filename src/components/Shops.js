@@ -2,7 +2,7 @@ import React from "react";
 
 const Shops = props => {
   return (
-    <div className="col">
+    <div className="search__text">
       {props.initSklepy &&
         props.sklepy.map(item => (
           <div className="search__result-box" key={item.id}>
