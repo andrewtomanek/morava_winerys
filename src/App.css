@@ -221,6 +221,34 @@ button {
   cursor: pointer;
 }
 
+.more__button {
+  grid-column: 1 / -1;
+  color: hsla(205, 100%, 50%, 1);
+  background-color: white;
+  padding: 1vmin 5vmin;
+  border-radius: 2rem;
+  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  width: 90vw;
+}
+
+.more__box {
+  display: grid;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  padding: 1.5rem;
+  background: hsla(205, 100%, 50%, 1);
+  height: 10vh;
+  width: 100%;
+}
+
 .modal {
   max-width: 100%;
   max-height: 100%;
@@ -341,8 +369,19 @@ button {
   align-content: space-between;
 }
 
-.shops__container {
+.shops__box {
   grid-area: 2 / 1 / 3 / 1;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5vmin 1vmin;
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-evenly;
+  overflow: hidden;
+}
+
+.shops__container {
   display: grid;
   grid-template-columns: repeat(5, 30vw);
   grid-template-rows: repeat(auto-fit, minmax(50vh, 1fr));
