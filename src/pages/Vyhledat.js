@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 import Navigation from "../components/Navigation";
 import database from "../data/db";
 import "../App.css";
@@ -35,8 +35,22 @@ const Vyhledat = () => {
       <Navigation />
       <div className="page__container">
         <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
-        {!initSklepy && <Shops sklepy={sklepy} initSklepy={!initSklepy} />}
-        {initSklepy && <FilteredList sklepy={sklepy} initSklepy={initSklepy} />}
+        <CSSTransition
+          in={!initSklepy}
+          timeout={500}
+          classNames="alert"
+          unmountOnExit
+        >
+          <Shops sklepy={sklepy} initSklepy={!initSklepy} />
+        </CSSTransition>
+        <CSSTransition
+          in={initSklepy}
+          timeout={500}
+          classNames="alert"
+          unmountOnExit
+        >
+          <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
+        </CSSTransition>
       </div>
     </div>
   );

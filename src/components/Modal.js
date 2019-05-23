@@ -1,6 +1,7 @@
 import React from "react";
 import { useGoogleMap, useMap } from "./MapHooksModal";
 import { useRef } from "react";
+import { CSSTransition } from "react-transition-group";
 
 function Modal({ modalContent, closeModal, modalToggle }) {
   const API_KEY = "AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI";
@@ -19,14 +20,20 @@ function Modal({ modalContent, closeModal, modalToggle }) {
     return <div className="modal__map" ref={mapContainerRef} />;
   };
 
-  const modalOpen = modalToggle
-    ? "modal__overlay open"
+  /*   const modalOpen = modalToggle
+    //? "modal__overlay open"
     : "modal__overlay closed";
   if (!modalToggle) {
     return null;
-  } else
-    return (
-      <div className={modalOpen}>
+  } else */
+  return (
+    <CSSTransition
+      in={modalToggle}
+      timeout={500}
+      classNames="alert"
+      unmountOnExit
+    >
+      <div className="modal__overlay open">
         <div className="modal__wrap">
           <button className="close__button" onClick={() => closeModal()}>
             {"\u{274C}"}
@@ -45,7 +52,8 @@ function Modal({ modalContent, closeModal, modalToggle }) {
           </div>
         </div>
       </div>
-    );
+    </CSSTransition>
+  );
 }
 
 export default Modal;

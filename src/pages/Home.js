@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
 import database from "../data/db";
 import citis from "../data/citis";
@@ -7,6 +6,7 @@ import "../App.css";
 import CityList from "../components/CityList";
 import FilteredCitis from "../components/FilteredCitis";
 import Modal from "../components/Modal.js";
+import { CSSTransition } from "react-transition-group";
 
 const Vyhledat = () => {
   const [filteredSklepy, setfilteredSklepy] = useState([]);
@@ -53,14 +53,19 @@ const Vyhledat = () => {
         closeModal={closeModal}
         onClick={() => closeModal()}
       />
-      {toggleBox && (
+      <CSSTransition
+        in={toggleBox}
+        timeout={500}
+        classNames="alert"
+        unmountOnExit
+      >
         <FilteredCitis
           sklepy={filteredSklepy}
           changeToggleBox={changeToggleBox}
           toggleBox={toggleBox}
           updateModal={updateModal}
         />
-      )}
+      </CSSTransition>
       {!toggleBox && <CityList citis={initLocations} pickItem={pickItem} />}
     </div>
   );
