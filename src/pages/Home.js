@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import database from "../data/db";
 import citis from "../data/citis";
 import "../App.css";
@@ -67,6 +68,7 @@ const Vyhledat = () => {
         />
       </CSSTransition>
       {!toggleBox && <CityList citis={initLocations} pickItem={pickItem} />}
+      <Footer />
     </div>
   );
 };

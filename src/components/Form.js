@@ -37,12 +37,12 @@ const Form = props => {
         <input
           type="text"
           className="search__input"
-          placeholder="Vyhledat"
+          placeholder="Zadejte hledané slovo"
           value={searchString.toLowerCase()}
           onChange={onChange}
         />
         <button className="search__button" type="submit">
-          Search
+          Vyhledat
         </button>
       </form>
     </div>

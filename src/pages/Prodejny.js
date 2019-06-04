@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
-
-//import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import ShopsList from "../components/ShopsList";
 import database from "../data/db";
 import "../App.css";
 
 function Prodejny() {
   let [initialArray, setInitialArray] = useState([]);
-  let [dataIndex, setDataIndex] = useState(8);
+  let [dataIndex, setDataIndex] = useState(16);
+
+  useEffect(() => {
+    let startArray = [];
+    for (let i = 0; i < 8; i++) {
+      startArray.push(database[i]);
+    }
+    setInitialArray(startArray);
+  }, []);
+
   const displayMore = () => {
     if (database.length < dataIndex) return;
     setDataIndex(dataIndex + 8);
@@ -26,11 +34,12 @@ function Prodejny() {
       <div className="shops__box">
         <div className="more__box">
           <button className="more__button" onClick={() => displayMore()}>
-            More
+            Zobrazit více
           </button>
         </div>
         <ShopsList shops={initialArray} displayMore={displayMore} />
       </div>
+      <Footer />
     </div>
   );
 }

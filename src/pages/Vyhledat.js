@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import database from "../data/db";
 import "../App.css";
 
@@ -22,6 +23,7 @@ const Vyhledat = () => {
     });
     setInitSklepy(true);
     if (filtered.length === 0) setInitSklepy(false);
+    if (filtered.length > 20) setInitSklepy(false);
     setSklepy(filtered);
   };
 
@@ -52,6 +54,7 @@ const Vyhledat = () => {
           <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
         </CSSTransition>
       </div>
+      <Footer />
     </div>
   );
 };

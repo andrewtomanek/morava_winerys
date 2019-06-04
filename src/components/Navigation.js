@@ -3,23 +3,28 @@ import { NavLink } from "react-router-dom";
 import "../App.css";
 
 const Navigation = props => (
-  <header className="main-navigation">
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Domu</NavLink>
+  <header>
+    <nav className="main__navigation">
+      <ul className="nav__list">
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/">
+            Domu
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/mapa">Mapa </NavLink>
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/mapa">
+            Mapa{" "}
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/prodejny">Prodejny </NavLink>
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/prodejny">
+            Prodejny{" "}
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/vyhledat">Vyhledat </NavLink>
-        </li>
-        <li>
-          <NavLink to="/kontakt">Kontakt </NavLink>
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/vyhledat">
+            Vyhledat{" "}
+          </NavLink>
         </li>
       </ul>
     </nav>

@@ -26,7 +26,7 @@ const FilteredCity = ({ item, updateModal }) => {
         alt={item.picture}
       />
       <button className="modal__button" onClick={() => showModal(item)}>
-        Details
+        Detail
       </button>
     </div>
   );

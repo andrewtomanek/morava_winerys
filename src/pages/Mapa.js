@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import MapApp from "../components/HookMap";
 import database from "../data/db";
 import "../App.css";
@@ -9,6 +10,7 @@ function Mapa() {
     <div className="main__container">
       <Navigation />
       <MapApp markers={database} />
+      <Footer />
     </div>
   );
 }
