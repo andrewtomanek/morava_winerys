@@ -171,7 +171,7 @@ button {
 .map__container {
   grid-area: 2 / 1 / 3 / 1;
   width: 100%;
-  height: 90vh;
+  height: 70vh;
 }
 
 .reset__button {
@@ -188,6 +188,12 @@ button {
   text-decoration: none;
   cursor: pointer;
   width: 100%;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.reset__button:hover {
+  transform: scaleY(1.1);
+  background-color: hsla(3, 99%, 48%, 1);
 }
 
 .modal__button {
@@ -203,6 +209,15 @@ button {
   text-decoration: none;
   cursor: pointer;
   width: 100%;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.modal__button:hover {
+  animation: floating-text 500ms ease-in-out;
+  text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.4), 0 0 0.2em rgba(0, 0, 0, 0.3),
+    0 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  color: hsla(3, 99%, 48%, 1);
+  background-color: white;
 }
 
 .close__button {
@@ -217,6 +232,11 @@ button {
   border: none;
   text-decoration: none;
   cursor: pointer;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.close__button:hover {
+  transform: scale(1.1);
 }
 
 .more__button {
@@ -232,7 +252,16 @@ button {
   border: none;
   text-decoration: none;
   cursor: pointer;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
   width: 90vw;
+}
+
+.more__button:hover {
+  transform: scale(1.1) rotate(1deg);
+  text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.4), 0 0 0.2em rgba(0, 0, 0, 0.3),
+    0 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  color: hsla(3, 99%, 48%, 1);
+  background-color: white;
 }
 
 .more__box {
@@ -463,7 +492,7 @@ h1 {
 }
 
 .citis__cell:hover {
-  animation: floating-text 1500ms ease;
+  animation: floating-text 500ms ease-in-out;
 }
 
 @keyframes floating-text {
@@ -484,13 +513,20 @@ h1 {
   background-color: hsla(220, 50%, 50%, 1);
   color: #f2f2f2;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 800;
   padding: 0.5rem;
   text-align: center;
   border: solid 0.2rem hsla(3, 99%, 48%, 1);
   border-radius: 0.8rem;
   transform: rotate(-1deg);
   transform: skew(-1deg, -2deg);
+  transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.citis__cell:hover .citis__name {
+  color: hsla(3, 99%, 48%, 1);
+  background-color: #f2f2f2;
+  border: solid 0.2rem hsla(220, 50%, 50%, 1);
 }
 
 .companyName {
@@ -658,7 +694,7 @@ img.front_picture {
   margin: 2px auto 0px;
   border-radius: 15px;
 }
-.pic_caption {
+.pic__caption {
   color: white;
   font-family: "Ubuntu", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 1rem;
@@ -677,7 +713,7 @@ img.front_picture {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-height: 50vh;
+  height: 100%;
   padding: 0;
   margin: 0px;
   border-radius: 1rem;
@@ -706,7 +742,7 @@ img.front_picture {
   opacity: 0;
   border-radius: 15px;
   transform: translate(0, -10vmin);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .wine_container:hover .wine_box .content_overlay {
   transform: translate(0, 0);
@@ -883,7 +919,7 @@ i {
 footer {
   display: grid;
   padding: 0;
-  height: 20vh;
+  min-height: 10vh;
   padding: 0rem 0rem;
   background-color: hsla(240, 100%, 35%, 0.7);
 }
@@ -894,6 +930,7 @@ footer {
 .footer__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   justify-items: center;
   justify-content: center;
   align-items: center;
@@ -902,14 +939,14 @@ footer {
 }
 
 .footer__text {
-  background-color: hsla(220, 50%, 50%, 1);
+  background-color: hsla(3, 99%, 48%, 1);
   color: #f2f2f2;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0.5rem;
   text-align: center;
   border-radius: 0.8rem;
-  border: solid 0.2rem hsla(3, 99%, 48%, 1);
+  border: solid 0.2rem hsla(220, 50%, 50%, 1);
 }
 
 .footer__link {
@@ -922,7 +959,6 @@ footer {
   text-align: left;
   text-decoration: none;
   border-radius: 1rem;
-  height: 35%;
 }
 
 @media all and (max-width: 1280px) {
@@ -1033,7 +1069,7 @@ footer {
     display: grid;
     grid-template-columns: 100vw;
     justify-content: stretch;
-    gap: 4vmin 1vmin;
+    gap: 20vmin 1vmin;
   }
 
   .search__shops {
@@ -1082,6 +1118,17 @@ footer {
   .shops__box {
     justify-items: normal;
     justify-content: stretch;
+  }
+
+  .footer__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0.2rem 0.3rem;
   }
 }
 
