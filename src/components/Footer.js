@@ -7,7 +7,9 @@ const Footer = props => (
     <div className="footer__box">
       <div className="footer__content">
         <p className="footer__text">Moravská vinařství</p>
-        <a className="footer__link">andrewtomanek@gmail.com</a>
+        <a className="footer__link" href="mailto:andrewtomanek@gmail.com">
+          Kontakt
+        </a>
       </div>
     </div>
   </footer>

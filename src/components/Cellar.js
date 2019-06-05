@@ -22,17 +22,17 @@ const Cellar = ({ item }) => {
           src={images[item.picture]}
           alt={item.picture}
         />
-        <div className="content_overlay">
-          <h5 className="business_title">{item.name}</h5>
-          <div className="business_link">
-            <a className="business_website" href={item.url}>
-              {item.website}
-            </a>
-          </div>
-          <p className="business_adress">{item.address}</p>
-          <p className="business_postal">{item.postalCode}</p>
-          <p className="business_telphone">{item.phoneNumber}</p>
+      </div>
+      <div className="content_overlay">
+        <h5 className="business_title">{item.name}</h5>
+        <div className="business_link">
+          <a className="business_website" href={item.url}>
+            {item.website}
+          </a>
         </div>
+        <p className="business_adress">{item.address}</p>
+        <p className="business_postal">{item.postalCode}</p>
+        <p className="business_telphone">{item.phoneNumber}</p>
       </div>
     </article>
   );
