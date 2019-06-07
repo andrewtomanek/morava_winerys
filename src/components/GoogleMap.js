@@ -88,17 +88,17 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
       googleMap.maps.event.addListener(marker, "click", function() {
         map.setZoom(13);
         map.setCenter(marker.getPosition());
-        let iwContent = `<div class="info__box">  <img
-        class="info_picture"
+        let iwContent = `<div class="info___box">  <img
+        class="info__picture"
         src=${picture}
         alt=${name}
-      /><div class="info_title">${name}</div>
-        <div class="info_adress">${address}</div>
-        <div class="info_postal">
+      /><div class="info__title">${name}</div>
+        <div class="info__adress">${address}</div>
+        <div class="info__postal">
             ${postalCode}</div>
-          <div class="info_telephone">${phoneNumber}</div>
-          <div class="info_link">
-          <a class="business_website" href="${url}">
+          <div class="info__telephone">${phoneNumber}</div>
+          <div class="info__link">
+          <a class="business__website" href="${url}">
           ${website}
 </a>
           </div></div>`;

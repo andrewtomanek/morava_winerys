@@ -3,17 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "^6.0.2",
     "google-maps-api-loader": "^1.1.1",
-    "google-maps-react": "^2.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-google-maps": "^9.4.5",
-    "react-icons": "^3.6.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
-    "react-transition-group": "^4.0.0",
-    "recompose": "^0.30.0"
+    "react-transition-group": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

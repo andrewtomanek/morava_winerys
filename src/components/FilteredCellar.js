@@ -14,25 +14,25 @@ const images = importAll(
 
 const FilteredCellar = ({ item }) => {
   return (
-    <article className="wine_container">
-      <div className="wine_box">
-        <h4 className="pic__caption">{item.name}</h4>
+    <article className="wine__container">
+      <div className="wine__box">
         <img
-          className="front_picture"
+          className="front__picture"
           src={images[item.picture]}
           alt={item.picture}
         />
+        <h4 className="pic__caption">{item.name}</h4>
       </div>
-      <div className="content_overlay">
-        <h5 className="business_title">{item.name}</h5>
-        <div className="business_link">
-          <a className="business_website" href={item.url}>
+      <div className="content__overlay">
+        <h5 className="business__title">{item.name}</h5>
+        <div className="business__link">
+          <a className="business__website" href={item.url}>
             {item.website}
           </a>
         </div>
-        <p className="business_adress">{item.address}</p>
-        <p className="business_postal">{item.postalCode}</p>
-        <p className="business_telphone">{item.phoneNumber}</p>
+        <p className="business__adress">{item.address}</p>
+        <p className="business__postal">{item.postalCode}</p>
+        <p className="business__telphone">{item.phoneNumber}</p>
       </div>
     </article>
   );

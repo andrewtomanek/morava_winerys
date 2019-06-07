@@ -26,7 +26,6 @@ function Prodejny() {
     }
     setInitialArray(updateArray);
   };
-  console.log(initialArray);
 
   return (
     <div className="main__container">

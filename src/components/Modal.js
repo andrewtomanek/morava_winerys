@@ -1,5 +1,5 @@
 import React from "react";
-import { useGoogleMap, useMap } from "./MapHooksModal";
+import { useGoogleMap, useMap } from "./MapModal";
 import { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 

@@ -6,7 +6,9 @@ const Footer = props => (
   <footer>
     <div className="footer__box">
       <div className="footer__content">
-        <p className="footer__text">Moravská vinařství</p>
+        <NavLink className="footer__link" to="/">
+          Moravská vinařství
+        </NavLink>
         <a className="footer__link" href="mailto:andrewtomanek@gmail.com">
           Kontakt
         </a>

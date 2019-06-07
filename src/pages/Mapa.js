@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import MapApp from "../components/HookMap";
+import MapApp from "../components/MapContainer";
 import database from "../data/db";
 import "../App.css";
 

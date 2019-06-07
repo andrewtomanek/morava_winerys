@@ -1,9 +1,8 @@
 import React from "react";
-import { useGoogleMap, useMap } from "./MapHooks";
+import { useGoogleMap, useMap } from "./GoogleMap";
 import { useRef } from "react";
 
-const API_KEY = "AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI";
-
+const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 const initialConfig = {
   zoom: 12,
   mapTypeId: "roadmap",

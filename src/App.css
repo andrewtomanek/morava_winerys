@@ -161,7 +161,7 @@ button {
 
 .search__shops {
   display: grid;
-  grid-template-columns: repeat(5, 30vw);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(auto-fill, minmax(50vh, 1fr));
   gap: 5vmin 1vmin;
   justify-items: center;
@@ -172,12 +172,13 @@ button {
   animation-name: jmena;
   animation-duration: 0.5s;
   padding: 1rem 0 3rem;
+  width: 99vw;
 }
 
 .map__container {
   grid-area: 2 / 1 / 3 / 1;
   width: 100%;
-  height: 70vh;
+  height: 80vh;
 }
 
 .reset__button {
@@ -416,7 +417,7 @@ button {
 
 .shops__container {
   display: grid;
-  grid-template-columns: repeat(5, 30vw);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(auto-fit, minmax(50vh, 1fr));
   gap: 5vmin 1vmin;
   justify-items: center;
@@ -427,12 +428,13 @@ button {
   animation-name: jmena;
   animation-duration: 0.5s;
   overflow: hidden;
+  width: 99vw;
 }
 
 .filtered__container {
   grid-area: 2 / 1 / 3 / 1;
   display: grid;
-  grid-template-columns: repeat(5, 30vw);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 15vh repeat(auto-fit, minmax(40vh, 1fr));
   gap: 5vmin 1vmin;
   justify-items: center;
@@ -443,11 +445,12 @@ button {
   animation-name: jmena;
   animation-duration: 0.5s;
   padding: 1rem 0 3rem;
+  width: 99vw;
 }
 
 .city_box {
   display: grid;
-  grid-template-rows: 10vh 1fr 5vh;
+  grid-template-rows: 1fr 10vh 5vh;
   gap: 5vmin 1vmin;
   justify-items: center;
   justify-content: space-evenly;
@@ -461,24 +464,6 @@ button {
   text-align: center;
 }
 
-h1 {
-  position: relative;
-  font-family: "Ubuntu", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: white;
-  background: hsla(205, 100%, 50%, 0.5);
-  background: linear-gradient(
-    to bottom right,
-    hsla(205, 100%, 50%, 0.4),
-    hsla(205, 100%, 50%, 0.8),
-    hsla(205, 100%, 90%, 0.2)
-  ); /* Standard syntax */
-  text-align: center;
-  margin: 80px auto 10px;
-  padding: 5px 20px;
-  border: 5px ridge hsla(205, 100%, 50%, 1);
-  border-radius: 10px;
-}
-
 .citis__box {
   width: 100vw;
   min-height: 80vh;
@@ -486,14 +471,15 @@ h1 {
   margin: 0rem;
   display: flex;
   flex-flow: row wrap;
-  grid-gap: 1rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
   justify-content: center;
   align-content: space-around;
   align-items: center;
 }
 
 .citis__cell {
-  margin: 0rem;
+  margin: 0.3rem;
   padding: 0rem;
 }
 
@@ -535,51 +521,6 @@ h1 {
   border: solid 0.2rem hsla(220, 50%, 50%, 1);
 }
 
-.companyName {
-  height: 5%;
-  color: hsla(3, 99%, 48%, 1);
-  margin: 4px;
-  padding: 4px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-align: center;
-  background-color: hsla(205, 100%, 80%, 0.9);
-  border-radius: 15px;
-}
-.postalNumber {
-  height: 5%;
-  margin: 5px;
-  padding: 3px;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-align: center;
-  background-color: hsla(205, 100%, 75%, 0.8);
-  border-radius: 15px;
-}
-
-.webLink {
-  height: 5%;
-  margin: 5px;
-  padding: 3px;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-align: center;
-  background-color: hsla(54, 100%, 90%, 1);
-  border-radius: 15px;
-}
-img.pctr {
-  margin: 0px auto 0;
-  width: auto;
-  max-height: 50px;
-  border-radius: 10px;
-}
-
-a.business_website {
-  color: hsl(120, 100%, 43%);
-}
-
 .search__result-box {
   width: 100vw;
   display: grid;
@@ -594,6 +535,7 @@ a.business_website {
   border-bottom: solid 0.1rem hsla(5, 100%, 50%, 1);
   background-color: hsla(205, 100%, 50%, 1);
   color: white;
+  width: 99vw;
 }
 
 .search__content {
@@ -622,7 +564,7 @@ a.business_website {
   cursor: pointer;
 }
 
-.info__box {
+.info___box {
   width: 100%;
   height: 50vh;
   display: grid;
@@ -639,12 +581,12 @@ a.business_website {
   color: hsla(205, 100%, 50%, 1);
   overflow: hidden;
 }
-.info_adress {
+.info__adress {
   padding: 3px;
   background-color: hsla(205, 100%, 50%, 0.1);
   border-radius: 10px;
 }
-.info_title {
+.info__title {
   font-size: 1.1rem;
   font-weight: 600;
   text-align: center;
@@ -653,31 +595,31 @@ a.business_website {
   color: red;
 }
 
-.info_picture {
+.info__picture {
   width: 80%;
   height: 90%;
 }
-.info_postal {
+.info__postal {
   padding: 3px;
   background-color: hsla(205, 100%, 50%, 0.1);
   border-radius: 10px;
 }
-.info_telephone {
+.info__telephone {
   padding: 3px;
   color: white;
   text-align: center;
   background-color: hsla(205, 100%, 70%, 0.9);
   border-radius: 15px;
 }
-.info_link {
+.info__link {
   background-color: hsla(205, 100%, 50%, 0.1);
   border-radius: 10px;
 }
-a.business_website {
+.business__website {
   color: hsl(120, 100%, 43%);
 }
 
-.business_title {
+.business__title {
   font-size: 1.1rem;
   padding: 0 0.3rem;
   color: hsla(3, 99%, 48%, 1);
@@ -686,7 +628,7 @@ a.business_website {
   background-color: hsla(205, 100%, 80%, 0.9);
   border-radius: 15px;
 }
-.business_adress {
+.business__adress {
   color: white;
   font-weight: 600;
   text-align: center;
@@ -694,7 +636,7 @@ a.business_website {
   background-color: hsla(205, 100%, 75%, 0.8);
   border-radius: 15px;
 }
-.business_postal {
+.business__postal {
   color: white;
   font-weight: 600;
   text-align: center;
@@ -702,7 +644,7 @@ a.business_website {
   background-color: hsla(205, 100%, 75%, 0.8);
   border-radius: 15px;
 }
-.business_telphone {
+.business__telphone {
   color: white;
   font-weight: 600;
   text-align: center;
@@ -710,7 +652,7 @@ a.business_website {
   background-color: hsla(205, 100%, 70%, 0.9);
   border-radius: 15px;
 }
-.business_link {
+.business__link {
   color: white;
   font-weight: 600;
   text-align: center;
@@ -719,7 +661,7 @@ a.business_website {
   border-radius: 15px;
 }
 
-img.front_picture {
+.front__picture {
   display: block;
   width: 95%;
   height: auto;
@@ -734,7 +676,7 @@ img.front_picture {
   text-align: center;
 }
 
-.wine_container {
+.wine__container {
   display: grid;
   grid: 1fr / 1fr;
   justify-items: center;
@@ -747,7 +689,7 @@ img.front_picture {
   height: 100%;
 }
 
-.wine_box {
+.wine__box {
   grid-area: 1 / 1 / 1 / 1;
   display: flex;
   flex-direction: column;
@@ -761,10 +703,10 @@ img.front_picture {
   text-align: center;
 }
 
-.content_overlay {
+.content__overlay {
   grid-area: 1 / 1 / 1 / 1;
   display: grid;
-  grid-template-rows: 20vh repeat(4, 7vh);
+  grid-template-rows: 15vh repeat(4, 7vh);
   justify-items: center;
   justify-content: space-around;
   align-items: center;
@@ -780,181 +722,14 @@ img.front_picture {
   transform: translate(0, -10vmin);
   transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
-.wine_container:hover .wine_box .content_overlay {
+.wine__container:hover .wine__box .content__overlay {
   transform: translate(0, 0);
   opacity: 1;
 }
 
-.wine_container:hover .content_overlay {
+.wine__container:hover .content__overlay {
   transform: translate(0, 0);
   opacity: 1;
-}
-
-a.lnk {
-  display: block;
-  float: left;
-  text-decoration: none;
-  outline: 0;
-  border-radius: 10px;
-}
-
-a.lnk:link {
-  background-color: hsla(240, 100%, 35%, 0.7);
-  color: hsl(210, 100%, 80%);
-  font-weight: 300;
-  padding: 1px 3px;
-  margin: 0px;
-  text-align: left;
-  text-decoration: none;
-  border-radius: 10px;
-}
-a.lnk:visited {
-  background-color: hsla(240, 100%, 35%, 0.6);
-  color: hsl(210, 100%, 90%);
-}
-
-a.lnk:hover {
-  background-color: hsl(210, 100%, 80%);
-  color: hsla(240, 100%, 35%, 1);
-}
-a.lnk:active {
-  background-color: olive;
-  color: pink;
-}
-
-.sidenav_box {
-  height: 100vh;
-  width: 0;
-  position: fixed;
-  z-index: 10;
-  top: 0px;
-  right: 0;
-  display: grid;
-  grid-auto-flow: row;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background: linear-gradient(
-    to left,
-    hsla(205, 100%, 50%, 1),
-    hsla(205, 100%, 70%, 1)
-  ); /* Standard syntax */
-  background-size: 100% 100%;
-  overflow-x: hidden;
-  transition: 0.9s;
-}
-
-.nav_open {
-  height: 100vh;
-  width: 50vmin;
-}
-
-.navihation_links {
-  width: 100%;
-  height: 100%;
-  padding: 0.3rem;
-  text-decoration: none;
-  font-size: 3rem;
-  font-weight: 800;
-  font-family: "Didact Gothic", "Ubuntu", "Lucida Console", Monaco, monospace;
-  color: white;
-  transition: 0.3s;
-}
-
-.navihation_links:hover {
-  background-color: white;
-  color: hsla(205, 100%, 50%, 1);
-}
-
-.to_top {
-  width: 10vh;
-  height: 10vh;
-  display: none;
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: hsla(205, 100%, 50%, 1);
-  color: white;
-  cursor: pointer;
-  padding: 20px 15px 0px;
-  border-radius: 10px 0 0 0;
-}
-
-.to_top:hover {
-  background-color: hsla(240, 100%, 90%, 1);
-  color: hsla(205, 100%, 50%, 1);
-}
-i {
-  border: solid white;
-  border-width: 0 10px 10px 0;
-  display: inline-block;
-  padding: 10px;
-}
-.up {
-  transform: rotate(-135deg);
-}
-
-.close_button {
-  display: none;
-  width: auto;
-  height: auto;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  z-index: 99;
-  font-size: 4rem;
-  background-color: hsla(205, 100%, 50%, 1);
-  color: white;
-  cursor: pointer;
-  padding: 0px;
-  border-radius: 0 1rem 0 0;
-}
-
-.close_button:hover {
-  background-color: hsla(240, 100%, 90%, 1);
-  color: hsla(205, 100%, 50%, 1);
-}
-
-.burger_container {
-  width: 5vh;
-  height: 5vh;
-  position: fixed;
-  top: 5px;
-  right: 5px;
-  display: grid;
-  grid-row: 1fr 1fr 1fr;
-  gap: 1vh;
-  cursor: pointer;
-  background-color: hsla(205, 100%, 50%, 1);
-  z-index: 20;
-  border-radius: 0 0 0 10px;
-  border: solid 1vh hsla(205, 100%, 50%, 1);
-}
-.bar1,
-.bar2,
-.bar3 {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  margin: 0px;
-  transition: 0.9s;
-  display: block;
-}
-.responsive .bar1 {
-  transform: rotate(-45deg) translate(1vh, -1vh);
-  grid-area: 2 / 1 / 2 / 1;
-}
-.responsive .bar2 {
-  grid-area: 2 / 1 / 2 / 1;
-  opacity: 0;
-}
-.responsive .bar3 {
-  transform: rotate(45deg) translate(-1vh, -1vh);
-  grid-area: 2 / 1 / 2 / 1;
 }
 
 footer {
@@ -1022,7 +797,7 @@ footer {
   }
 }
 @media all and (max-width: 980px) {
-  .content_overlay {
+  .content__overlay {
     font-size: 1.2rem;
   }
 
@@ -1046,7 +821,7 @@ footer {
 }
 
 @media all and (max-width: 736px) {
-  .content_overlay {
+  .content__overlay {
     font-size: 1.5rem;
   }
 
@@ -1094,7 +869,7 @@ footer {
 }
 
 @media all and (max-width: 480px) {
-  .content_overlay {
+  .content__overlay {
     font-size: 2rem;
     height: 50vh;
   }

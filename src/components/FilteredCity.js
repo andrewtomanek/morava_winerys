@@ -19,12 +19,12 @@ const FilteredCity = ({ item, updateModal }) => {
 
   return (
     <div className="city_box">
-      <h4 className="pic__caption">{item.name}</h4>
       <img
-        className="front_picture"
+        className="front__picture"
         src={images[item.picture]}
         alt={item.picture}
       />
+      <h4 className="pic__caption">{item.name}</h4>
       <button className="modal__button" onClick={() => showModal(item)}>
         Detail
       </button>
