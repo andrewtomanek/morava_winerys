@@ -22,6 +22,11 @@ body {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: 'Courgette',monospace;
+}
+
+p {
+  font-family: 'Palatino',monospace;
 }
 
 header {
@@ -104,8 +109,7 @@ button {
   background-color: white;
   padding: 20px 10px;
   border-radius: 1rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 1rem;
+font-family: 'Marcellus',monospace;  font-size: 1rem;
   font-weight: 900;
   text-align: center;
   border: none;
@@ -145,7 +149,7 @@ button {
   color: white;
   padding: 0.2rem 1.3rem;
   border-radius: 1rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
   font-size: 1.2rem;
   font-weight: 900;
   text-align: center;
@@ -187,7 +191,7 @@ button {
   background-color: white;
   padding: 1vmin 5vmin;
   border-radius: 1rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
   font-size: 2.2rem;
   font-weight: 900;
   text-align: center;
@@ -208,7 +212,7 @@ button {
   color: white;
   background-color: hsla(3, 99%, 48%, 1);
   padding: 0.3rem 0.2rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
@@ -232,7 +236,7 @@ button {
   background-color: white;
   padding: 0rem 0.4rem;
   border-radius: 2rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
   font-size: 2rem;
   font-weight: 900;
   text-align: center;
@@ -252,7 +256,7 @@ button {
   color: white;
   padding: 1vmin 5vmin;
   border-radius: 2rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
   font-size: 2rem;
   font-weight: 900;
   text-align: center;
@@ -387,7 +391,6 @@ button {
 }
 
 .search__input {
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
@@ -670,7 +673,6 @@ button {
 }
 .pic__caption {
   color: white;
-  font-family: "Ubuntu", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
@@ -712,7 +714,7 @@ button {
   align-items: center;
   align-content: space-between;
   font-size: 1rem;
-  font-family: "Oldenburg", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
   background-color: hsla(205, 100%, 50%, 0.81);
   overflow: hidden;
   width: 100%;
