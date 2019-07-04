@@ -22,11 +22,11 @@ body {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: 'Courgette',monospace;
+  font-family: 'Courgette',Georgia,monospace;
 }
 
 p {
-  font-family: 'Palatino',monospace;
+  font-family: 'Palatino',Georgia,monospace;
 }
 
 header {
@@ -109,7 +109,7 @@ button {
   background-color: white;
   padding: 20px 10px;
   border-radius: 1rem;
-font-family: 'Marcellus',monospace;  font-size: 1rem;
+font-family: 'Marcellus',Georgia,monospace;  font-size: 1rem;
   font-weight: 900;
   text-align: center;
   border: none;
