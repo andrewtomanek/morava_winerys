@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# morava_winerys
 
-## Available Scripts
+Directory of winerys of South-east Moravia.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Contact](#contact)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## General info
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Pick businesses by location. Display google map marker and individual contact info.<br />
+Generate google map with every location's marker.<br />
+Browse picture grid and reveal information by :hover or touch.<br />
+Search company by name, city or address.
 
-### `npm test`
+<br />
+  <a href="https://github.com/andrewtomanek/morava_winerys">
+    <img src="public\hledati.png" alt="Logo" width="80%" height="auto">
+  </a>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
 
-### `npm run build`
+- [React.js](https://reactjs.org)
+- [React-Router](https://reacttraining.com/react-router/)
+- [react-transition-group](https://github.com/reactjs/react-transition-group)
+- [google-maps-api-loader](https://www.npmjs.com/package/google-maps-api-loader)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. Create a folder to hold your installation: mkdir morava_winerys
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. FTP/Copy the contents of the zip to your newly created folder
 
-### `npm run eject`
+3. Install dependencies: npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Create Firebase account.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Enter your API variables in `.env` file
+   const API_KEY = 'ENTER YOUR API';
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+6. Start application: npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+7. Visit http://localhost:3000/ in your browser
+   <br />
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+andrewtomanek - andrewtomanek@gmail.com
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[https://github.com/andrewtomanek/morava_winerys](https://github.com/andrewtomanek/morava_winerys)
 
-### Code Splitting
+## License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Distributed under the MIT License.
