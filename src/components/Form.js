@@ -41,8 +41,8 @@ const Form = props => {
           value={searchString.toLowerCase()}
           onChange={onChange}
         />
-        <button className="search__button" type="submit">
-          Vyhledat
+        <button className="search__button" onClick={() => resetSearch()}>
+          Reset
         </button>
       </form>
     </div>
