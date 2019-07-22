@@ -22,11 +22,11 @@ body {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: 'Courgette',Georgia,monospace;
+  font-family: "Courgette", Georgia, monospace;
 }
 
 p {
-  font-family: 'Palatino',Georgia,monospace;
+  font-family: "Palatino", Georgia, monospace;
 }
 
 header {
@@ -109,7 +109,8 @@ button {
   background-color: white;
   padding: 20px 10px;
   border-radius: 1rem;
-font-family: 'Marcellus',Georgia,monospace;  font-size: 1rem;
+  font-family: "Marcellus", Georgia, monospace;
+  font-size: 1rem;
   font-weight: 900;
   text-align: center;
   border: none;
@@ -121,8 +122,9 @@ font-family: 'Marcellus',Georgia,monospace;  font-size: 1rem;
   display: grid;
   justify-items: center;
   justify-content: center;
-  padding: 0.2rem 0.3rem;
+  padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
+  width: 100vw;
 }
 .search__form {
   display: grid;
@@ -135,7 +137,8 @@ font-family: 'Marcellus',Georgia,monospace;  font-size: 1rem;
     to left,
     hsla(205, 100%, 50%, 1),
     hsla(205, 100%, 70%, 1)
-  ); /* Standard syntax */
+  );
+  width: 100%;
 }
 
 .search__input {
@@ -282,9 +285,7 @@ font-family: 'Marcellus',Georgia,monospace;  font-size: 1rem;
   align-items: center;
   align-content: space-evenly;
   padding: 1.5rem;
-  background: hsla(205, 100%, 50%, 1);
   height: 10vh;
-  width: 100%;
 }
 
 .modal {
