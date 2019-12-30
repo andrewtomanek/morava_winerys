@@ -12,13 +12,10 @@ import { CSSTransition } from "react-transition-group";
 const Vyhledat = () => {
   const [filteredSklepy, setfilteredSklepy] = useState([]);
   const [toggleBox, setToggleBox] = useState(false);
-  const [initLocations, setInitLocations] = useState(citis);
-  const [searchString, setSearchString] = useState("");
   const [show, setOpen] = useState(false);
   const [modalContent, setModalContent] = useState(false);
 
   const pickItem = query => {
-    setSearchString(query.toLowerCase());
     let filtered = database.filter(item => {
       return item.postalCode.toLowerCase().indexOf(query) > -1;
     });
@@ -67,7 +64,7 @@ const Vyhledat = () => {
           updateModal={updateModal}
         />
       </CSSTransition>
-      {!toggleBox && <CityList citis={initLocations} pickItem={pickItem} />}
+      {!toggleBox && <CityList citis={citis} pickItem={pickItem} />}
       <Footer />
     </div>
   );
