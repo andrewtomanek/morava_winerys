@@ -31,12 +31,12 @@ function Prodejny() {
     <div className="main__container">
       <Navigation />
       <div className="shops__box">
+        <ShopsList shops={initialArray} displayMore={displayMore} />
         <div className="more__box">
           <button className="more__button" onClick={() => displayMore()}>
             Zobrazit více
           </button>
         </div>
-        <ShopsList shops={initialArray} displayMore={displayMore} />
       </div>
       <Footer />
     </div>
