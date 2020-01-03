@@ -37,7 +37,7 @@ header {
   font-weight: 700;
   padding: 0.5rem;
   text-align: center;
-  background-color: hsla(3, 99%, 48%, 1);
+  background-color: hsla(3, 90%, 60%, 1);
 }
 
 .main__navigation {
@@ -87,8 +87,8 @@ header {
   grid-template-rows: 10vh 1fr;
   background: linear-gradient(
     to left,
-    hsla(205, 100%, 50%, 1),
-    hsla(205, 100%, 70%, 1)
+    hsla(205, 100%, 60%, 1),
+    hsla(205, 100%, 80%, 1)
   ); /* Standard syntax */
   text-align: center;
 }
@@ -506,13 +506,13 @@ button {
 }
 
 .citis__name {
-  background-color: hsla(220, 50%, 50%, 1);
+  background-color: hsla(220, 60%, 50%, 1);
   color: #f2f2f2;
   font-size: 1.2rem;
   font-weight: 800;
   padding: 0.5rem;
   text-align: center;
-  border: solid 0.2rem hsla(3, 99%, 48%, 1);
+  border: solid 0.2rem hsla(3, 95%, 60%, 1);
   border-radius: 0.8rem;
   transform: rotate(-1deg);
   transform: skew(-1deg, -2deg);
@@ -520,9 +520,9 @@ button {
 }
 
 .citis__cell:hover .citis__name {
-  color: hsla(3, 99%, 48%, 1);
+  color: hsla(3, 95%, 60%, 1);
   background-color: #f2f2f2;
-  border: solid 0.2rem hsla(220, 50%, 50%, 1);
+  border: solid 0.2rem hsla(220, 60%, 50%, 1);
 }
 
 .search__result-box {
@@ -740,7 +740,7 @@ footer {
   padding: 0;
   min-height: 10vh;
   padding: 0rem 0rem;
-  background-color: hsla(240, 100%, 35%, 0.7);
+  background-color: hsla(240, 80%, 50%, 0.7);
 }
 .footer__box {
   display: grid;
@@ -758,18 +758,18 @@ footer {
 }
 
 .footer__text {
-  background-color: hsla(3, 99%, 48%, 1);
+  background-color: hsla(3, 90%, 70%, 1);
   color: #f2f2f2;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0.5rem;
   text-align: center;
   border-radius: 0.8rem;
-  border: solid 0.2rem hsla(220, 50%, 50%, 1);
+  border: solid 0.2rem hsla(220, 50%, 60%, 1);
 }
 
 .footer__link {
-  background-color: hsla(3, 99%, 48%, 1);
+  background-color: hsla(3, 90%, 60%, 1);
   color: white;
   font-weight: 700;
   font-size: 1.1rem;
