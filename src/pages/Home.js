@@ -6,7 +6,7 @@ import citis from "../data/citis";
 import "../App.css";
 import CityList from "../components/CityList";
 import FilteredCitis from "../components/FilteredCitis";
-import Modal from "../components/Modal.js";
+import ModalContainer from "../components/ModalContainer.js";
 import { CSSTransition } from "react-transition-group";
 
 const Vyhledat = () => {
@@ -45,7 +45,7 @@ const Vyhledat = () => {
   return (
     <div className="main__container">
       <Navigation />
-      <Modal
+      <ModalContainer
         modalContent={modalContent}
         modalToggle={show}
         closeModal={closeModal}
