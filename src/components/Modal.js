@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import { useGoogleMap, useMap } from "./MapModal";
 import { useRef } from "react";
-import DetailsCard from "./DetailsCard"
+import DetailsCard from "./DetailsCard";
 
-export default function Modal({modalContent,closeModal}) {
-  const API_KEY = "AIzaSyAKAuGeGiFJgClLjhPz6sAm8A9UfMY6MmI";
+export default function Modal({ modalContent, closeModal }) {
+  const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
   const initialConfig = {
     zoom: 10,
@@ -21,13 +21,13 @@ export default function Modal({modalContent,closeModal}) {
   };
   return (
     <div className="modal__wrap">
-    <button className="close__button" onClick={() => closeModal()}>
-      {"\u{274C}"}
-    </button>
-    <div className="modal__container">
-    <DetailsCard modalContent={modalContent}/>
-      <MapApp />
+      <button className="close__button" onClick={() => closeModal()}>
+        {"\u{274C}"}
+      </button>
+      <div className="modal__container">
+        <DetailsCard modalContent={modalContent} />
+        <MapApp />
+      </div>
     </div>
-  </div>
-  )
+  );
 }

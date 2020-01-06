@@ -1,10 +1,9 @@
 import React from "react";
 
 import { CSSTransition } from "react-transition-group";
-import Modal from "./Modal"
+import Modal from "./Modal";
 
-function ModalContainer({  modalToggle, ...props }) {
-
+function ModalContainer({ modalToggle, ...props }) {
   return (
     <CSSTransition
       in={modalToggle}
@@ -13,7 +12,7 @@ function ModalContainer({  modalToggle, ...props }) {
       unmountOnExit
     >
       <div className="modal__overlay open">
-      <Modal {...props}/>
+        <Modal {...props} />
       </div>
     </CSSTransition>
   );
