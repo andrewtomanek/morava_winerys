@@ -1,5 +1,5 @@
 import React from "react";
-import FilteredCellar from "./FilteredCellar";
+import DetailsCard from "./DetailsCard";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const FilteredList = props => {
@@ -11,7 +11,7 @@ const FilteredList = props => {
         timeout={500}
         classNames="alert"
       >
-        <FilteredCellar key={item.id} item={item} />
+        <DetailsCard key={item.id} item={item} />
       </CSSTransition>
     );
   });

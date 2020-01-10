@@ -681,7 +681,7 @@ button {
   text-align: center;
 }
 
-.wine__container {
+.cell__container {
   display: grid;
   grid: 1fr / 1fr;
   justify-items: center;
@@ -692,9 +692,10 @@ button {
   transition: 0.7s ease-in;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
-.wine__box {
+.cell__box {
   grid-area: 1 / 1 / 1 / 1;
   display: flex;
   flex-direction: column;
@@ -727,12 +728,12 @@ button {
   transform: translate(0, -10vmin);
   transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
-.wine__container:hover .wine__box .content__overlay {
+.cell__container:hover .cell__box .content__overlay {
   transform: translate(0, 0);
   opacity: 1;
 }
 
-.wine__container:hover .content__overlay {
+.cell__container:hover .content__overlay {
   transform: translate(0, 0);
   opacity: 1;
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import FilteredCity from "./FilteredCity";
+import BusinessCard from "./BusinessCard";
 import { CSSTransition } from "react-transition-group";
 
-const FilteredCitis = props => {
+const CardBox = props => {
   const items = props.sklepy.map(item => {
     return (
-      <FilteredCity key={item.id} item={item} updateModal={props.updateModal} />
+      <BusinessCard key={item.id} item={item} updateModal={props.updateModal} />
     );
   });
 
@@ -24,9 +24,9 @@ const FilteredCitis = props => {
           {"\u{1F504}"}
         </button>
       </CSSTransition>
-      {props.toggleBox && items}
+      {items}
     </div>
   );
 };
 
-export default FilteredCitis;
+export default CardBox;

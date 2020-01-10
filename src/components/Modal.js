@@ -1,7 +1,7 @@
 import React from "react";
 import { useGoogleMap, useMap } from "./MapModal";
 import { useRef } from "react";
-import DetailsCard from "./DetailsCard";
+import ModalCard from "./ModalCard";
 
 export default function Modal({ modalContent, closeModal }) {
   const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;
@@ -25,7 +25,7 @@ export default function Modal({ modalContent, closeModal }) {
         {"\u{274C}"}
       </button>
       <div className="modal__container">
-        <DetailsCard modalContent={modalContent} />
+        <ModalCard modalContent={modalContent} />
         <MapApp />
       </div>
     </div>

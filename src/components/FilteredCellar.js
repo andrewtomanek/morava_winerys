@@ -1,26 +1,11 @@
 import React from "react";
-
-function importAll(r) {
-  let images = {};
-  r.keys().map(item => {
-    return (images[item.replace("./", "")] = r(item));
-  });
-  return images;
-}
-
-const images = importAll(
-  require.context("../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
-);
+import ImageCard from "./ImageCard";
 
 const FilteredCellar = ({ item }) => {
   return (
-    <article className="wine__container">
-      <div className="wine__box">
-        <img
-          className="front__picture"
-          src={images[item.picture]}
-          alt={item.picture}
-        />
+    <article className="cell__container">
+      <div className="cell__box">
+              <ImageCard item={item} />
         <h4 className="pic__caption">{item.name}</h4>
       </div>
       <div className="content__overlay">
