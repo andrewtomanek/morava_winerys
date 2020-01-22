@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
 import ShopsList from "../components/ShopsList";
 import database from "../data/db";
 import "../App.css";
@@ -28,17 +26,13 @@ function Prodejny() {
   };
 
   return (
-    <div className="main__container">
-      <Navigation />
-      <div className="shops__box">
-        <ShopsList shops={initialArray} displayMore={displayMore} />
-        <div className="more__box">
-          <button className="more__button" onClick={() => displayMore()}>
-            Zobrazit více
-          </button>
-        </div>
+    <div className="shops__box">
+      <ShopsList shops={initialArray} displayMore={displayMore} />
+      <div className="more__box">
+        <button className="more__button" onClick={() => displayMore()}>
+          Zobrazit více
+        </button>
       </div>
-      <Footer />
     </div>
   );
 }

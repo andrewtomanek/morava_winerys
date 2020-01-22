@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
 import database from "../data/db";
 import "../App.css";
-
 import Form from "../components/Form";
 import Shops from "../components/Shops";
 import FilteredList from "../components/FilteredList";
@@ -33,28 +30,24 @@ const Vyhledat = () => {
   };
 
   return (
-    <div className="main__container">
-      <Navigation />
-      <div className="page__container">
-        <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
-        <CSSTransition
-          in={!initSklepy}
-          timeout={500}
-          classNames="alert"
-          unmountOnExit
-        >
-          <Shops sklepy={sklepy} initSklepy={!initSklepy} />
-        </CSSTransition>
-        <CSSTransition
-          in={initSklepy}
-          timeout={500}
-          classNames="alert"
-          unmountOnExit
-        >
-          <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
-        </CSSTransition>
-      </div>
-      <Footer />
+    <div className="page__container">
+      <Form searchDatabase={searchDatabase} resetSearch={resetSearch} />
+      <CSSTransition
+        in={!initSklepy}
+        timeout={500}
+        classNames="alert"
+        unmountOnExit
+      >
+        <Shops sklepy={sklepy} initSklepy={!initSklepy} />
+      </CSSTransition>
+      <CSSTransition
+        in={initSklepy}
+        timeout={500}
+        classNames="alert"
+        unmountOnExit
+      >
+        <FilteredList sklepy={sklepy} initSklepy={initSklepy} />
+      </CSSTransition>
     </div>
   );
 };

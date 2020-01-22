@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalContainer from "../components/ModalContainer.js";
+import ModalContainer from "./modal/ModalContainer";
 import CardBox from "./CardBox";
 import { CSSTransition } from "react-transition-group";
 import citis from "../data/citis";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import GoogleMapsApiLoader from "google-maps-api-loader";
-import database from "../data/db";
+import database from "../../data/db";
 
 function importAll(r) {
   let images = {};
@@ -11,7 +11,7 @@ function importAll(r) {
 }
 
 const images = importAll(
-  require.context("../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
+  require.context("../../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
 );
 
 export const useGoogleMap = apiKey => {
@@ -106,7 +106,7 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
         infoWindow.open(map, marker);
       });
     }
-  }, [googleMap, initialConfig, mapContainerRef]); // initialConfigは変わったとしても再マウントするとおかしなことになるので更新対象にしない // googleMapかmapContainerRefが変化したらeffectが発火する。
+  }, [googleMap, initialConfig, mapContainerRef]); 
 
   return map;
 };
