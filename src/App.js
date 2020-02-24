@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Mapa from "./pages/Mapa";
 import Prodejny from "./pages/Prodejny";
 import Vyhledat from "./pages/Vyhledat";
+import Form from "./pages/Form";
 import Footer from "./components/layout/Footer";
 import "./App.css";
 
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/mapa" component={Mapa} exact />
           <Route path="/prodejny" component={Prodejny} exact />
           <Route path="/vyhledat" component={Vyhledat} exact />
+          <Route path="/vlozit" component={Form} exact />
         </Switch>
         <Footer />
         </div>
