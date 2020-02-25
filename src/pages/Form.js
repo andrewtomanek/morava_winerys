@@ -10,23 +10,17 @@ export default function App() {
   );
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
-    //console.log(data);
     let businessList = sessionStorage.getItem("businessList");
-    //console.log(businessList);
     let businessArray = [];
     if (businessList) {
       businessArray = JSON.parse(businessList);
     }
 
     businessArray.push(data);
-    //console.log(businessArray);
     sessionStorage.setItem("businessList", JSON.stringify(businessArray));
+  setCompanyDatabase(businessArray)
   };
 
-  const displayResult = () => {
-    let businessList = sessionStorage.getItem("businessList");
-    console.log(businessList);
-  };
   console.log(errors);
 
   useEffect(() => {
@@ -205,9 +199,7 @@ export default function App() {
         </div>
       </form>
 
-      <button className="add__result" onClick={() => displayResult()}></button>
-
-        <div className="list__container">
+       <div className="list__container">
           {companyDatabase &&
             companyDatabase.map((elem, index) => (
               <ul className="list__box" key={index}>

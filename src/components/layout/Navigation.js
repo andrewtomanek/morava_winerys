@@ -26,9 +26,14 @@ const Navigation = props => (
             Vyhledat{" "}
           </NavLink>
         </li>
-                <li className="nav__item">
+        <li className="nav__item">
           <NavLink className="nav__link" to="/vlozit">
             Pridat{" "}
+          </NavLink>
+        </li>{" "}
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/upload">
+            Upload{" "}
           </NavLink>
         </li>
       </ul>
