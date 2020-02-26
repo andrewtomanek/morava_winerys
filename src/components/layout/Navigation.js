@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import firebase from "../../firebase/firebase";
 import "../../App.css";
 
 const Navigation = props => (
@@ -35,6 +36,19 @@ const Navigation = props => (
           <NavLink className="nav__link" to="/upload">
             Upload{" "}
           </NavLink>
+        </li>{" "}
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/login">
+            Login{" "}
+          </NavLink>
+        </li>{" "}
+        <li className="nav__item">
+          <NavLink className="nav__link" to="/signup">
+            SignUp{" "}
+          </NavLink>
+        </li>        <li className="nav__item">
+        <button onClick={() => firebase.auth().signOut()}>Sign out</button>
+
         </li>
       </ul>
     </nav>
