@@ -12,7 +12,7 @@ const Login = ({ history }) => {
         await firebase
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+        history.push("/upload");
       } catch (error) {
         alert(error);
       }
@@ -23,7 +23,7 @@ const Login = ({ history }) => {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/" />;
+    return <Redirect to="/upload" />;
   }
 
   return (
@@ -39,6 +39,7 @@ const Login = ({ history }) => {
           <input name="password" type="password" placeholder="Password" />
         </label>
         <button type="submit">Log in</button>
+        <button onClick={() => history.push("/signup")}>Registrovat</button>
       </form>
     </div>
   );

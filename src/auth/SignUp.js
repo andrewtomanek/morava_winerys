@@ -10,7 +10,7 @@ const SignUp = ({ history }) => {
       await firebase
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
-      history.push("/");
+      history.push("/upload");
     } catch (error) {
       alert(error);
     }
@@ -29,6 +29,7 @@ const SignUp = ({ history }) => {
           <input name="password" type="password" placeholder="Password" />
         </label>
         <button type="submit">Sign Up</button>
+        <button onClick={() => history.push("/login")}>přihlásit</button>
       </form>
     </div>
   );

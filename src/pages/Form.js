@@ -4,7 +4,7 @@ import database from "../data/db";
 import "../App.css";
 import { useForm } from "react-hook-form";
 
-export default function App() {
+export default function Form({ history }) {
   let [companyDatabase, setCompanyDatabase] = useState(
     JSON.parse(sessionStorage.getItem("businessList")) || null
   );
@@ -198,6 +198,7 @@ export default function App() {
           <button className="add__result" type="submit" >Uložit</button>
         </div>
       </form>
+      <button onClick={() => history.push("/upload")}>Odeslat</button>
 
        <div className="list__container">
           {companyDatabase &&

@@ -18,6 +18,7 @@ function App() {
 
   React.useEffect(() => {
     setCompanyDatabase(JSON.parse(sessionStorage.getItem("businessList")));
+    fetchData();
   }, []);
 
   
