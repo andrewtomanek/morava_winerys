@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Mapa from "./pages/Mapa";
 import Prodejny from "./pages/Prodejny";
 import Vyhledat from "./pages/Vyhledat";
-import Form from "./pages/Form";
+import Vlozit from "./pages/Vlozit";
 import Upload from "./pages/Upload";
 import Footer from "./components/layout/Footer";
 import "./App.css";
@@ -28,7 +28,7 @@ class App extends Component {
               <Route path="/mapa" component={Mapa} exact />
               <Route path="/prodejny" component={Prodejny} exact />
               <Route path="/vyhledat" component={Vyhledat} exact />
-              <Route path="/vlozit" component={Form} exact />
+              <Route path="/vlozit" component={Vlozit} exact />
               <PrivateRoute exact path="/upload" component={Upload} />
             </Switch>
             <Footer />

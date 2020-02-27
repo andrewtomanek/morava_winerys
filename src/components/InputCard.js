@@ -1,23 +1,24 @@
-import React from 'react'
+import React from "react";
 
-function InputCard({item,deleteCompany}) {
-    return (
-        <ul className="list__box">
-        <li className="text__field">{item.businessId}</li>
-        <li className="text__field">{item.name}</li>
-        <li className="text__field">{item.lat}</li>
-        <li className="text__field">{item.lng}</li>
-        <li className="text__field">{item.address}</li>
-        <li className="text__field">{item.postalCode}</li>
-        <li className="text__field">{item.phoneNumber}</li>
-        <li className="text__field">{item.url}</li>
-        <li className="text__field">{item.website}</li>
-        <li className="text__field">{item.email}</li>
-        <li className="text__field">
-          <button onClick={() => deleteCompany(item)}>delete</button>
-        </li>
-      </ul>
-    )
+function InputCard({ item, buttonLabel, pickItem }) {
+  return (
+    <div className="business___box">
+      <h5 className="business__title">{item.name}</h5>
+      <a className="business__website" href={item.url}>
+        {item.website}
+      </a>
+      <p className="business__adress">{item.address}</p>
+      <p className="business__postal">{item.postalCode}</p>
+      <p className="business__telephone">{item.phoneNumber}</p>
+      <p className="business__text">{item.lat}</p>
+      <p className="business__text">{item.lng}</p>
+      <p className="business__text">{item.email}</p>
+
+      {buttonLabel && (
+        <button onClick={() => pickItem(item)}>{buttonLabel}</button>
+      )}
+    </div>
+  );
 }
 
-export default InputCard
+export default InputCard;

@@ -3,8 +3,9 @@ import "../App.css";
 import firebase from "../firebase/firebase";
 import { AuthContext } from "../auth/Auth";
 import ImageUpload from "../components/ImageUpload";
+import InputCard from "../components/InputCard";
 
-function App() {
+const Upload = () => {
   const [companyDatabase, setCompanyDatabase] = React.useState([]);
   const [businesses, setBusinesses] = React.useState([]);
   const [imageURL, setImageURL] = React.useState(null);
@@ -21,7 +22,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    setCompanyDatabase(JSON.parse(sessionStorage.getItem("businessList")));
+    setCompanyDatabase(JSON.parse(localStorage.getItem("businessList")));
     fetchData();
   }, []);
 
@@ -50,67 +51,42 @@ function App() {
   };
 
   return (
-    <div className="upload__container">
+    <div className="upload__page">
       <div className="list__container">
-        {businesses &&
-          businesses.map((elem, index) => (
-            <ul className="list__box" key={index}>
-              <li className="text__field">{elem.businessId}</li>
-              <li className="text__field">{elem.name}</li>
-              <li className="text__field">{elem.lat}</li>
-              <li className="text__field">{elem.lng}</li>
-              <li className="text__field">{elem.address}</li>
-              <li className="text__field">{elem.postalCode}</li>
-              <li className="text__field">{elem.phoneNumber}</li>
-              <li className="text__field">{elem.url}</li>
-              <li className="text__field">{elem.website}</li>
-              <li className="text__field">{elem.email}</li>
-              <li className="text__field">
-                <button onClick={() => onDelete(elem)}>delete</button>
-              </li>
-              <li className="text__field">
-                <img
-                  src={elem.imgSrc || "/img/cont/placeholder720x540.png"}
-                  alt="Uploaded images"
-                  height="300"
-                  width="400"
-                />
-              </li>
-            </ul>
+        {companyDatabase &&
+          companyDatabase.map((elem, index) => (
+            <div className="upload__container" key={elem.name}>
+              <ImageUpload selectedCompany={elem} imageSucces={getImgUrl} />
+              <InputCard item={elem} buttonLabel={false} />
+              {imageURL && (
+                <button onClick={() => setData({ ...elem, imgSrc: imageURL })}>
+                  Upload
+                </button>
+              )}
+            </div>
           ))}
       </div>
 
       <div className="list__container">
-        {companyDatabase &&
-          companyDatabase.map((elem, index) => (
-            <ul className="list__box" key={index}>
-              <li className="text__field">
-                <ImageUpload selectedCompany={elem} imageSucces={getImgUrl} />
-              </li>
-              <li className="text__field">{elem.businessId}</li>
-              <li className="text__field">{elem.name}</li>
-              <li className="text__field">{elem.lat}</li>
-              <li className="text__field">{elem.lng}</li>
-              <li className="text__field">{elem.address}</li>
-              <li className="text__field">{elem.postalCode}</li>
-              <li className="text__field">{elem.phoneNumber}</li>
-              <li className="text__field">{elem.url}</li>
-              <li className="text__field">{elem.website}</li>
-              <li className="text__field">{elem.email}</li>
-              {imageURL && (
-                <li className="text__field">
-                  <button
-                    onClick={() => setData({ ...elem, imgSrc: imageURL })}
-                  >
-                    setData
-                  </button>
-                </li>
-              )}
-            </ul>
+        {businesses &&
+          businesses.map((elem, index) => (
+            <div className="upload__container" key={index}>
+              <InputCard
+                item={elem}
+                pickItem={onDelete}
+                buttonLabel={"Delete"}
+              />
+              <img
+                src={elem.imgSrc || "/img/cont/placeholder720x540.png"}
+                alt="Uploaded images"
+                height="300"
+                width="400"
+              />
+            </div>
           ))}
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Upload;

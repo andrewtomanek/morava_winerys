@@ -166,13 +166,42 @@ button {
   color: white;
 }
 
+.upload__page {
+  display: grid;
+ grid-auto-flow: row;
+  justify-content: space-around;
+  align-content: center;
+  padding: 0.2rem 0rem;
+  background: hsla(205, 100%, 70%, 1);
+  width: 100vw;
+}
+
+.list__container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: space-around;
+  align-content: center;
+  padding: 0.2rem 0rem;
+  background: hsla(205, 100%, 70%, 1);
+  width: 100vw;
+}
+
+.upload__container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-content: center;
+  padding: 0.2rem 0rem;
+  background: hsla(205, 100%, 70%, 1);
+}
+
 .add__container {
   display: grid;
   justify-content: space-around;
   align-content: center;
   padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
-  width: 100vw;
 }
 .add__form {
   display: grid;
@@ -702,6 +731,15 @@ button {
 }
 .business__website {
   color: hsl(120, 70%, 70%);
+}
+
+.business__text {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  background-color: hsla(205, 100%, 70%, 0.9);
+  border-radius: 15px;
 }
 
 .business__title {
