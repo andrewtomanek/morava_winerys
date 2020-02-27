@@ -14,7 +14,7 @@ const ImageUpload = props => {
   };
   const handleUpload = () => {
     const uploadTask = storage
-      .ref(`images/${props.selectedCompany.businessId}`)
+      .ref(`images/${props.selectedCompany.name}`)
       .put(image);
     uploadTask.on(
       "state_changed",
@@ -30,7 +30,7 @@ const ImageUpload = props => {
       () => {
         storage
           .ref("images")
-          .child(props.selectedCompany.businessId)
+          .child(props.selectedCompany.name)
           .getDownloadURL()
           .then(url => {
             setUrl(url);
@@ -48,7 +48,7 @@ const ImageUpload = props => {
   };
   return (
     <div style={style}>
-      <p>{props.selectedCompany.businessId}</p>
+      <p>{props.selectedCompany.name}</p>
       <progress value={progress} max="100" />
       <br />
       <input type="file" onChange={handleChange} />

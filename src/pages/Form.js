@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
-import database from "../data/db";
+import InputCard from "../components/InputCard";
 import "../App.css";
 import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
@@ -211,22 +211,8 @@ export default function Form({ history }) {
 
       <div className="list__container">
         {companyDatabase &&
-          companyDatabase.map((elem, index) => (
-            <ul className="list__box" key={index}>
-              <li className="text__field">{elem.businessId}</li>
-              <li className="text__field">{elem.name}</li>
-              <li className="text__field">{elem.lat}</li>
-              <li className="text__field">{elem.lng}</li>
-              <li className="text__field">{elem.address}</li>
-              <li className="text__field">{elem.postalCode}</li>
-              <li className="text__field">{elem.phoneNumber}</li>
-              <li className="text__field">{elem.url}</li>
-              <li className="text__field">{elem.website}</li>
-              <li className="text__field">{elem.email}</li>
-              <li className="text__field">
-                <button onClick={() => deleteCompany(elem)}>delete</button>
-              </li>
-            </ul>
+          companyDatabase.map((elem) => (
+<InputCard item={elem} deleteCompany={deleteCompany} key={elem.businessId}/>
           ))}
       </div>
     </div>
