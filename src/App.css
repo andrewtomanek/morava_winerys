@@ -325,6 +325,10 @@ button {
   color: white;
 }
 
+.add_checkmark {
+  color: green;
+}
+
 .add__submit {
   background-color: hsla(220, 60%, 50%, 1);
   border: solid 0.2rem hsla(3, 80%, 60%, 1);

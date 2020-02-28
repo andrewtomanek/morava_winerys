@@ -64,7 +64,7 @@ const AddForm = props => {
         {errors.address ? (
           <span className="add_error">{errors.address.message}</span>
         ) : (
-          <span>✔</span>
+          <span className="add_checkmark">✔</span>
         )}
       </div>
       <div className="add__input-field">
@@ -84,7 +84,7 @@ const AddForm = props => {
         {errors.postalCode ? (
           <span className="add_error">{errors.postalCode.message}</span>
         ) : (
-          <span>✔</span>
+          <span className="add_checkmark">✔</span>
         )}
       </div>
       <div className="add__input-field">
@@ -101,7 +101,7 @@ const AddForm = props => {
         {errors.phoneNumber ? (
           <span className="add_error">{errors.phoneNumber.message}</span>
         ) : (
-          <span>✔</span>
+          <span className="add_checkmark">✔</span>
         )}
       </div>
       <div className="add__input-field">
@@ -118,7 +118,7 @@ const AddForm = props => {
         {errors.url ? (
           <span className="add_error">{errors.url.message}</span>
         ) : (
-          <span>✔</span>
+          <span className="add_checkmark">✔</span>
         )}
       </div>
       <div className="add__input-field">
@@ -135,7 +135,7 @@ const AddForm = props => {
         {errors.website ? (
           <span className="add_error">{errors.website.message}</span>
         ) : (
-          <span>✔</span>
+          <span className="add_checkmark">✔</span>
         )}
       </div>
       <div className="add__input-field">
@@ -153,7 +153,7 @@ const AddForm = props => {
         {errors.email ? (
           <span className="add_error">{errors.email.message}</span>
         ) : (
-          <span>✔</span>
+          <span className="add_checkmark">✔</span>
         )}
       </div>
       <div className="add__input-field">
