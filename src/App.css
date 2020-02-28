@@ -171,7 +171,7 @@ button {
   grid-auto-flow: row;
   justify-content: center;
   align-items: center;
-  grid-gap: 0.2rem;
+  grid-gap: 2rem 0;
 }
 
 .login__input {
@@ -180,17 +180,16 @@ button {
   padding: 0.1rem 0.3rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: hsla(220, 60%, 50%, 1);
+  color: hsla(220, 60%, 50%, 1);
   border: solid 0.2rem hsla(3, 80%, 60%, 1);
-  color: white;
+  background-color: white;
 }
 
 .login__label {
   padding: 0.3rem 0.1rem;
   font-size: 1rem;
-  font-weight: 900;
-  background-color: hsla(220, 60%, 50%, 1);
-  color: white;
+  font-weight: 800;
+  color: hsla(220, 60%, 50%, 1);
 }
 
 .login__button {
@@ -207,12 +206,10 @@ button {
 .login__title {
   margin: 0;
   padding: 0.1rem 0.3rem;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
-  background-color: hsla(220, 60%, 50%, 1);
-  border: solid 0.2rem hsla(3, 80%, 60%, 1);
-  color: white;
+  color: hsla(3, 80%, 60%, 1);
 }
 
 .login__page {
@@ -220,21 +217,21 @@ button {
   grid-auto-flow: row;
   justify-content: space-around;
   align-content: center;
-  padding: 0.2rem 0rem;
+  padding: 0rem;
   background: hsla(205, 100%, 70%, 1);
   width: 100vw;
-  border: solid 0.2rem rgb(235, 71, 153);
+  min-height: 80vh;
 }
 
 .list__container {
   display: grid;
-  grid-auto-flow: column;
   justify-content: space-around;
   align-content: center;
-  padding: 0.2rem 0rem;
+  padding: 0.2rem 0.3rem;
   background: hsla(205, 100%, 70%, 1);
   width: 100vw;
-  border: solid 0.2rem rgb(235, 71, 221);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.2rem 0.3rem;
 }
 
 .card__box {
@@ -242,10 +239,8 @@ button {
   padding: 0;
   display: grid;
   grid-gap: 0.3rem;
-  justify-items: center;
-  justify-content: space-between;
-  align-items: center;
-  align-content: space-between;
+  justify-content: center;
+  align-content: center;
   background: hsla(205, 100%, 50%, 1);
   padding: 0.2rem 0.3rem;
   border-radius: 1rem;
@@ -279,9 +274,8 @@ button {
   justify-items: center;
   align-content: center;
   padding: 0.2rem 0rem;
-  background: hsla(205, 100%, 70%, 1);
-  border: solid 0.2rem rgb(71, 216, 235);
-  width: 30vw;
+  background: hsla(205, 100%, 50%, 1);
+  border-radius: 1rem;  width: 30vw;
 }
 
 .add__container {
@@ -290,12 +284,11 @@ button {
   align-content: center;
   padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
-  border: solid 0.2rem rgb(224, 235, 71);
 }
 .add__form {
   display: grid;
-  align-content: center;	
-    justify-content: center;
+  align-content: center;
+  justify-content: center;
   grid-auto-flow: row;
   grid-gap: 1rem;
   padding: 0.2rem 1.3rem;
@@ -308,7 +301,7 @@ button {
   grid-template-columns: 2fr 3fr 2fr;
   grid-gap: 0.2rem 0.3rem;
   padding: 0.2rem 0.3rem;
-  align-content: center;	
+  align-content: center;
   justify-content: center;
 }
 
@@ -388,10 +381,9 @@ button {
 .picture__input {
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: 1fr 1fr 1fr 4fr;
-  grid-gap: 0.1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:  center;
   justify-items: center;
   align-items: center;
 }
@@ -399,6 +391,7 @@ button {
 .upload__picture {
   height: 20vh;
   margin: 0;
+  padding: 0.3rem 0.2rem;
 }
 
 .add__button {

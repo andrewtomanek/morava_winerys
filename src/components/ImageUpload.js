@@ -39,12 +39,18 @@ const ImageUpload = props => {
       }
     );
   };
- 
+
   return (
     <div className="picture__input">
       <progress className="progress__bar" value={progress} max="100" />
       <input className="file__input" type="file" onChange={handleChange} />
-      <button className="upload__button" onClick={handleUpload} disabled={!image}>Upload image</button>
+      <button
+        className="upload__button"
+        onClick={handleUpload}
+        disabled={!image}
+      >
+        Nahrát foto
+      </button>
       <img
         src={url || "/img/cont/placeholder720x540.png"}
         alt="Uploaded images"

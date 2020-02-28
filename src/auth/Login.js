@@ -28,18 +28,30 @@ const Login = ({ history }) => {
 
   return (
     <div className="login__page">
-      <h1 className="login__title">Log in</h1>
       <form className="login__form" onSubmit={handleLogin}>
-        <label className="login__label">
-          Email
-        </label>
-          <input className="login__input" name="email" type="email" placeholder="Email" />
-        <label className="login__label">
-          Password
-        </label>
-          <input className="login__input" name="password" type="password" placeholder="Password" />
-        <button className="login__button" type="submit">Log in</button>
-        <button className="login__switch" onClick={() => history.push("/signup")}>Registrovat</button>
+        <h1 className="login__title">Přihlášení</h1>
+        <input
+          className="login__input"
+          name="email"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          className="login__input"
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
+        <button className="login__button" type="submit">
+        Přihlásit
+        </button>
+        <h1 className="login__title">nebo</h1>
+        <button
+          className="login__switch"
+          onClick={() => history.push("/signup")}
+        >
+          Registrovat
+        </button>
       </form>
     </div>
   );

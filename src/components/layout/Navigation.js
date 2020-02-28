@@ -42,7 +42,7 @@ const Navigation = props => {
               <span>{currentUser.email}</span>
             </li>
           <li className="nav__item">
-            <button onClick={() => firebase.auth().signOut()}>
+            <button className="login__button" onClick={() => firebase.auth().signOut()}>
               Odhlásit
             </button>
           </li>

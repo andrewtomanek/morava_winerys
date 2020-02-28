@@ -59,8 +59,11 @@ const Upload = () => {
               <ImageUpload selectedCompany={elem} imageSucces={getImgUrl} />
               <InputCard item={elem} buttonLabel={false} />
               {imageURL && (
-                      <button className="upload__button" onClick={() => setData({ ...elem, imgSrc: imageURL })}>
-                  Upload
+                <button
+                  className="upload__button"
+                  onClick={() => setData({ ...elem, imgSrc: imageURL })}
+                >
+                  Nahrát data
                 </button>
               )}
             </div>

@@ -14,7 +14,7 @@ function AddInput({labelString ,name,type,placeholder,register,errors,validation
         {errors.lat ? (
           <span className="add_error">{errors.lat.message}</span>
         ) : (
-          <span>empty</span>
+          <span>✔</span>
         )}
       </div>
     )
