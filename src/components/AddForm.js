@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 
 const AddForm = props => {
   const { register, handleSubmit, errors } = useForm();
+  console.log(errors);
+  console.log(register);
   return (
     <form className="add__form" onSubmit={handleSubmit(props.onSubmit)}>
       <AddInput
@@ -41,11 +43,11 @@ const AddForm = props => {
         register={register}
         errors={errors}
         validationOptions={{
-            required: { value: true, message: "povinné pole" },
-            minLength: 5,
-            maxLength: 20,
-            pattern: /^[A-Za-z]+$/i
-          }}
+          required: { value: true, message: "povinné pole" },
+          minLength: 5,
+          maxLength: 20,
+          pattern: /^[A-Za-z]+$/i
+        }}
       />
       <div className="add__input-field">
         <label className="add__label">Addresa</label>
@@ -155,7 +157,7 @@ const AddForm = props => {
         )}
       </div>
       <div className="add__input-field">
-        <button className="add__result" type="submit">
+        <button className="add__button upload__button" type="submit">
           Uložit
         </button>
       </div>

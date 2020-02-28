@@ -166,34 +166,122 @@ button {
   color: white;
 }
 
-.upload__page {
+.login__form {
   display: grid;
- grid-auto-flow: row;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0.2rem;
+}
+
+.login__input {
+  width: 100%;
+  margin: 0;
+  padding: 0.1rem 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: hsla(220, 60%, 50%, 1);
+  border: solid 0.2rem hsla(3, 80%, 60%, 1);
+  color: white;
+}
+
+.login__label {
+  padding: 0.3rem 0.1rem;
+  font-size: 1rem;
+  font-weight: 900;
+  background-color: hsla(220, 60%, 50%, 1);
+  color: white;
+}
+
+.login__button {
+  margin: 0;
+  padding: 0.1rem 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: hsla(220, 60%, 50%, 1);
+  border: solid 0.2rem hsla(3, 80%, 60%, 1);
+  color: white;
+}
+
+.login__title {
+  margin: 0;
+  padding: 0.1rem 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: hsla(220, 60%, 50%, 1);
+  border: solid 0.2rem hsla(3, 80%, 60%, 1);
+  color: white;
+}
+
+.login__page {
+  display: grid;
+  grid-auto-flow: row;
   justify-content: space-around;
   align-content: center;
   padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
   width: 100vw;
+  border: solid 0.2rem rgb(235, 71, 153);
 }
 
 .list__container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-auto-flow: column;
   justify-content: space-around;
   align-content: center;
   padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
   width: 100vw;
+  border: solid 0.2rem rgb(235, 71, 221);
+}
+
+.card__box {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 0.3rem;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  background: hsla(205, 100%, 50%, 1);
+  padding: 0.2rem 0.3rem;
+  border-radius: 1rem;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.1rem;
+  padding: 0 0.1rem;
+  color: hsla(3, 80%, 60%, 1);
+  font-weight: 700;
+  text-align: center;
+  background-color: hsla(205, 100%, 80%, 0.9);
+  border-radius: 15px;
+}
+
+.card__text {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  background-color: hsla(205, 100%, 70%, 0.9);
+  border-radius: 15px;
+  margin: 0;
 }
 
 .upload__container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
   grid-template-columns: 1fr;
-  justify-content: space-around;
+  justify-items: center;
   align-content: center;
   padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
+  border: solid 0.2rem rgb(71, 216, 235);
+  width: 30vw;
 }
 
 .add__container {
@@ -202,24 +290,26 @@ button {
   align-content: center;
   padding: 0.2rem 0rem;
   background: hsla(205, 100%, 70%, 1);
+  border: solid 0.2rem rgb(224, 235, 71);
 }
 .add__form {
   display: grid;
-  justify-items: center;
-  justify-content: center;
+  align-content: center;	
+    justify-content: center;
   grid-auto-flow: row;
   grid-gap: 1rem;
   padding: 0.2rem 1.3rem;
-  background:     hsla(205, 100%, 50%, 1);
-  width: 100%;
+  background: hsla(205, 100%, 50%, 1);
+  width: 95%;
 }
 
 .add__input-field {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
-  grid-gap: 1rem 2rem;
-  padding: 0.2rem 1.3rem;
-  width: 100%;
+  grid-gap: 0.2rem 0.3rem;
+  padding: 0.2rem 0.3rem;
+  align-content: center;	
+  justify-content: center;
 }
 
 .add__label {
@@ -230,18 +320,17 @@ button {
 }
 
 .add__input {
-  place-self: center;
   color: hsla(220, 60%, 50%, 1);
   padding: 0.2rem 1.3rem;
   border-radius: 1rem;
+  width: 100%;
 }
-    
 
 .add_error {
   place-self: end;
-      background-color: hsla(3, 80%, 60%, 1);
-      color: white;
-    }
+  background-color: hsla(3, 80%, 60%, 1);
+  color: white;
+}
 
 .add__submit {
   background-color: hsla(220, 60%, 50%, 1);
@@ -274,6 +363,114 @@ button {
   width: 90%;
 }
 
+.progress__bar {
+  padding: 0 0.1rem;
+  color: hsla(3, 80%, 60%, 1);
+  text-align: center;
+  background-color: hsla(205, 100%, 80%, 0.9);
+  border-radius: 15px;
+  width: 90%;
+}
+
+.progress__bar {
+  margin: 0;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  padding: 0 0.1rem;
+  color: hsla(3, 80%, 60%, 1);
+  font-weight: 700;
+  text-align: center;
+  background-color: hsla(205, 100%, 80%, 0.9);
+  border-radius: 15px;
+  width: 90%;
+}
+
+.picture__input {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 1fr 1fr 1fr 4fr;
+  grid-gap: 0.1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.upload__picture {
+  height: 20vh;
+  margin: 0;
+}
+
+.add__button {
+  grid-area: 2 / 2 / 2 / 2;
+}
+
+.upload__button {
+  color: hsla(205, 100%, 50%, 1);
+  color: white;
+  background-color: hsla(3, 80%, 60%, 1);
+  padding: 0.3rem 0.2rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.upload__button:hover {
+  animation: floating-text 500ms ease-in-out;
+  text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.4), 0 0 0.2em rgba(0, 0, 0, 0.3),
+    0 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  color: hsla(3, 80%, 60%, 1);
+  background-color: white;
+}
+
+.upload__button:disabled {
+  animation: none;
+  border: 0.2rem solid grey;
+  background-color: white;
+  color: grey;
+  cursor: not-allowed;
+}
+
+.file__input {
+  margin: 0;
+  padding: 0.2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: hsla(205, 88%, 43%, 0.9);
+  font-weight: 700;
+  text-align: center;
+  background-color: hsla(205, 100%, 80%, 0.9);
+  border-radius: 15px;
+  width: 90%;
+}
+
+.file__input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.file__input::before {
+  content: "Select image";
+  display: inline-block;
+  color: white;
+  background-color: hsla(205, 88%, 43%, 0.9);
+  border: solid 0.2rem hsla(3, 80%, 60%, 1);
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.2rem;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+.file__input:hover::before {
+  background-color: white;
+  color: hsla(205, 70%, 50%, 0.9);
+}
 
 .search__shops {
   display: grid;
@@ -303,7 +500,6 @@ button {
   background-color: white;
   padding: 1vmin 5vmin;
   border-radius: 1rem;
-
   font-size: 2.2rem;
   font-weight: 900;
   text-align: center;
@@ -324,7 +520,6 @@ button {
   color: white;
   background-color: hsla(3, 80%, 60%, 1);
   padding: 0.3rem 0.2rem;
-
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
@@ -729,6 +924,17 @@ button {
   background-color: hsla(205, 100%, 50%, 0.1);
   border-radius: 10px;
 }
+
+.business___box {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+
 .business__website {
   color: hsl(120, 70%, 70%);
 }
@@ -740,6 +946,7 @@ button {
   padding: 0 0.3rem;
   background-color: hsla(205, 100%, 70%, 0.9);
   border-radius: 15px;
+  margin: 0;
 }
 
 .business__title {

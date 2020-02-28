@@ -59,7 +59,7 @@ const Upload = () => {
               <ImageUpload selectedCompany={elem} imageSucces={getImgUrl} />
               <InputCard item={elem} buttonLabel={false} />
               {imageURL && (
-                <button onClick={() => setData({ ...elem, imgSrc: imageURL })}>
+                      <button className="upload__button" onClick={() => setData({ ...elem, imgSrc: imageURL })}>
                   Upload
                 </button>
               )}
@@ -79,8 +79,7 @@ const Upload = () => {
               <img
                 src={elem.imgSrc || "/img/cont/placeholder720x540.png"}
                 alt="Uploaded images"
-                height="300"
-                width="400"
+                className="upload__picture"
               />
             </div>
           ))}

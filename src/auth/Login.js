@@ -27,19 +27,19 @@ const Login = ({ history }) => {
   }
 
   return (
-    <div>
-      <h1>Log in</h1>
-      <form onSubmit={handleLogin}>
-        <label>
+    <div className="login__page">
+      <h1 className="login__title">Log in</h1>
+      <form className="login__form" onSubmit={handleLogin}>
+        <label className="login__label">
           Email
-          <input name="email" type="email" placeholder="Email" />
         </label>
-        <label>
+          <input className="login__input" name="email" type="email" placeholder="Email" />
+        <label className="login__label">
           Password
-          <input name="password" type="password" placeholder="Password" />
         </label>
-        <button type="submit">Log in</button>
-        <button onClick={() => history.push("/signup")}>Registrovat</button>
+          <input className="login__input" name="password" type="password" placeholder="Password" />
+        <button className="login__button" type="submit">Log in</button>
+        <button className="login__switch" onClick={() => history.push("/signup")}>Registrovat</button>
       </form>
     </div>
   );

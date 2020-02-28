@@ -31,14 +31,28 @@ export default function Form({ history }) {
 
   return (
     <div className="add__container">
- <AddForm onSubmit={onSubmit}/>
-      <div className="list__container">
-        {companyDatabase &&
-          companyDatabase.map((elem) => (
-            <InputCard item={elem} pickItem={deleteCompany} buttonLabel={"Smazat"} key={elem.businessId}/>
+      <AddForm onSubmit={onSubmit} />
+      {companyDatabase && (
+        <>
+          <div className="list__container">
+            {companyDatabase.map(elem => (
+              <InputCard
+                item={elem}
+                pickItem={deleteCompany}
+                buttonLabel={"Smazat"}
+                key={elem.businessId}
+              />
             ))}
-      </div>
-            <button onClick={() => history.push("/upload")}>Odeslat</button>
+          </div>
+          <button
+            className="upload__button"
+            onClick={() => history.push("/upload")}
+            disabled={!companyDatabase}
+          >
+            Odeslat
+          </button>
+        </>
+      )}
     </div>
   );
 }

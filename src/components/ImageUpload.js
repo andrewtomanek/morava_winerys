@@ -39,26 +39,16 @@ const ImageUpload = props => {
       }
     );
   };
-
-  const style = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center"
-  };
+ 
   return (
-    <div style={style}>
-      <p>{props.selectedCompany.name}</p>
-      <progress value={progress} max="100" />
-      <br />
-      <input type="file" onChange={handleChange} />
-      <button onClick={handleUpload}>Upload</button>
-      <br />
+    <div className="picture__input">
+      <progress className="progress__bar" value={progress} max="100" />
+      <input className="file__input" type="file" onChange={handleChange} />
+      <button className="upload__button" onClick={handleUpload} disabled={!image}>Upload image</button>
       <img
         src={url || "/img/cont/placeholder720x540.png"}
         alt="Uploaded images"
-        height="300"
-        width="400"
+        className="upload__picture"
       />
     </div>
   );
