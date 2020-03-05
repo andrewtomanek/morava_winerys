@@ -31,22 +31,28 @@ const Navigation = props => {
               Vyhledat{" "}
             </NavLink>
           </li>
+        </ul>
+
+        <ul className="nav__list">
           <li className="nav__item">
             <NavLink className="nav__link" to="/vlozit">
               Vložit{" "}
             </NavLink>
           </li>{" "}
-                {currentUser && (
-<>
-            <li className="nav__item">
-              <span>{currentUser.email}</span>
-            </li>
-          <li className="nav__item">
-            <button className="login__button" onClick={() => firebase.auth().signOut()}>
-              Odhlásit
-            </button>
-          </li>
-          </>
+          {currentUser && (
+            <>
+              <li className="nav__item">
+                <span>{currentUser.email}</span>
+              </li>
+              <li className="nav__item">
+                <button
+                  className="login__button"
+                  onClick={() => firebase.auth().signOut()}
+                >
+                  Odhlásit
+                </button>
+              </li>
+            </>
           )}
         </ul>
       </nav>
