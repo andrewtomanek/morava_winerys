@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
-import AddForm from "../components/AddForm";
+import React, { useState } from "react";
+import AddForm from "../components/forms/AddForm";
 import InputCard from "../components/InputCard";
 import "../App.css";
 import { v4 as uuidv4 } from "uuid";

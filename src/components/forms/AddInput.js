@@ -11,8 +11,8 @@ function AddInput({labelString ,name,type,placeholder,register,errors,validation
           name={name}
           ref={register(validationOptions)}
         />
-        {errors.lat ? (
-          <span className="add_error">{errors.lat.message}</span>
+        {errors[name] ? (
+          <span className="add_error">{errors[name].message}</span>
         ) : (
           <span className="add_checkmark">✔</span>
         )}

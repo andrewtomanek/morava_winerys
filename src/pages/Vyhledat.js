@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import database from "../data/db";
 import "../App.css";
-import Form from "../components/Form";
+import Form from "../components/forms/Form";
 import Shops from "../components/Shops";
 import FilteredList from "../components/FilteredList";
 

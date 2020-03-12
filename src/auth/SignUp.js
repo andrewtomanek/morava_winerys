@@ -30,7 +30,7 @@ const SignUp = ({ history }) => {
     className="login__input"
     name="password"
     type="password"
-    placeholder="Password"
+    placeholder="heslo"
   />
   <button className="login__button" type="submit">
   Registrovat
