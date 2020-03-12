@@ -1,5 +1,5 @@
 import React from "react";
-import DetailsCard from "./DetailsCard";
+import DetailsCard from "./cards/DetailsCard";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const FilteredList = props => {

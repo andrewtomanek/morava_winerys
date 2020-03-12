@@ -1,5 +1,5 @@
 import React from "react";
-import BusinessCard from "./BusinessCard";
+import BusinessCard from "./cards/BusinessCard";
 import { CSSTransition } from "react-transition-group";
 
 const CardBox = props => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useGoogleMap, useMap } from "./MapModal";
 import { useRef } from "react";
-import ModalCard from "./ModalCard";
+import ModalCard from "../cards/ModalCard";
 
 export default function Modal({ modalContent, closeModal }) {
   const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_KEY;

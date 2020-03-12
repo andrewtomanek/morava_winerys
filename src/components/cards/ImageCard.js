@@ -9,7 +9,7 @@ function importAll(r) {
 }
 
 const images = importAll(
-  require.context("../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
+  require.context("../../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
 );
 
 export default function ImageCard({ item }) {

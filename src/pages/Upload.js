@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import "../App.css";
 import firebase from "../firebase/firebase";
 import { AuthContext } from "../auth/Auth";
-import ImageUpload from "../components/ImageUpload";
-import InputCard from "../components/InputCard";
+import ImageUpload from "../components/forms/ImageUpload";
+import InputCard from "../components/cards/InputCard";
 
 const Upload = () => {
-  const [companyDatabase, setCompanyDatabase] = React.useState([]);
-  const [businesses, setBusinesses] = React.useState([]);
-  const [imageURL, setImageURL] = React.useState(null);
+  const [companyDatabase, setCompanyDatabase] = useState([]);
+  const [businesses, setBusinesses] = useState([]);
+  const [imageURL, setImageURL] = useState(null);
   const { currentUser } = useContext(AuthContext);
 
   const fetchData = async () => {
@@ -21,7 +21,7 @@ const Upload = () => {
     setBusinesses(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setCompanyDatabase(JSON.parse(localStorage.getItem("businessList")));
     fetchData();
   }, []);

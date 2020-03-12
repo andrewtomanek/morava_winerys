@@ -35,7 +35,7 @@ export const useMap = ({
 
       map.fitBounds(bounds);
       function createMarker(latlng) {
-        let marker = new googleMap.maps.Marker({
+       new googleMap.maps.Marker({
           position: latlng,
           map: map,
           title: "Hello World!",

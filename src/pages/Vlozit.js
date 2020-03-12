@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddForm from "../components/forms/AddForm";
-import InputCard from "../components/InputCard";
+import InputCard from "../components/cards/InputCard";
 import "../App.css";
 import { v4 as uuidv4 } from "uuid";
 
