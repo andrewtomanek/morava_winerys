@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import ModalContainer from "./modal/ModalContainer";
-import CardBox from "./CardBox";
+import ModalContainer from "../modal/ModalContainer";
+import CardBox from "../CardBox";
 import { CSSTransition } from "react-transition-group";
-import citis from "../data/citis";
-import "../App.css";
-import CityList from "./CityList";
-import database from "../data/db";
+import citis from "../../data/citis";
+import "../../App.css";
+import CityList from "../CityList";
+import database from "../../data/db";
 
 export default function GridContainer() {
   const [filteredSklepy, setfilteredSklepy] = useState([]);

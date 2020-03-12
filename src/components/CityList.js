@@ -2,10 +2,13 @@ import React from "react";
 import City from "./City";
 
 const CityList = props => {
-  const items = props.citis.map(item => {
-    return <City key={item} item={item} pickItem={props.pickItem} />;
-  });
-  return <div className="citis__box">{items}</div>;
+  return (
+    <div className="citis__box">
+      {props.citis.map(item => (
+        <City key={item} item={item} pickItem={props.pickItem} />
+      ))}
+    </div>
+  );
 };
 
 export default CityList;
