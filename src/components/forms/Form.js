@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = props => {
+const Form = (props) => {
   const [searchString, setSearchString] = useState("");
   const [oldSearchString, setOldSearchString] = useState("");
 
@@ -9,7 +9,7 @@ const Form = props => {
     props.resetSearch();
   };
 
-  const onChange = event => {
+  const onChange = (event) => {
     const newSearchString = event.target.value.trim();
     setSearchString(newSearchString);
     setOldSearchString(newSearchString);
@@ -24,7 +24,7 @@ const Form = props => {
     }
     props.searchDatabase(newSearchString);
   };
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     if (searchString.trim() === "") return;
     const newSearchString = searchString.trim();
@@ -40,6 +40,7 @@ const Form = props => {
           placeholder="Zadejte hledané slovo"
           value={searchString.toLowerCase()}
           onChange={onChange}
+          autoFocus
         />
         <button className="search__button" onClick={() => resetSearch()}>
           Reset
