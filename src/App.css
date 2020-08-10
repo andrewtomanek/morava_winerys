@@ -32,9 +32,6 @@ p {
 header {
   width: 100vw;
   grid-area: 1 / 1 / 1 / 1;
-  color: #f2f2f2;
-  font-size: 1.2rem;
-  font-weight: 700;
   padding: 0.5rem;
   text-align: center;
   background-color: hsla(3, 90%, 60%, 1);
@@ -69,8 +66,11 @@ header {
 .nav__link {
   display: block;
   padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-decoration: none;
   color: white;
+  background-color: hsla(3, 90%, 60%, 1);
   border-radius: 0.1rem;
   transition: all 400ms;
 }
@@ -81,6 +81,14 @@ header {
   color: #00179b;
 }
 
+.nav__text {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: hsla(3, 90%, 60%, 1);
+  border-radius: 0.1rem;
+}
 .main__container {
   width: 100vw;
   display: grid;

@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../App.css";
 import firebase from "../firebase/firebase";
 import { AuthContext } from "../auth/Auth";
@@ -18,7 +18,7 @@ const Upload = () => {
       .doc(currentUser.uid)
       .collection("locations")
       .get();
-    setBusinesses(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+    setBusinesses(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Upload = () => {
     fetchData();
   }, []);
 
-  const setData = pickedData => {
+  const setData = (pickedData) => {
     const db = firebase.firestore();
     db.collection("businesses")
       .doc(currentUser.uid)
@@ -36,11 +36,11 @@ const Upload = () => {
     fetchData();
   };
 
-  const getImgUrl = imgData => {
+  const getImgUrl = (imgData) => {
     setImageURL(imgData);
   };
 
-  const onDelete = pickedData => {
+  const onDelete = (pickedData) => {
     const db = firebase.firestore();
     db.collection("businesses")
       .doc(currentUser.uid)

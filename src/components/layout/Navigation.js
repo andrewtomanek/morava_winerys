@@ -4,7 +4,7 @@ import firebase from "../../firebase/firebase";
 import { AuthContext } from "../../auth/Auth";
 import "../../App.css";
 
-const Navigation = props => {
+const Navigation = () => {
   const { currentUser } = useContext(AuthContext);
 
   return (
@@ -42,7 +42,7 @@ const Navigation = props => {
           {currentUser && (
             <>
               <li className="nav__item">
-                <span>{currentUser.email}</span>
+                <span className="nav__text">{currentUser.email}</span>
               </li>
               <li className="nav__item">
                 <button

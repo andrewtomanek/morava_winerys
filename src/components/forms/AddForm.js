@@ -3,10 +3,9 @@ import AddInput from "./AddInput";
 
 import { useForm } from "react-hook-form";
 
-const AddForm = props => {
+const AddForm = (props) => {
   const { register, handleSubmit, errors } = useForm();
   console.log(errors);
-  console.log(register);
   return (
     <form className="add__form" onSubmit={handleSubmit(props.onSubmit)}>
       <AddInput
@@ -18,8 +17,8 @@ const AddForm = props => {
         errors={errors}
         validationOptions={{
           required: { value: true, message: "povinné pole" },
-          minLength: { value: 3, message: "too short" },
-          maxLength: { value: 10, message: "error message" }
+          minLength: { value: 2, message: "too short" },
+          maxLength: { value: 10, message: "error message" },
         }}
       />
       <AddInput
@@ -31,8 +30,8 @@ const AddForm = props => {
         errors={errors}
         validationOptions={{
           required: { value: true, message: "povinné pole" },
-          minLength: { value: 3, message: "too short" },
-          maxLength: { value: 10, message: "error message" }
+          minLength: { value: 2, message: "too short" },
+          maxLength: { value: 10, message: "error message" },
         }}
       />{" "}
       <AddInput
@@ -46,7 +45,7 @@ const AddForm = props => {
           required: { value: true, message: "povinné pole" },
           minLength: 5,
           maxLength: 20,
-          pattern: /^[A-Za-z]+$/i
+          pattern: /^[A-Za-z]+$/i,
         }}
       />
       <AddInput
@@ -59,7 +58,7 @@ const AddForm = props => {
         validationOptions={{
           required: { value: true, message: "povinné pole" },
           minLength: 5,
-          maxLength: 20
+          maxLength: 20,
         }}
       />
       <AddInput
@@ -72,7 +71,7 @@ const AddForm = props => {
         validationOptions={{
           required: { value: true, message: "povinné pole" },
           minLength: { value: 5, message: "minimálně 5 čísel" },
-          maxLength: { value: 20, message: "maximálně 20 znaků" }
+          maxLength: { value: 20, message: "maximálně 20 znaků" },
         }}
       />
       <AddInput
@@ -85,7 +84,7 @@ const AddForm = props => {
         validationOptions={{
           required: { value: true, message: "povinné pole" },
           minLength: { value: 9, message: "minimálně 9 čísel" },
-          maxLength: { value: 13, message: "maximálně 13 čísel" }
+          maxLength: { value: 13, message: "maximálně 13 čísel" },
         }}
       />
       <AddInput
@@ -99,7 +98,7 @@ const AddForm = props => {
         errors={errors}
         validationOptions={{
           required: { value: true, message: "povinné pole" },
-          minLength: { value: 9, message: "minimálně 9 znaků" }
+          minLength: { value: 9, message: "minimálně 9 znaků" },
         }}
       />
       <AddInput
@@ -111,7 +110,7 @@ const AddForm = props => {
         errors={errors}
         validationOptions={{
           required: { value: true, message: "povinné pole" },
-          minLength: { value: 5, message: "minimálně 5 znaků" }
+          minLength: { value: 5, message: "minimálně 5 znaků" },
         }}
       />
       <AddInput
@@ -123,7 +122,7 @@ const AddForm = props => {
         errors={errors}
         validationOptions={{
           required: { value: true, message: "povinné pole" },
-          pattern: /^\S+@\S+$/i
+          pattern: /^\S+@\S+$/i,
         }}
       />
       <div className="add__input-field">

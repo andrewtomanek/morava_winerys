@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../App.css";
 
-const Footer = props => (
+const Footer = () => (
   <footer>
     <div className="footer__box">
       <div className="footer__content">
