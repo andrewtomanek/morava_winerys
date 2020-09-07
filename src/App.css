@@ -30,6 +30,9 @@ p {
 }
 
 header {
+  display: grid;
+  justify-content: center;
+  align-content: center;
   width: 100vw;
   grid-area: 1 / 1 / 1 / 1;
   padding: 0.5rem;
@@ -131,7 +134,7 @@ button {
   justify-items: center;
   justify-content: center;
   padding: 0.2rem 0rem;
-  background: hsla(205, 100%, 70%, 1);
+  background: hsla(205, 100%, 50%, 1);
   width: 100vw;
 }
 .search__form {
@@ -141,11 +144,6 @@ button {
   grid-template-columns: 70vw 1fr;
   grid-gap: 2rem;
   padding: 0.2rem 1.3rem;
-  background: linear-gradient(
-    to left,
-    hsla(205, 100%, 50%, 1),
-    hsla(205, 100%, 70%, 1)
-  );
   width: 100%;
 }
 
@@ -153,6 +151,7 @@ button {
   color: hsla(220, 60%, 50%, 1);
   padding: 0.2rem 1.3rem;
   border-radius: 1rem;
+  width: 90%;
 }
 
 .search__button {
@@ -781,7 +780,7 @@ button {
 .citis__box {
   width: 100vw;
   min-height: 80vh;
-  padding: 4rem 0.1rem;
+  padding: 2rem 0.1rem;
   margin: 0rem;
   display: flex;
   flex-flow: row wrap;
