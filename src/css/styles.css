@@ -1178,6 +1178,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 48vw);
     gap: 3vmin 0vmin;
+    width: 99vw;
   }
   .filtered__container {
     display: grid;
@@ -1235,6 +1236,7 @@ footer {
     grid-template-columns: 100vw;
     justify-content: stretch;
     gap: 4vmin 1vmin;
+    width: 99vw;
   }
   .filtered__container {
     display: grid;
