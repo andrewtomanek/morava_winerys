@@ -3,7 +3,6 @@ import ModalContainer from "../modal/ModalContainer";
 import CardBox from "../CardBox";
 import { CSSTransition } from "react-transition-group";
 import citis from "../../data/citis";
-import "../../App.css";
 import CityList from "../CityList";
 import database from "../../data/db";
 

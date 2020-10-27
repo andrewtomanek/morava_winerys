@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import firebase from "../../firebase/firebase";
 import { AuthContext } from "../../auth/Auth";
-import "../../App.css";
 
 const Navigation = () => {
   const { currentUser } = useContext(AuthContext);

@@ -1,0 +1,38 @@
+@mixin full-space {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin zero-space {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin one-area {
+  grid-area: 1 / 1 / 1 / 1;
+}
+
+@mixin center-grid {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-content {
+  align-content: center;
+  justify-content: center;
+}
+
+@mixin medium-padding {
+  padding: 0.2rem 1.3rem;
+}
+
+@mixin small-padding {
+  padding: 0.2rem 0.3rem;
+}
+@mixin text-format {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.3rem;
+  border-radius: 15px;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../App.css";
+
+
 import firebase from "../firebase/firebase";
 import { AuthContext } from "../auth/Auth";
 import ImageUpload from "../components/forms/ImageUpload";

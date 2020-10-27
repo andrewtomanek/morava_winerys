@@ -12,7 +12,7 @@ import Vyhledat from "./pages/Vyhledat";
 import Vlozit from "./pages/Vlozit";
 import Upload from "./pages/Upload";
 import Footer from "./components/layout/Footer";
-import "./App.css";
+import "./css/styles.css";
 
 class App extends Component {
   render() {

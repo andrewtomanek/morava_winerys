@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ShopsList from "../components/ShopsList";
 import database from "../data/db";
-import "../App.css";
+
+
 
 function Prodejny() {
   let [initialArray, setInitialArray] = useState([]);
@@ -27,9 +28,9 @@ function Prodejny() {
 
   return (
     <div className="shops__box">
-      <ShopsList shops={initialArray} displayMore={displayMore} />
+      <ShopsList shops={initialArray} />
       <div className="more__box">
-        <button className="more__button" onClick={() => displayMore()}>
+        <button className="more__button" onClick={displayMore}>
           Zobrazit více
         </button>
       </div>
