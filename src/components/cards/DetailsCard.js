@@ -5,8 +5,8 @@ const DetailsCard = ({ item }) => {
   return (
     <article className="cell__container">
       <div className="cell__box">
-      <ImageCard item={item} />
         <h4 className="pic__caption">{item.name}</h4>
+        <ImageCard item={item} />
       </div>
       <div className="content__overlay">
         <h5 className="business__title">{item.name}</h5>

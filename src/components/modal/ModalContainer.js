@@ -11,7 +11,7 @@ function ModalContainer({ modalToggle, ...props }) {
       classNames="alert"
       unmountOnExit
     >
-      <div className="modal__overlay open">
+      <div className="modal__overlay open" onClick={() => props.closeModal()}>
         <Modal {...props} />
       </div>
     </CSSTransition>

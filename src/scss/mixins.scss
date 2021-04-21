@@ -23,7 +23,7 @@
 }
 
 @mixin medium-padding {
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
 }
 
 @mixin small-padding {
@@ -31,8 +31,10 @@
 }
 @mixin text-format {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
 }

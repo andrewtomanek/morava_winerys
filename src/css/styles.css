@@ -1,5 +1,5 @@
 :root {
-  font-size: calc(1vw + 1vh + 0.4vmin);
+  font-size: calc(1vw + 1vh + 0.2vmin);
 }
 
 html {
@@ -100,17 +100,6 @@ header {
   text-align: center;
 }
 
-.page__container {
-  grid-area: 2 / 1 / 3 / 1;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 10vh 1fr;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-}
-
 button {
   color: #0095ff;
   background-color: white;
@@ -140,7 +129,7 @@ button {
   justify-content: center;
   grid-template-columns: 70vw 1fr;
   grid-gap: 2rem;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   width: 100%;
 }
 
@@ -155,7 +144,7 @@ button {
   background-color: #3366cc;
   border: solid 0.2rem #f5463d;
   color: white;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   border-radius: 1rem;
   font-size: 1.2rem;
   font-weight: 900;
@@ -263,9 +252,11 @@ button {
 
 .card__text {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: rgba(102, 191, 255, 0.9);
   border-radius: 15px;
@@ -298,7 +289,7 @@ button {
   justify-content: center;
   grid-auto-flow: row;
   grid-gap: 1rem;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   background: #0095ff;
   width: 95%;
 }
@@ -315,13 +306,13 @@ button {
 .add__label {
   place-self: start;
   color: white;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   border-radius: 1rem;
 }
 
 .add__input {
   color: #3366cc;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   border-radius: 1rem;
   width: 100%;
 }
@@ -340,7 +331,7 @@ button {
   background-color: #3366cc;
   border: solid 0.2rem #f5463d;
   color: white;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   border-radius: 1rem;
   font-size: 1.2rem;
   font-weight: 900;
@@ -630,7 +621,7 @@ button {
   grid-gap: 1rem;
   grid-area: 2 / 1 / 2 / 1;
   z-index: 6;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
   background: #66bfff;
 }
 
@@ -638,24 +629,24 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
-  padding: 0.2rem 1.3rem;
+  padding: 1.2rem 1.3rem;
 }
 
 .modal__map {
   padding: 0.2rem 0.5rem;
-  height: "70vh";
-  width: "100%";
+  height: 50vh;
+  width: 100%;
   background: #0095ff;
 }
 
 .modal__box {
   display: flex;
   flex-flow: column;
-  justify-items: center;
   justify-content: center;
+  align-items: center;
   grid-gap: 0.2rem;
   padding: 0.2rem 1.5rem;
-  height: 70vh;
+  height: 50vh;
   background: #0095ff;
 }
 
@@ -667,7 +658,6 @@ button {
   text-align: center;
   background-color: rgba(153, 213, 255, 0.9);
   border-radius: 0.5rem;
-  width: 100%;
 }
 
 .modal__row {
@@ -690,9 +680,11 @@ button {
 
 .modal__link {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: #fffacc;
 }
@@ -716,28 +708,27 @@ button {
 .shops__box {
   grid-area: 2 / 1 / 3 / 1;
   display: grid;
-  grid-auto-flow: row;
-  gap: 5vmin 1vmin;
-  justify-items: center;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  align-content: space-evenly;
-  padding: 1rem 0 3rem;
+  padding: 1rem 2rem 3rem;
+}
+
+.search__list {
+  padding: 4rem 0.5rem 3rem;
 }
 
 .shops__container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(auto-fit, minmax(50vh, 1fr));
-  gap: 5vmin 1vmin;
+  grid-auto-rows: 35vh;
+  gap: 3vmin 3vmin;
   justify-content: center;
   align-items: center;
-  align-content: space-evenly;
   transition: 0.7s ease-in;
   animation-name: jmena;
   animation-duration: 0.5s;
   overflow: hidden;
-  width: 95vw;
+  width: 95%;
 }
 
 .filtered__container {
@@ -824,28 +815,28 @@ button {
   transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
+.search__wrap {
+  margin: 0;
+  padding: 0;
+}
+
 .search__result-box {
-  width: 100vw;
   display: grid;
-  grid: 1fr/repeat(5, 1fr);
+  grid: 1fr/repeat(4, 1fr) 5vw;
   grid-gap: 0.5rem;
-  place-items: center;
-  justify-content: space-around;
-  margin: 0px;
-  padding: 0px;
+  margin: 1rem 0;
+  padding: 0rem 2rem;
   font-size: 1rem;
   font-weight: normal;
-  border-bottom: solid 0.1rem #d6665c;
   background-color: #0095ff;
   color: white;
-  width: 99vw;
 }
 
 .search__content {
   display: flex;
   flex-flow: column;
   padding: 2rem 0rem;
-  width: 100%;
+  width: 90%;
 }
 
 .search__text {
@@ -940,9 +931,11 @@ button {
 
 .business__text {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: rgba(102, 191, 255, 0.9);
   margin: 0;
@@ -951,6 +944,7 @@ button {
 .business__title {
   font-size: 1.1rem;
   padding: 0 0.1rem;
+  margin: 0;
   color: #f5463d;
   font-weight: 700;
   text-align: center;
@@ -961,36 +955,44 @@ button {
 
 .business__adress {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: rgba(128, 202, 255, 0.8);
 }
 
 .business__postal {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: rgba(128, 202, 255, 0.8);
 }
 
 .business__telphone {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: rgba(102, 191, 255, 0.9);
 }
 
 .business__link {
   color: white;
+  font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
-  padding: 0 0.3rem;
+  padding: 0.4rem 0.3rem;
+  margin: 0;
   border-radius: 15px;
   background-color: #fffacc;
 }
@@ -1008,20 +1010,18 @@ button {
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
+  min-height: 20%;
 }
 
 .cell__container {
   display: grid;
   grid: 1fr / 1fr;
-  justify-items: center;
   justify-content: center;
   align-items: center;
-  align-content: center;
   transform: rotate(1deg);
   transition: 0.7s ease-in;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 .cell__container:hover .cell__box .content__overlay {
@@ -1038,29 +1038,23 @@ button {
   grid-area: 1 / 1 / 1 / 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
   padding: 0;
   margin: 0px;
   border-radius: 1rem;
   overflow: hidden;
   background-color: #3399ff;
   text-align: center;
+  height: 100%;
 }
 
 .content__overlay {
   grid-area: 1 / 1 / 1 / 1;
   display: grid;
-  grid-template-rows: 15vh repeat(4, 7vh);
+  gap: 1vmin 1vmin;
   justify-items: center;
-  justify-content: space-around;
-  align-items: center;
-  align-content: space-between;
-  font-size: 1rem;
+  padding: 1rem 0.1rem;
   background-color: rgba(0, 149, 255, 0.81);
   overflow: hidden;
-  width: 100%;
-  height: 100%;
   opacity: 0;
   border-radius: 15px;
   transform: translate(0, -10vmin);
@@ -1117,8 +1111,8 @@ footer {
 @media all and (max-width: 1280px) {
   .shops__container {
     display: grid;
-    grid-template-columns: repeat(4, 24vw);
-    gap: 5vmin 1vmin;
+    grid-template-columns: repeat(4, 20vw);
+    gap: 3vmin 3vmin;
   }
   .filtered__container {
     display: grid;
@@ -1130,6 +1124,9 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 24vw);
     gap: 5vmin 1vmin;
+  }
+  .pic__caption {
+    min-height: 30%;
   }
 }
 
@@ -1145,8 +1142,10 @@ footer {
   }
   .shops__container {
     display: grid;
-    grid-template-columns: repeat(3, 30vw);
-    gap: 5vmin 1vmin;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 25vw);
+    gap: 4vmin 4vmin;
+    width: 90%;
   }
   .filtered__container {
     display: grid;
@@ -1180,9 +1179,9 @@ footer {
   }
   .shops__container {
     display: grid;
-    grid-template-columns: repeat(2, 48vw);
-    gap: 3vmin 0vmin;
-    width: 99vw;
+    grid-template-columns: repeat(2, 40vw);
+    grid-auto-rows: 25vh;
+    gap: 3vmin 3vmin;
   }
   .filtered__container {
     display: grid;
@@ -1232,16 +1231,12 @@ footer {
   .main__navigation {
     grid-auto-flow: row;
   }
-  .content__overlay {
-    font-size: 2rem;
-    height: 50vh;
-  }
   .shops__container {
     display: grid;
-    grid-template-columns: 100vw;
-    justify-content: stretch;
-    gap: 4vmin 1vmin;
-    width: 99vw;
+    justify-items: center;
+    grid-template-columns: 90vw;
+    grid-auto-rows: 30vh;
+    gap: 4vmin 0vmin;
   }
   .filtered__container {
     display: grid;
@@ -1288,8 +1283,7 @@ footer {
     padding: 1rem 0.1rem;
   }
   .shops__box {
-    justify-items: normal;
-    justify-content: stretch;
+    padding: 5rem 1rem;
   }
   .list__container {
     grid-template-columns: 1fr;
@@ -1297,6 +1291,28 @@ footer {
   }
   .upload__container {
     width: 100vw;
+  }
+  .pic__caption {
+    font-size: 2rem;
+    min-height: 10%;
+  }
+  .content__overlay {
+    gap: 3vmin 0vmin;
+  }
+  .business__title {
+    font-size: 1.5rem;
+  }
+  .business__adress {
+    font-size: 1.5rem;
+  }
+  .business__postal {
+    font-size: 1.5rem;
+  }
+  .business__telphone {
+    font-size: 1.5rem;
+  }
+  .business__link {
+    font-size: 1.5rem;
   }
   .footer__content {
     display: grid;

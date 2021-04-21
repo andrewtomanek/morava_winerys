@@ -2,8 +2,8 @@ import React from "react";
 import DetailsCard from "./cards/DetailsCard";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-const FilteredList = props => {
-  const items = props.sklepy.map(item => {
+const FilteredList = (props) => {
+  const items = props.sklepy.map((item) => {
     return (
       <CSSTransition
         key={item.id}
@@ -17,7 +17,7 @@ const FilteredList = props => {
   });
 
   return (
-    <TransitionGroup className="search__shops">
+    <TransitionGroup className="shops__container search__list">
       {props.initSklepy && items}
     </TransitionGroup>
   );
