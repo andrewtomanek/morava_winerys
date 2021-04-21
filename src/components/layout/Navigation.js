@@ -11,33 +11,54 @@ const Navigation = () => {
       <nav className="main__navigation">
         <ul className="nav__list">
           <li className="nav__item">
-            <NavLink className="nav__link" to="/">
+            <NavLink
+              className="nav__link"
+              to="/"
+              exact={true}
+              activeClassName="is-active"
+            >
               Domů
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink className="nav__link" to="/mapa">
-              Mapa{" "}
+            <NavLink
+              className="nav__link"
+              to="/mapa"
+              activeClassName="is-active"
+            >
+              Mapa
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink className="nav__link" to="/prodejny">
-              Prodejny{" "}
+            <NavLink
+              className="nav__link"
+              to="/prodejny"
+              activeClassName="is-active"
+            >
+              Prodejny
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink className="nav__link" to="/vyhledat">
-              Vyhledat{" "}
+            <NavLink
+              className="nav__link"
+              to="/vyhledat"
+              activeClassName="is-active"
+            >
+              Vyhledat
             </NavLink>
           </li>
         </ul>
 
         <ul className="nav__list">
           <li className="nav__item">
-            <NavLink className="nav__link" to="/vlozit">
-              Vložit{" "}
+            <NavLink
+              className="nav__link"
+              to="/vlozit"
+              activeClassName="is-active"
+            >
+              Vložit
             </NavLink>
-          </li>{" "}
+          </li>
           {currentUser && (
             <>
               <li className="nav__item">

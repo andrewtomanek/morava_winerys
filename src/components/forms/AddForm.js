@@ -33,7 +33,7 @@ const AddForm = (props) => {
           minLength: { value: 2, message: "too short" },
           maxLength: { value: 10, message: "error message" },
         }}
-      />{" "}
+      />
       <AddInput
         labelString={"Název"}
         name={"name"}
