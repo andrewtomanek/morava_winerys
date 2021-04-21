@@ -490,8 +490,11 @@ button {
   height: 80vh;
 }
 
-.reset__button {
+.reset__box {
   grid-column: 1 / -1;
+}
+
+.reset__button {
   color: $skyblue;
   background-color: white;
   padding: 1vmin 5vmin;
@@ -502,7 +505,6 @@ button {
   border: none;
   text-decoration: none;
   cursor: pointer;
-  width: 100%;
   transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &:hover {
@@ -729,8 +731,8 @@ button {
   grid-area: 2 / 1 / 3 / 1;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 15vh repeat(auto-fit, minmax(40vh, 1fr));
-  gap: 5vmin 1vmin;
+  grid-template-rows: 15vh repeat(auto-fit, minmax(20vh, 1fr));
+  gap: 4vmin 4vmin;
   justify-items: center;
   justify-content: space-evenly;
   align-items: center;
@@ -738,22 +740,19 @@ button {
   transition: 0.7s ease-in;
   animation-name: jmena;
   animation-duration: 0.5s;
-  padding: 1rem 0 3rem;
-  width: 99vw;
+  padding: 1rem 2rem 3rem;
+  width: 90%;
 }
 
 .city_box {
   display: grid;
-  grid-template-rows: 1fr 10vh 5vh;
-  gap: 5vmin 1vmin;
-  justify-items: center;
-  justify-content: space-evenly;
+  grid-template-rows: 10vh 1fr 5vh;
+  gap: 2vmin 1vmin;
   align-items: center;
-  align-content: space-evenly;
   width: 100%;
   margin: 0px;
   border-radius: 1rem;
-  padding: 1rem 0 3rem;
+  padding: 0.2rem 0 0.1rem;
   background-color: hsl(210, 100%, 60%);
   text-align: center;
 }
@@ -1076,8 +1075,9 @@ footer {
 
   .filtered__container {
     display: grid;
-    grid-template-columns: repeat(4, 24vw);
-    gap: 5vmin 1vmin;
+    grid-template-columns: repeat(4, 20vw);
+    gap: 4vmin 4vmin;
+    padding: 1rem 1.5rem 3rem;
   }
 
   .search__shops {
@@ -1107,8 +1107,9 @@ footer {
 
   .filtered__container {
     display: grid;
-    grid-template-columns: repeat(3, 30vw);
-    gap: 5vmin 1vmin;
+    grid-template-columns: repeat(3, 25vw);
+    gap: 4vmin 4vmin;
+    padding: 1rem 1rem 3rem;
   }
 
   .search__shops {
@@ -1149,8 +1150,9 @@ footer {
 
   .filtered__container {
     display: grid;
-    grid-template-columns: repeat(2, 48vw);
-    gap: 3vmin 0vmin;
+    grid-template-columns: repeat(2, 40vw);
+    gap: 4vmin 4vmin;
+    padding: 1rem 1rem 3rem;
   }
 
   .search__shops {
@@ -1217,9 +1219,10 @@ footer {
 
   .filtered__container {
     display: grid;
-    grid-template-columns: 100vw;
-    justify-content: stretch;
-    gap: 20vmin 1vmin;
+    grid-template-columns: 80vw;
+    justify-content: center;
+    gap: 10vmin 0vmin;
+    padding: 1rem 1rem 3rem;
   }
 
   .search__shops {

@@ -2,8 +2,8 @@ import React from "react";
 import BusinessCard from "./cards/BusinessCard";
 import { CSSTransition } from "react-transition-group";
 
-const CardBox = props => {
-  const items = props.sklepy.map(item => {
+const CardBox = (props) => {
+  const items = props.sklepy.map((item) => {
     return (
       <BusinessCard key={item.id} item={item} updateModal={props.updateModal} />
     );
@@ -17,12 +17,14 @@ const CardBox = props => {
         classNames="alert"
         unmountOnExit
       >
-        <button
-          className="reset__button"
-          onClick={() => props.changeToggleBox()}
-        >
-          {"\u{1F504}"}
-        </button>
+        <div className="reset__box">
+          <button
+            className="reset__button"
+            onClick={() => props.changeToggleBox()}
+          >
+            {"\u{1F504}"}
+          </button>
+        </div>
       </CSSTransition>
       {items}
     </div>
