@@ -28,7 +28,7 @@ const Form = (props) => {
     event.preventDefault();
     if (searchString.trim() === "") return;
     const newSearchString = searchString.trim();
-    props.searchDatabase(newSearchString);
+    props.searchDatabase(newSearchString.toLowerCase());
     setSearchString(newSearchString);
   };
   return (
@@ -38,7 +38,7 @@ const Form = (props) => {
           type="text"
           className="search__input"
           placeholder="Zadejte hledané slovo"
-          value={searchString.toLowerCase()}
+          value={searchString}
           onChange={onChange}
           autoFocus
         />

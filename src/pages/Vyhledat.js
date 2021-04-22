@@ -13,9 +13,10 @@ const Vyhledat = () => {
   const searchDatabase = (searchString) => {
     let filtered = sklepy.filter((item) => {
       return (
-        item.name.toLowerCase().indexOf(searchString) > -1 ||
-        item.postalCode.toLowerCase().indexOf(searchString) > -1 ||
-        item.address.toLowerCase().indexOf(searchString) > -1
+        item.name.toLowerCase().indexOf(searchString.toLowerCase()) > -1 ||
+        item.postalCode.toLowerCase().indexOf(searchString.toLowerCase()) >
+          -1 ||
+        item.address.toLowerCase().indexOf(searchString.toLowerCase()) > -1
       );
     });
     setInitSklepy(true);
