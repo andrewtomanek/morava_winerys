@@ -116,21 +116,19 @@ button {
 
 .search__container {
   display: grid;
-  justify-items: center;
+  align-items: center;
   justify-content: center;
-  padding: 0.2rem 0rem;
+  padding: 1.5rem 1rem;
   background: #0095ff;
-  width: 100vw;
 }
 
 .search__form {
   display: grid;
-  justify-items: center;
+  align-items: center;
   justify-content: center;
+  padding: 0.3rem 0rem;
   grid-template-columns: 70vw 1fr;
-  grid-gap: 2rem;
-  padding: 1.2rem 1.3rem;
-  width: 100%;
+  grid-gap: 1rem;
 }
 
 .search__input {
@@ -141,12 +139,11 @@ button {
 }
 
 .search__button {
-  background-color: #3366cc;
-  border: solid 0.2rem #f5463d;
+  background-color: #f5463d;
   color: white;
-  padding: 1.2rem 1.3rem;
+  padding: 0.3rem 1.3rem;
   border-radius: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 900;
   text-align: center;
   text-decoration: none;
@@ -820,32 +817,34 @@ button {
   padding: 0;
 }
 
+.search__content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0rem;
+}
+
 .search__result-box {
   display: grid;
-  grid: 1fr/repeat(4, 1fr) 5vw;
-  grid-gap: 0.5rem;
-  margin: 1rem 0;
-  padding: 0rem 2rem;
+  grid: 1fr/repeat(4, 1fr) 10%;
+  grid-gap: 0.1rem;
+  margin: 1rem auto;
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: normal;
   background-color: #0095ff;
   color: white;
-}
-
-.search__content {
-  display: flex;
-  flex-flow: column;
-  padding: 2rem 0rem;
-  width: 90%;
+  width: 80vw;
 }
 
 .search__text {
   padding: 0.2rem 0.3rem;
   color: white;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
-  width: 100%;
 }
 
 .search__link {
@@ -1126,7 +1125,7 @@ footer {
     gap: 5vmin 1vmin;
   }
   .pic__caption {
-    min-height: 30%;
+    min-height: 15%;
   }
 }
 
