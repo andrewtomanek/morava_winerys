@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import AddForm from "../components/forms/AddForm";
 import InputCard from "../components/cards/InputCard";
 
-
 import { v4 as uuidv4 } from "uuid";
 
 export default function Form({ history }) {
   let [companyDatabase, setCompanyDatabase] = useState(
     JSON.parse(localStorage.getItem("businessList")) || null
   );
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     let businessList = localStorage.getItem("businessList");
     let businessArray = [];
     if (businessList) {
@@ -21,9 +20,9 @@ export default function Form({ history }) {
     setCompanyDatabase(businessArray);
   };
 
-  const deleteCompany = pickedCompany => {
+  const deleteCompany = (pickedCompany) => {
     let filteredCompanys = companyDatabase.filter(
-      item => item.businessId !== pickedCompany.businessId
+      (item) => item.businessId !== pickedCompany.businessId
     );
     localStorage.setItem("businessList", JSON.stringify(filteredCompanys));
     setCompanyDatabase(filteredCompanys);
@@ -34,8 +33,8 @@ export default function Form({ history }) {
       <AddForm onSubmit={onSubmit} />
       {companyDatabase && (
         <>
-          <div className="list__container">
-            {companyDatabase.map(elem => (
+          <div className="upload__box">
+            {companyDatabase.map((elem) => (
               <InputCard
                 item={elem}
                 pickItem={deleteCompany}

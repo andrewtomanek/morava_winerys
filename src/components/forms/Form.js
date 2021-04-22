@@ -28,7 +28,7 @@ const Form = (props) => {
     event.preventDefault();
     if (searchString.trim() === "") return;
     const newSearchString = searchString.trim();
-    props.searchDatabase(newSearchString.toLowerCase());
+    props.searchDatabase(newSearchString);
     setSearchString(newSearchString);
   };
   return (

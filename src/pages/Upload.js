@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 
-
 import firebase from "../firebase/firebase";
 import { AuthContext } from "../auth/Auth";
 import ImageUpload from "../components/forms/ImageUpload";
@@ -75,15 +74,15 @@ const Upload = () => {
         {businesses &&
           businesses.map((elem, index) => (
             <div className="upload__container" key={index}>
-              <InputCard
-                item={elem}
-                pickItem={onDelete}
-                buttonLabel={"Delete"}
-              />
               <img
                 src={elem.imgSrc || "/img/cont/placeholder720x540.png"}
                 alt="Uploaded images"
                 className="upload__picture"
+              />
+              <InputCard
+                item={elem}
+                pickItem={onDelete}
+                buttonLabel={"Delete"}
               />
             </div>
           ))}

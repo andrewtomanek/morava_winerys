@@ -6,13 +6,13 @@
 }
 
 html {
-  @include zero-space;
+  @include zero_space;
   width: 100vw;
   overflow-x: hidden;
 }
 
 body {
-  @include zero-space;
+  @include zero_space;
   background: hsla(205, 100%, 50%, 0.4);
   background: linear-gradient(
     to bottom right,
@@ -32,9 +32,9 @@ p {
 
 header {
   display: grid;
-  @include center-content;
+  @include center_content;
   width: 100vw;
-  @include one-area;
+  @include one_area;
   padding: 0.5rem;
   text-align: center;
   background-color: $red;
@@ -43,23 +43,23 @@ header {
 .main__navigation {
   display: grid;
   grid-auto-flow: column;
-  @include center-grid;
+  @include center_content;
   height: 100%;
 }
 
 .nav__list {
   list-style: none;
-  @include zero-space;
+  @include zero_space;
   z-index: 10;
   display: grid;
   grid-auto-flow: column;
-  @include center-grid;
+  @include center_content;
   align-content: center;
   text-align: center;
 }
 
 .nav__item {
-  @include zero-space;
+  @include zero_space;
 }
 
 .nav__link {
@@ -163,7 +163,7 @@ button {
 .login__form {
   display: grid;
   grid-auto-flow: row;
-  @include center-grid;
+  @include center_content;
   grid-gap: 2rem 0;
 }
 
@@ -218,22 +218,22 @@ button {
 
 .list__container {
   display: grid;
-  justify-content: space-around;
-  align-content: center;
-  @include small-padding;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
   background: hsla(205, 100%, 70%, 1);
-  width: 100vw;
+  width: 90%;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.2rem 0.3rem;
+  grid-gap: 2rem 3rem;
 }
 
 .card__box {
-  @include zero-space;
+  @include zero_space;
   display: grid;
   grid-gap: 0.3rem;
-  @include center-content;
+  @include center_content;
   background: $skyblue;
-  @include small-padding;
+  @include small_padding;
   border-radius: 1rem;
 }
 
@@ -241,86 +241,102 @@ button {
   margin: 0;
   font-size: 1.1rem;
   padding: 0 0.1rem;
-  color: $red;
+  color: $deepblue;
+  background-color: $lightblue;
   font-weight: 700;
   text-align: center;
-  background-color: $lightblue;
   border-radius: 15px;
 }
 
 .card__text {
-  @include text-format;
+  @include text_format;
+  padding: 0.3rem 0.5rem;
   background-color: $oceanblue;
-  border-radius: 15px;
+  border-radius: 1rem;
   margin: 0;
 }
 
 .upload__container {
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr;
   justify-items: center;
   align-content: center;
   padding: 0.2rem 0rem;
   background: $skyblue;
   border-radius: 1rem;
-  width: 30vw;
+  width: 100%;
+}
+
+.upload__box {
+  display: grid;
+  justify-content: space-around;
+  align-content: center;
+  padding: 3rem 2rem;
+  background: hsla(205, 100%, 70%, 1);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.2rem 0.3rem;
 }
 
 .add__container {
   display: grid;
   justify-content: space-around;
   align-content: center;
-  padding: 0.2rem 0rem;
-  background: hsla(205, 100%, 70%, 1);
+  padding: 3rem 0rem;
+  background: $oceanblue;
 }
 .add__form {
   display: grid;
-  @include center-content;
+  @include center_content;
   grid-auto-flow: row;
   grid-gap: 1rem;
-  @include medium-padding;
+  @include medium_padding;
   background: $skyblue;
+  border-radius: 1rem;
   width: 95%;
 }
 
 .add__input-field {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
-  grid-gap: 0.2rem 0.3rem;
-  @include small-padding;
-  @include center-content;
+  grid-gap: 0.2rem 1rem;
+  border-radius: 1rem;
+  background: $waterblue;
+  padding: 0.7rem 1rem;
+  @include center_content;
 }
 
 .add__label {
   place-self: start;
   color: white;
-  @include medium-padding;
+  @include small_padding;
   border-radius: 1rem;
 }
 
 .add__input {
   color: $waterblue;
-  @include medium-padding;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
   border-radius: 1rem;
-  width: 100%;
 }
 
 .add_error {
   place-self: end;
+  @include small_padding;
   background-color: $red;
   color: white;
 }
 
 .add_checkmark {
-  color: green;
+  color: white;
 }
 
 .add__submit {
   background-color: $waterblue;
-  border: solid 0.2rem $red;
+  border: solid 0.2rem $green;
   color: white;
-  @include medium-padding;
+  @include medium_padding;
   border-radius: 1rem;
   font-size: 1.2rem;
   font-weight: 900;
@@ -330,7 +346,7 @@ button {
   transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &:hover {
-    background-color: $red;
+    background-color: $green;
     color: white;
   }
 }
@@ -370,10 +386,10 @@ button {
 }
 
 .picture__input {
-  @include zero-space;
+  @include zero_space;
   display: flex;
   flex-flow: row wrap;
-  @include center-grid;
+  @include center_content;
   justify-items: center;
 }
 
@@ -388,7 +404,34 @@ button {
 }
 
 .upload__button {
-  color: $skyblue;
+  color: white;
+  background-color: hsla(120, 50%, 50%, 1);
+  padding: 0.3rem 0.2rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  &:hover {
+    animation: floating-text 500ms ease-in-out;
+    text-shadow: 0 0 0.5em $greyshade, 0 0 0.2em rgba(0, 0, 0, 0.3),
+      0 0.5em 0.5em rgba(0, 0, 0, 0.3);
+    color: hsla(120, 50%, 50%, 1);
+    background-color: white;
+  }
+}
+.upload__button:disabled {
+  animation: none;
+  border: 0.2rem solid grey;
+  background-color: white;
+  color: grey;
+  cursor: not-allowed;
+}
+
+.delete__button {
   color: white;
   background-color: $red;
   padding: 0.3rem 0.2rem;
@@ -398,7 +441,6 @@ button {
   border: none;
   text-decoration: none;
   cursor: pointer;
-  width: 100%;
   transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
   &:hover {
@@ -409,7 +451,7 @@ button {
     background-color: white;
   }
 }
-.upload__button:disabled {
+.delete__button:disabled {
   animation: none;
   border: 0.2rem solid grey;
   background-color: white;
@@ -588,7 +630,7 @@ button {
   grid-area: 1 / 1 / 5 / 1;
   grid-template-rows: 10vh 1fr;
   grid-gap: 1rem;
-  @include full-space;
+  @include full_space;
   z-index: 99;
   align-items: start;
   align-content: center;
@@ -610,7 +652,7 @@ button {
   grid-gap: 1rem;
   grid-area: 2 / 1 / 2 / 1;
   z-index: 6;
-  @include medium-padding;
+  @include medium_padding;
   background: hsla(205, 100%, 70%, 1);
 }
 
@@ -618,7 +660,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
-  @include medium-padding;
+  @include medium_padding;
 }
 
 .modal__map {
@@ -640,7 +682,7 @@ button {
 }
 
 .modal__title {
-  @include small-padding;
+  @include small_padding;
   color: $red;
   font-weight: 700;
   font-size: 1.3rem;
@@ -667,7 +709,7 @@ button {
 }
 
 .modal__link {
-  @include text-format;
+  @include text_format;
   background-color: hsla(54, 100%, 90%, 1);
 }
 
@@ -678,7 +720,7 @@ button {
 }
 
 .wine__wrap {
-  @include zero-space;
+  @include zero_space;
   display: grid;
   justify-items: center;
   justify-content: space-between;
@@ -824,7 +866,7 @@ button {
 }
 
 .search__text {
-  @include small-padding;
+  @include small_padding;
   color: white;
   font-weight: 400;
   font-size: 0.9rem;
@@ -849,7 +891,7 @@ button {
   grid-gap: 0.1rem;
   place-items: center;
   justify-content: space-around;
-  @include zero-space;
+  @include zero_space;
   font-size: 0.9rem;
   font-weight: normal;
   background-color: hsla(205, 100%, 50%, 0.08);
@@ -893,7 +935,7 @@ button {
 }
 
 .business___box {
-  @include zero-space;
+  @include zero_space;
   display: grid;
   justify-items: center;
   justify-content: space-between;
@@ -906,7 +948,7 @@ button {
 }
 
 .business__text {
-  @include text-format;
+  @include text_format;
   background-color: $oceanblue;
   margin: 0;
 }
@@ -923,19 +965,19 @@ button {
   width: 90%;
 }
 .business__adress {
-  @include text-format;
+  @include text_format;
   background-color: hsla(205, 100%, 75%, 0.8);
 }
 .business__postal {
-  @include text-format;
+  @include text_format;
   background-color: hsla(205, 100%, 75%, 0.8);
 }
 .business__telphone {
-  @include text-format;
+  @include text_format;
   background-color: $oceanblue;
 }
 .business__link {
-  @include text-format;
+  @include text_format;
   background-color: hsla(54, 100%, 90%, 1);
 }
 
@@ -978,7 +1020,7 @@ button {
 }
 
 .cell__box {
-  @include one-area;
+  @include one_area;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -991,7 +1033,7 @@ button {
 }
 
 .content__overlay {
-  @include one-area;
+  @include one_area;
   display: grid;
   gap: 1vmin 1vmin;
   justify-items: center;
@@ -1013,16 +1055,16 @@ footer {
 }
 .footer__box {
   display: grid;
-  @include small-padding;
+  @include small_padding;
 }
 .footer__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
-  @include center-grid;
+  @include center_content;
   align-content: center;
-  @include small-padding;
+  @include small_padding;
 }
 
 .footer__text {
@@ -1108,11 +1150,10 @@ footer {
 
   .list__container {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.2rem 0.3rem;
   }
 
   .upload__container {
-    width: 45vw;
+    width: 40vw;
   }
 }
 
@@ -1175,11 +1216,10 @@ footer {
 
   .list__container {
     grid-template-columns: 1fr;
-    grid-gap: 0.2rem 0.3rem;
   }
 
   .upload__container {
-    width: 100vw;
+    width: 90vw;
   }
 }
 
@@ -1257,11 +1297,10 @@ footer {
 
   .list__container {
     grid-template-columns: 1fr;
-    grid-gap: 0.2rem 0.3rem;
   }
 
   .upload__container {
-    width: 100vw;
+    width: 90%;
   }
 
   .pic__caption {
@@ -1294,9 +1333,9 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-    @include center-grid;
+    @include center_content;
     align-content: center;
-    @include small-padding;
+    @include small_padding;
   }
 }
 

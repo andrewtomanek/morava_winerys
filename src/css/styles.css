@@ -26,7 +26,7 @@ p {
 
 header {
   display: grid;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   width: 100vw;
   grid-area: 1 / 1 / 1 / 1;
@@ -38,8 +38,8 @@ header {
 .main__navigation {
   display: grid;
   grid-auto-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
@@ -50,8 +50,8 @@ header {
   z-index: 10;
   display: grid;
   grid-auto-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   align-content: center;
   text-align: center;
 }
@@ -159,8 +159,8 @@ button {
 .login__form {
   display: grid;
   grid-auto-flow: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   grid-gap: 2rem 0;
 }
 
@@ -215,13 +215,13 @@ button {
 
 .list__container {
   display: grid;
-  justify-content: space-around;
-  align-content: center;
-  padding: 0.2rem 0.3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
   background: #66bfff;
-  width: 100vw;
+  width: 90%;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.2rem 0.3rem;
+  grid-gap: 2rem 3rem;
 }
 
 .card__box {
@@ -229,7 +229,7 @@ button {
   padding: 0;
   display: grid;
   grid-gap: 0.3rem;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   background: #0095ff;
   padding: 0.2rem 0.3rem;
@@ -240,10 +240,10 @@ button {
   margin: 0;
   font-size: 1.1rem;
   padding: 0 0.1rem;
-  color: #f5463d;
+  color: rgba(26, 26, 230, 0.7);
+  background-color: rgba(153, 213, 255, 0.9);
   font-weight: 700;
   text-align: center;
-  background-color: rgba(153, 213, 255, 0.9);
   border-radius: 15px;
 }
 
@@ -255,78 +255,94 @@ button {
   padding: 0.4rem 0.3rem;
   margin: 0;
   border-radius: 15px;
+  padding: 0.3rem 0.5rem;
   background-color: rgba(102, 191, 255, 0.9);
-  border-radius: 15px;
+  border-radius: 1rem;
   margin: 0;
 }
 
 .upload__container {
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr;
   justify-items: center;
   align-content: center;
   padding: 0.2rem 0rem;
   background: #0095ff;
   border-radius: 1rem;
-  width: 30vw;
+  width: 100%;
+}
+
+.upload__box {
+  display: grid;
+  justify-content: space-around;
+  align-content: center;
+  padding: 3rem 2rem;
+  background: #66bfff;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.2rem 0.3rem;
 }
 
 .add__container {
   display: grid;
   justify-content: space-around;
   align-content: center;
-  padding: 0.2rem 0rem;
-  background: #66bfff;
+  padding: 3rem 0rem;
+  background: rgba(102, 191, 255, 0.9);
 }
 
 .add__form {
   display: grid;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   grid-auto-flow: row;
   grid-gap: 1rem;
   padding: 1.2rem 1.3rem;
   background: #0095ff;
+  border-radius: 1rem;
   width: 95%;
 }
 
 .add__input-field {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
-  grid-gap: 0.2rem 0.3rem;
-  padding: 0.2rem 0.3rem;
-  align-content: center;
+  grid-gap: 0.2rem 1rem;
+  border-radius: 1rem;
+  background: #3366cc;
+  padding: 0.7rem 1rem;
+  align-items: center;
   justify-content: center;
 }
 
 .add__label {
   place-self: start;
   color: white;
-  padding: 1.2rem 1.3rem;
+  padding: 0.2rem 0.3rem;
   border-radius: 1rem;
 }
 
 .add__input {
   color: #3366cc;
-  padding: 1.2rem 1.3rem;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
   border-radius: 1rem;
-  width: 100%;
 }
 
 .add_error {
   place-self: end;
+  padding: 0.2rem 0.3rem;
   background-color: #f5463d;
   color: white;
 }
 
 .add_checkmark {
-  color: green;
+  color: white;
 }
 
 .add__submit {
   background-color: #3366cc;
-  border: solid 0.2rem #f5463d;
+  border: solid 0.2rem #75f075;
   color: white;
   padding: 1.2rem 1.3rem;
   border-radius: 1rem;
@@ -339,7 +355,7 @@ button {
 }
 
 .add__submit:hover {
-  background-color: #f5463d;
+  background-color: #75f075;
   color: white;
 }
 
@@ -382,8 +398,8 @@ button {
   padding: 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   justify-items: center;
 }
 
@@ -398,7 +414,34 @@ button {
 }
 
 .upload__button {
-  color: #0095ff;
+  color: white;
+  background-color: #40bf40;
+  padding: 0.3rem 0.2rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.upload__button:hover {
+  animation: floating-text 500ms ease-in-out;
+  text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.4), 0 0 0.2em rgba(0, 0, 0, 0.3), 0 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  color: #40bf40;
+  background-color: white;
+}
+
+.upload__button:disabled {
+  animation: none;
+  border: 0.2rem solid grey;
+  background-color: white;
+  color: grey;
+  cursor: not-allowed;
+}
+
+.delete__button {
   color: white;
   background-color: #f5463d;
   padding: 0.3rem 0.2rem;
@@ -408,18 +451,17 @@ button {
   border: none;
   text-decoration: none;
   cursor: pointer;
-  width: 100%;
   transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.upload__button:hover {
+.delete__button:hover {
   animation: floating-text 500ms ease-in-out;
   text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.4), 0 0 0.2em rgba(0, 0, 0, 0.3), 0 0.5em 0.5em rgba(0, 0, 0, 0.3);
   color: #f5463d;
   background-color: white;
 }
 
-.upload__button:disabled {
+.delete__button:disabled {
   animation: none;
   border: 0.2rem solid grey;
   background-color: white;
@@ -1078,8 +1120,8 @@ footer {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   align-content: center;
   padding: 0.2rem 0.3rem;
 }
@@ -1159,10 +1201,9 @@ footer {
   }
   .list__container {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.2rem 0.3rem;
   }
   .upload__container {
-    width: 45vw;
+    width: 40vw;
   }
 }
 
@@ -1216,10 +1257,9 @@ footer {
   }
   .list__container {
     grid-template-columns: 1fr;
-    grid-gap: 0.2rem 0.3rem;
   }
   .upload__container {
-    width: 100vw;
+    width: 90vw;
   }
 }
 
@@ -1286,10 +1326,9 @@ footer {
   }
   .list__container {
     grid-template-columns: 1fr;
-    grid-gap: 0.2rem 0.3rem;
   }
   .upload__container {
-    width: 100vw;
+    width: 90%;
   }
   .pic__caption {
     font-size: 2rem;
@@ -1318,8 +1357,8 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     align-content: center;
     padding: 0.2rem 0.3rem;
   }

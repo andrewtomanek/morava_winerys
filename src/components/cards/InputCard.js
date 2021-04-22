@@ -15,7 +15,7 @@ function InputCard({ item, buttonLabel, pickItem }) {
       <p className="card__text">{item.email}</p>
 
       {buttonLabel && (
-        <button className="upload__button" onClick={() => pickItem(item)}>
+        <button className="delete__button" onClick={() => pickItem(item)}>
           {buttonLabel}
         </button>
       )}
