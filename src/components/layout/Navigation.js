@@ -1,15 +1,24 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import firebase from "../../firebase/firebase";
 import { AuthContext } from "../../auth/Auth";
 
 const Navigation = () => {
   const { currentUser } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header>
+      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "\u{274C}" : "\u{2630}"}
+      </div>
       <nav className="main__navigation">
-        <ul className="nav__list">
+        <img
+          className="logo__picture"
+          src={"../img/winerys_logo.svg"}
+          alt={"logo"}
+        />
+        <ul className={isOpen ? "nav__list active" : "nav__list"}>
           <li className="nav__item">
             <NavLink
               className="nav__link"
@@ -47,9 +56,6 @@ const Navigation = () => {
               Vyhledat
             </NavLink>
           </li>
-        </ul>
-
-        <ul className="nav__list">
           <li className="nav__item">
             <NavLink
               className="nav__link"
@@ -62,7 +68,7 @@ const Navigation = () => {
           {currentUser && (
             <>
               <li className="nav__item">
-                <span className="nav__text">{currentUser.email}</span>
+                <p className="nav__text">{currentUser.email}</p>
               </li>
               <li className="nav__item">
                 <button

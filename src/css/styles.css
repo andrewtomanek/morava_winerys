@@ -30,17 +30,16 @@ header {
   justify-content: center;
   width: 100vw;
   grid-area: 1 / 1 / 1 / 1;
-  padding: 0.5rem;
   text-align: center;
-  background-color: #f5463d;
+  background-color: #3333ff;
 }
 
 .main__navigation {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: 5vw 1fr;
+  width: 80vw;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .nav__list {
@@ -56,6 +55,22 @@ header {
   text-align: center;
 }
 
+.nav__list-opened {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  min-height: 50vh;
+  background-color: #3333ff;
+  z-index: 9;
+}
+
 .nav__item {
   margin: 0;
   padding: 0;
@@ -68,7 +83,6 @@ header {
   font-weight: 700;
   text-decoration: none;
   color: white;
-  background-color: #f5463d;
   border: solid 0.1rem transparent;
   border-radius: 0.1rem;
   transition: all 400ms;
@@ -80,16 +94,22 @@ header {
 }
 
 .nav__text {
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.3rem;
   font-size: 1.1rem;
   font-weight: 700;
-  color: white;
-  background-color: #f5463d;
-  border-radius: 0.1rem;
+  color: #75f075;
 }
 
 .is-active {
   border-bottom: solid 0.1rem white;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logo__picture {
+  width: 80%;
 }
 
 .main__container {
@@ -184,12 +204,11 @@ button {
 
 .login__button {
   margin: 0;
-  padding: 0.1rem 0.3rem;
+  padding: 0.2rem 0.4rem;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
-  background-color: #3366cc;
-  border: solid 0.2rem #f5463d;
+  background-color: #f5463d;
   color: white;
 }
 
@@ -268,6 +287,18 @@ button {
   justify-items: center;
   align-content: center;
   padding: 0.2rem 0rem;
+  background: #0095ff;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.picture__container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.3rem;
   background: #0095ff;
   border-radius: 1rem;
   width: 100%;
@@ -372,17 +403,7 @@ button {
 }
 
 .progress__bar {
-  padding: 0 0.1rem;
-  color: #f5463d;
-  text-align: center;
-  background-color: rgba(153, 213, 255, 0.9);
-  border-radius: 15px;
-  width: 90%;
-}
-
-.progress__bar {
-  margin: 0;
-  padding: 0.3rem;
+  margin: 0.5rem auto;
   font-size: 1.1rem;
   padding: 0 0.1rem;
   color: #f5463d;
@@ -416,7 +437,8 @@ button {
 .upload__button {
   color: white;
   background-color: #40bf40;
-  padding: 0.3rem 0.2rem;
+  margin: 0.5rem auto;
+  padding: 0.4rem 0.5rem;
   font-size: 1rem;
   font-weight: 900;
   text-align: center;
@@ -470,7 +492,7 @@ button {
 }
 
 .file__input {
-  margin: 0;
+  margin: 0.5rem auto;
   padding: 0.2rem;
   font-size: 1rem;
   color: white;
@@ -496,6 +518,7 @@ button {
   cursor: pointer;
   font-weight: 700;
   font-size: 0.7rem;
+  text-align: left;
 }
 
 .file__input:hover:before {
@@ -1172,9 +1195,6 @@ footer {
 }
 
 @media all and (max-width: 980px) {
-  .main__container {
-    grid-template-rows: 15vh 1fr;
-  }
   .main__navigation {
     grid-auto-flow: row;
   }
@@ -1205,12 +1225,80 @@ footer {
   .upload__container {
     width: 40vw;
   }
+  header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .main__navigation {
+    grid-auto-flow: column;
+    align-items: start;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .nav__list.active {
+    background: #6668f4;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+  .nav-links:hover {
+    background-color: #7577fa;
+    border-radius: 0;
+  }
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+  .nav__text {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #75f075;
+  }
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    transform: translate(-100%, 60%);
+    font-size: 1.7rem;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 9;
+  }
+  .logo__picture {
+    width: 80%;
+    height: 5vh;
+    padding: 1.3rem;
+  }
 }
 
 @media all and (max-width: 736px) {
-  .main__container {
-    grid-template-rows: 15vh 1fr;
-  }
   .main__navigation {
     grid-auto-flow: row;
   }
@@ -1264,9 +1352,6 @@ footer {
 }
 
 @media all and (max-width: 480px) {
-  .main__container {
-    grid-template-rows: 15vh 1fr;
-  }
   .main__navigation {
     grid-auto-flow: row;
   }

@@ -55,7 +55,7 @@ const Upload = () => {
       <div className="list__container">
         {companyDatabase &&
           companyDatabase.map((elem, index) => (
-            <div className="upload__container" key={elem.name}>
+            <div className="picture__container" key={elem.name}>
               <ImageUpload selectedCompany={elem} imageSucces={getImgUrl} />
               <InputCard item={elem} buttonLabel={false} />
               {imageURL && (
