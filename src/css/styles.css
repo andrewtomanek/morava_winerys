@@ -1,5 +1,5 @@
 :root {
-  font-size: calc(1vw + 1vh + 0.2vmin);
+  font-size: calc(1vw + 1vh + 0.1vmin);
 }
 
 html {
@@ -1374,6 +1374,12 @@ footer {
     grid-template-columns: 100vw;
     justify-content: stretch;
     gap: 2vmin 1vmin;
+  }
+  .nav__link {
+    display: block;
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 900;
   }
   .modal__overlay {
     justify-items: stretch;

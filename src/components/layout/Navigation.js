@@ -18,7 +18,10 @@ const Navigation = () => {
           src={"../img/winerys_logo.svg"}
           alt={"logo"}
         />
-        <ul className={isOpen ? "nav__list active" : "nav__list"}>
+        <ul
+          className={isOpen ? "nav__list active" : "nav__list"}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <li className="nav__item">
             <NavLink
               className="nav__link"
