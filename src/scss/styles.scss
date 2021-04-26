@@ -47,6 +47,13 @@ header {
   @include center_content;
 }
 
+.main__navigation-closed {
+  display: grid;
+  grid-template-columns: 5vw 1fr;
+  width: 80vw;
+  @include center_content;
+}
+
 .nav__list {
   list-style: none;
   @include zero_space;
@@ -541,11 +548,8 @@ button {
   height: 80vh;
 }
 
-.reset__box {
-  grid-column: 1 / -1;
-}
-
 .reset__button {
+  grid-column: 1 / -1;
   color: $skyblue;
   background-color: white;
   padding: 1vmin 5vmin;
@@ -1320,6 +1324,10 @@ footer {
 @media all and (max-width: 480px) {
   .main__navigation {
     grid-auto-flow: row;
+  }
+
+  .main__navigation-closed {
+    display: none;
   }
 
   .nav__text {

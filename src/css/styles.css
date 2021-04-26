@@ -43,6 +43,14 @@ header {
   justify-content: center;
 }
 
+.main__navigation-closed {
+  display: grid;
+  grid-template-columns: 5vw 1fr;
+  width: 80vw;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav__list {
   list-style: none;
   margin: 0;
@@ -553,11 +561,8 @@ button {
   height: 80vh;
 }
 
-.reset__box {
-  grid-column: 1 / -1;
-}
-
 .reset__button {
+  grid-column: 1 / -1;
   color: #0095ff;
   background-color: white;
   padding: 1vmin 5vmin;
@@ -1354,6 +1359,9 @@ footer {
 @media all and (max-width: 480px) {
   .main__navigation {
     grid-auto-flow: row;
+  }
+  .main__navigation-closed {
+    display: none;
   }
   .nav__text {
     font-size: 2rem;

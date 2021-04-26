@@ -4,7 +4,7 @@ import database from "../../data/db";
 
 function importAll(r) {
   let images = {};
-  r.keys().map(item => {
+  r.keys().map((item) => {
     return (images[item.replace("./", "")] = r(item));
   });
   return images;
@@ -14,10 +14,10 @@ const images = importAll(
   require.context("../../../public/img/cont", false, /\.(png|jpe?g|svg)$/)
 );
 
-export const useGoogleMap = apiKey => {
+export const useGoogleMap = (apiKey) => {
   const [googleMap, setGoogleMap] = useState(null);
   useEffect(() => {
-    GoogleMapsApiLoader({ apiKey }).then(google => {
+    GoogleMapsApiLoader({ apiKey }).then((google) => {
       setGoogleMap(google);
     });
   }, [apiKey]);
@@ -38,7 +38,7 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
     function displayMarkers() {
       let bounds = new googleMap.maps.LatLngBounds();
 
-      markersData.forEach(element => {
+      markersData.forEach((element) => {
         let latlng = new googleMap.maps.LatLng(element.lat, element.lng);
         let name = element.name;
         let picture = images[element.picture];
@@ -75,22 +75,22 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
         position: latlng,
         map: map,
         title: name,
-        icon: "../img/cont/marker_blue50x50.png"
+        icon: "../img/cont/marker_blue50x50.png",
       });
       const infoWindow = new googleMap.maps.InfoWindow({
-        maxWidth: 300
+        maxWidth: 300,
       });
 
-      googleMap.maps.event.addListener(map, "click", function() {
+      googleMap.maps.event.addListener(map, "click", function () {
         infoWindow.close();
       });
 
-      googleMap.maps.event.addListener(marker, "click", function() {
+      googleMap.maps.event.addListener(marker, "click", function () {
         map.setZoom(13);
         map.setCenter(marker.getPosition());
         let iwContent = `<div class="info___box">  <img
         class="info__picture"
-        src=${picture}
+        src=${picture.default}
         alt=${name}
       /><div class="info__title">${name}</div>
         <div class="info__adress">${address}</div>
@@ -106,7 +106,7 @@ export const useMap = ({ googleMap, mapContainerRef, initialConfig }) => {
         infoWindow.open(map, marker);
       });
     }
-  }, [googleMap, initialConfig, mapContainerRef]); 
+  }, [googleMap, initialConfig, mapContainerRef]);
 
   return map;
 };

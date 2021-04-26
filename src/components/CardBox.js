@@ -17,14 +17,12 @@ const CardBox = (props) => {
         classNames="alert"
         unmountOnExit
       >
-        <div className="reset__box">
-          <button
-            className="reset__button"
-            onClick={() => props.changeToggleBox()}
-          >
-            {"\u{1F504}"}
-          </button>
-        </div>
+        <button
+          className="reset__button"
+          onClick={() => props.changeToggleBox()}
+        >
+          {"\u{1F504}"}
+        </button>
       </CSSTransition>
       {items}
     </div>

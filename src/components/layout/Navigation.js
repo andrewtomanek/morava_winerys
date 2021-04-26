@@ -12,7 +12,10 @@ const Navigation = () => {
       <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "\u{274C}" : "\u{2630}"}
       </div>
-      <nav className="main__navigation">
+      <nav
+        className="main__navigation"
+        className={isOpen ? "main__navigation" : "main__navigation-closed"}
+      >
         <img
           className="logo__picture"
           src={"../img/winerys_logo.svg"}

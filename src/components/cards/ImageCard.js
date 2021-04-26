@@ -13,7 +13,6 @@ const images = importAll(
 );
 
 export default function ImageCard({ item }) {
-  console.log(images);
   return (
     <img
       className="front__picture"
