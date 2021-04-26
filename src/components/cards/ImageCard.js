@@ -2,7 +2,7 @@ import React from "react";
 
 function importAll(r) {
   let images = {};
-  r.keys().map(item => {
+  r.keys().map((item) => {
     return (images[item.replace("./", "")] = r(item));
   });
   return images;
@@ -13,10 +13,11 @@ const images = importAll(
 );
 
 export default function ImageCard({ item }) {
+  console.log(images);
   return (
     <img
       className="front__picture"
-      src={images[item.picture]}
+      src={images[item.picture].default}
       alt={item.picture}
     />
   );
