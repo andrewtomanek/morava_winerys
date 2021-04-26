@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 
-import firebase from "../firebase/firebase";
 import { AuthContext } from "../auth/Auth";
 import ImageUpload from "../components/forms/ImageUpload";
 import InputCard from "../components/cards/InputCard";
+import firebaseFetch from "../api/firebaseFetch";
 
 const Upload = () => {
   const [companyDatabase, setCompanyDatabase] = useState([]);
@@ -11,28 +11,22 @@ const Upload = () => {
   const [imageURL, setImageURL] = useState(null);
   const { currentUser } = useContext(AuthContext);
 
-  const fetchData = async () => {
-    const db = firebase.firestore();
-    const data = await db
-      .collection("businesses")
-      .doc(currentUser.uid)
-      .collection("locations")
-      .get();
-    setBusinesses(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  };
+  const fetchData = useCallback(async () => {
+    const currentData = await firebaseFetch(currentUser);
+    const companyData = await currentData.get();
+    setBusinesses(
+      companyData.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    );
+  }, [currentUser]);
 
   useEffect(() => {
     setCompanyDatabase(JSON.parse(localStorage.getItem("businessList")));
     fetchData();
-  }, []);
+  }, [fetchData]);
 
-  const setData = (pickedData) => {
-    const db = firebase.firestore();
-    db.collection("businesses")
-      .doc(currentUser.uid)
-      .collection("locations")
-      .doc(pickedData.name)
-      .set(pickedData);
+  const setData = async (pickedData) => {
+    const currentData = await firebaseFetch(currentUser);
+    currentData.doc(pickedData.name).set(pickedData);
     fetchData();
   };
 
@@ -40,13 +34,9 @@ const Upload = () => {
     setImageURL(imgData);
   };
 
-  const onDelete = (pickedData) => {
-    const db = firebase.firestore();
-    db.collection("businesses")
-      .doc(currentUser.uid)
-      .collection("locations")
-      .doc(pickedData.id)
-      .delete();
+  const onDelete = async (pickedData) => {
+    const currentData = await firebaseFetch(currentUser);
+    currentData.doc(pickedData.id).delete();
     fetchData();
   };
 

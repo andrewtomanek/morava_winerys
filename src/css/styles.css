@@ -418,7 +418,7 @@ button {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
   justify-items: center;

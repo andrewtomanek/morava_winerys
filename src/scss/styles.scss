@@ -407,7 +407,7 @@ button {
 .picture__input {
   @include zero_space;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   @include center_content;
   justify-items: center;
 }
