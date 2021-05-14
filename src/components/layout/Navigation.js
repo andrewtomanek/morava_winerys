@@ -71,7 +71,7 @@ const Navigation = () => {
           {currentUser && (
             <>
               <li className="nav__item">
-                <p className="nav__text">{currentUser.email}</p>
+                <span className="nav__text">{currentUser.email}</span>
               </li>
               <li className="nav__item">
                 <button

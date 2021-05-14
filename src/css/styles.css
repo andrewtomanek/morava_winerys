@@ -45,7 +45,7 @@ header {
 
 .main__navigation-closed {
   display: grid;
-  grid-template-columns: 5vw 1fr;
+  grid-template-columns: 4vw 1fr;
   width: 80vw;
   align-items: center;
   justify-content: center;
@@ -932,7 +932,6 @@ button {
   border-radius: 1rem;
   color: #0095ff;
   overflow: hidden;
-  padding: 0.5rem;
 }
 
 .info__adress {

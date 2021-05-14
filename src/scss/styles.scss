@@ -49,7 +49,7 @@ header {
 
 .main__navigation-closed {
   display: grid;
-  grid-template-columns: 5vw 1fr;
+  grid-template-columns: 4vw 1fr;
   width: 80vw;
   @include center_content;
 }
@@ -914,7 +914,6 @@ button {
   border-radius: 1rem;
   color: $skyblue;
   overflow: hidden;
-  padding: 0.5rem;
 }
 .info__adress {
   margin: 0.5rem;
