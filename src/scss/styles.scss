@@ -61,8 +61,6 @@ header {
   display: grid;
   grid-auto-flow: column;
   @include center_content;
-  align-content: center;
-  text-align: center;
 }
 
 .nav__list-opened {
@@ -77,10 +75,6 @@ header {
   min-height: 50vh;
   background-color: hsla(240, 100%, 60%, 1);
   z-index: 9;
-}
-
-.nav__item {
-  @include zero_space;
 }
 
 .nav__link {
@@ -911,25 +905,22 @@ button {
 }
 
 .info___box {
-  width: 100%;
-  height: 50vh;
-  display: grid;
-  grid: 5fr repeat(5, 1fr) / 1fr;
-  grid-gap: 0.1rem;
-  place-items: center;
-  justify-content: space-around;
-  @include zero_space;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   font-size: 0.9rem;
   font-weight: normal;
   background-color: hsla(205, 100%, 50%, 0.08);
-  border-radius: 10px;
+  border-radius: 1rem;
   color: $skyblue;
   overflow: hidden;
+  padding: 0.5rem;
 }
 .info__adress {
+  margin: 0.5rem;
   padding: 3px;
   background-color: $steelblue;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .info__title {
   font-size: 1.1rem;
@@ -937,19 +928,22 @@ button {
   text-align: center;
   font-family: "Marcellus", Georgia, monospace;
   background-color: hsla(205, 100%, 50%, 0.2);
-  border-radius: 10px;
-  color: $red;
+  border-radius: 1rem;
+  color: $deepblue;
+  margin: 0.5rem;
 }
 
 .info__picture {
-  width: 80%;
+  margin-bottom: 1rem;
 }
 .info__postal {
+  margin: 0.5rem;
   padding: 3px;
   background-color: $steelblue;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .info__telephone {
+  margin: 0.5rem;
   padding: 3px;
   color: white;
   text-align: center;
@@ -959,6 +953,8 @@ button {
 .info__link {
   background-color: $steelblue;
   border-radius: 10px;
+  margin: 0.5rem;
+  padding: 3px;
 }
 
 .business___box {
@@ -971,7 +967,7 @@ button {
 }
 
 .business__website {
-  color: $green;
+  color: $waterblue;
 }
 
 .business__text {
